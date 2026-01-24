@@ -1,35 +1,397 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>Street View Containers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jim Clifford | Environmental and Digital Historian</title>
+    <meta name="description" content="Jim Clifford is an Associate Professor of History at the University of Saskatchewan, specializing in environmental and digital history of Britain and the British World.">
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #street-view {
-        height: 100%;
-      }
+        :root {
+            --primary: #1a5f7a;
+            --primary-dark: #134b5f;
+            --text: #333;
+            --text-light: #666;
+            --bg: #fafafa;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        section p {
+            margin-bottom: 1rem;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .research-areas span {
+            background: var(--bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+
+        .publication {
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .publication:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .publication h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .publication .meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .project {
+            margin-bottom: 1rem;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .project p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-item {
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .link-item:hover {
+            border-color: var(--primary);
+            text-decoration: none;
+        }
+
+        .link-item span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .link-item small {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item {
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 6px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div id="street-view"></div>
-    <script>
-      var panorama;
-      function initialize() {
-        panorama = new google.maps.StreetViewPanorama(
-            document.getElementById('street-view'),
-            {
-              position: {lat: 37.869260, lng: -122.254811},
-              pov: {heading: 165, pitch: 0},
-              zoom: 1
-            });
-      }
-    </script>
-    <script async defer
-         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initialize">
-    </script>
-  </body>
+</head>
+<body>
+    <header>
+        <h1>Jim Clifford</h1>
+        <p>Associate Professor of History | University of Saskatchewan</p>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>About</h2>
+            <p>I am an environmental and digital historian of Britain, Canada, and the British World during the long nineteenth century. My research uses advanced digital methods, including text-mining and Historical GIS, to explore the connections between rapid industrialization and urbanization in London and environmental transformations in other parts of the world.</p>
+            <p>I am an Associate Professor in the Department of History at the University of Saskatchewan, where I teach environmental, European, transnational, and digital history. I am also a co-editor of <a href="https://activehistory.ca/">ActiveHistory.ca</a> and a faculty member at the <a href="https://hgis.usask.ca/">Historical GIS Lab</a>.</p>
+            <div class="research-areas">
+                <span>Environmental History</span>
+                <span>Digital History</span>
+                <span>Historical GIS</span>
+                <span>Global Commodities</span>
+                <span>Urban History</span>
+                <span>Public Health</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Publications</h2>
+
+            <div class="publication">
+                <h3><a href="https://www.ubcpress.ca/west-ham-and-the-river-lea">West Ham and the River Lea: A Social and Environmental History of London's Industrialized Marshland, 1839-1914</a></h3>
+                <p class="meta">UBC Press, 2017 | Nature | History | Society Series</p>
+                <p class="meta">Examines how environmental degradation in London's industrial marshlands sparked political change and the emergence of social democracy.</p>
+            </div>
+
+            <div class="publication">
+                <h3>Logging and Settlement beyond the Rapids: Unmaking Algonquin Space in the Ottawa Valley, 1817–61</h3>
+                <p class="meta">With S. Huckerby. <em>Canadian Historical Review</em> 106(3), 405-432, 2025</p>
+            </div>
+
+            <div class="publication">
+                <h3>London's Rapid Growth</h3>
+                <p class="meta">Chapter in <em>A Mighty Capital Under Threat: The Environmental History of London, 1800-2000</em>, University of Pittsburgh Press, 2020</p>
+            </div>
+
+            <div class="publication">
+                <h3>British Ghost Acres and Environmental Changes in the Laurentian Forest</h3>
+                <p class="meta">With S. Castonguay. <em>Journal of Historical Geography</em>, 2022</p>
+            </div>
+
+            <div class="publication">
+                <h3>London's Soap Industry and the Development of Global Ghost Acres in the Nineteenth Century</h3>
+                <p class="meta"><em>Environment and History</em> 27(3), 471-497, 2021</p>
+            </div>
+
+            <div class="publication">
+                <h3>Geoparsing History: Locating Commodities in Ten Million Pages of Nineteenth-Century Sources</h3>
+                <p class="meta">With B. Alex, C.M. Coates, E. Klein, and A. Watson. <em>Historical Methods</em>, 2016</p>
+            </div>
+
+            <div class="publication">
+                <h3>Trading Consequences: A Case Study of Combining Text Mining and Visualization to Facilitate Document Exploration</h3>
+                <p class="meta">With U. Hinrichs, B. Alex, A. Watson, A. Quigley, E. Klein, and C.M. Coates. <em>Digital Scholarship in the Humanities</em>, 2015</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Interdisciplinary</h2>
+
+            <div class="publication">
+                <h3>Virtual Reality in History Education: Instructional Design Considerations for Designing Authentic, Deep, and Meaningful Learning</h3>
+                <p class="meta">With P. MacDowell, J. Jaunzems-Fernuk, A. Ghani, and B. Hoy. <em>Journal of Applied Instructional Design</em> 14(1), 2025</p>
+            </div>
+
+            <div class="publication">
+                <h3>Co-occurrence of Depression, Anxiety and Increased Alcohol Use During the Late Stage of the COVID-19 Pandemic in Saskatchewan, Canada: A Cross-Sectional Survey</h3>
+                <p class="meta">With N. Muhajarine, J. Dixon, M.S. Ahmed, A. Bukhari, D.A. Adeyinka, et al. <em>BMJ Public Health</em> 3(1), 2025</p>
+            </div>
+
+            <div class="publication">
+                <h3>Capturing and Documenting the Wider Health Impacts of the COVID-19 Pandemic Through the Remember Rebuild Saskatchewan Initiative</h3>
+                <p class="meta">With N. Muhajarine, J. Dixon, E. Dyck, et al. <em>JMIR Research Protocols</em>, 2023</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work in Progress</h2>
+
+            <div class="project">
+                <h3><a href="https://jburnford.github.io/philosophical-transactions-ocr-1665-1869/">Philosophical Transactions Archive (1665-1869)</a></h3>
+                <p>OCR digitization of the world's first scientific journal. 8,128 articles across 106,829 pages from the Royal Society of London, featuring work by Newton, Hooke, Faraday, Darwin, and 3,920 other authors. Available in plain text and JSON formats.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://jburnford.github.io/early_encyclopedia_britannica/">Early Encyclopaedia Britannica Corpus (1771-1842)</a></h3>
+                <p>OCR digitization of the first seven editions of the Encyclopaedia Britannica. Over 174,000 articles spanning 71 years of documented knowledge, from the 3-volume 1st edition to the 21-volume 7th edition.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://jburnford.github.io/JosephBanksKG/">Sir Joseph Banks Knowledge Graph (1765-1820)</a></h3>
+                <p>Interactive visualizations of Sir Joseph Banks' correspondence networks. 7,124 documents involving 6,441 people, with network graphs, correspondence flows, and topic/commodity analysis.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data & Visualizations</h2>
+            <p>Databases and GIS resources from my research projects:</p>
+
+            <div class="project">
+                <h3><a href="https://zenodo.org/records/15084182">Quebec Arrivals Database, 1817-1839</a></h3>
+                <p>Quebec gazette/La gazette de Québec data from BAnQ collections. With D. Allan.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://zenodo.org/records/3581271">London's Ghost Acres: British Imports Database, 1856-1906</a></h3>
+                <p>Database of trade statistics tracking commodity imports to Britain and their environmental origins.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://zenodo.org/records/3580344">British Tallow Imports Database, 1800-1901</a></h3>
+                <p>British imports database used in "London's Soap Industry and the Development of Global Ghost Acres."</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://zenodo.org/records/3580168">HGIS Data: Greater London Industry, 1865-1875</a></h3>
+                <p>Historical GIS dataset based on the First Series of Ordnance Survey London Town Plans.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://zenodo.org/records/3580263">HGIS Data: Greater London Industry, 1893-1895</a></h3>
+                <p>Historical GIS dataset based on the First Revised Series of Ordnance Survey London Town Plans.</p>
+            </div>
+
+            <div class="project">
+                <h3><a href="https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/7ESLQ0">Historical Canadian Persons Dataset</a></h3>
+                <p>Linked data augmenting the Dictionary of Canadian Biography with Wikidata and census records. With S. Brown and the LINCS team.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Links</h2>
+            <div class="links-grid">
+                <a href="https://artsandscience.usask.ca/profile/JClifford" class="link-item">
+                    <span>University Profile</span>
+                    <small>USask Arts & Science</small>
+                </a>
+                <a href="https://scholar.google.ca/citations?user=RBhCqv0AAAAJ" class="link-item">
+                    <span>Google Scholar</span>
+                    <small>Publications & Citations</small>
+                </a>
+                <a href="https://hgis.usask.ca/" class="link-item">
+                    <span>HGIS Lab</span>
+                    <small>Historical GIS Lab</small>
+                </a>
+                <a href="https://activehistory.ca/" class="link-item">
+                    <span>ActiveHistory.ca</span>
+                    <small>Public History</small>
+                </a>
+                <a href="https://zenodo.org/communities/jim_s_clifford/records" class="link-item">
+                    <span>Zenodo</span>
+                    <small>Research Data</small>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:jim.clifford@usask.ca">jim.clifford@usask.ca</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Office</strong>
+                    Arts 706, University of Saskatchewan
+                </div>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    (306) 966-2973
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jim Clifford | Department of History | University of Saskatchewan</p>
+    </footer>
+</body>
 </html>
