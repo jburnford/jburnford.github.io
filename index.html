@@ -1127,13 +1127,15 @@
             .attr('font-weight', '500')
             .text(d => d.name);
 
-        // Touch support for mobile
-        projectNodes.on('touchstart', function(event) {
+        // Touch support for mobile - show label AND open detail panel
+        projectNodes.on('touchstart', function(event, d) {
             event.preventDefault();
             const isActive = d3.select(this).classed('active');
             d3.selectAll('.intersection-node').classed('active', false);
             if (!isActive) {
                 d3.select(this).classed('active', true);
+                // Also show the project detail panel
+                showProjectDetail(d);
             }
         });
 
