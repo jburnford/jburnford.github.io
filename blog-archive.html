@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Archive - Jim Clifford</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+        }
+        .year-group {
+            margin-bottom: 2.5rem;
+        }
+        .year-group h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .year-group ul {
+            list-style: none;
+        }
+        .year-group li {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .year-group li:last-child {
+            border-bottom: none;
+        }
+        .date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            min-width: 50px;
+        }
+        .year-group a {
+            color: var(--text-primary);
+            text-decoration: none;
+            flex: 1;
+        }
+        .year-group a:hover {
+            color: var(--accent);
+        }
+        .category {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            .year-group li {
+                flex-wrap: wrap;
+            }
+            .category {
+                margin-top: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">&larr; Back to Main Site</a>
+            <h1>Blog Archive</h1>
+            <p class="subtitle">77 posts from jimclifford.ca (2008-2023)</p>
+        </header>
+        
+            <div class="year-group">
+                <h2>2020</h2>
+                <ul>
+                <li>
+                    <span class="date">May 09</span>
+                    <a href="blog/liverpool-trade-1853-4.html">Liverpool Trade 1853-4</a>
+                    <span class="category">Work In Progress</span>
+                </li>
+                <li>
+                    <span class="date">Jan 31</span>
+                    <a href="blog/1190.html">Environmental History of Long-Distance Trade Bibilography</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2019</h2>
+                <ul>
+                <li>
+                    <span class="date">Mar 28</span>
+                    <a href="blog/aseh-poster-live-visualizations.html">ASEH Poster Live Visualizations</a>
+                    <span class="category">Digital History, London&#x27;s Industries and Global Environments</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2018</h2>
+                <ul>
+                <li>
+                    <span class="date">Sep 28</span>
+                    <a href="blog/british-timber-imports-1861-1906.html">British Timber Imports 1861-1906</a>
+                    <span class="category">Digital History, London&#x27;s Industries and Global Environments</span>
+                </li>
+                <li>
+                    <span class="date">Sep 19</span>
+                    <a href="blog/gb1900_interactive_map.html">GB1900 Interactive Map</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Aug 24</span>
+                    <a href="blog/new-books-network-podcast.html">New Books Network Podcast</a>
+                    <span class="category">Books, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Jul 25</span>
+                    <a href="blog/canada-docks-and-quebec-pond.html">Canada Docks and Quebec Pond</a>
+                    <span class="category">The Otter, Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Jun 11</span>
+                    <a href="blog/repurposing-a-map-of-greater-londons-industry-1893-5.html">Repurposing a Map of Greater London&#x27;s Industry (1893-5)</a>
+                    <span class="category">ActiveHistory.ca</span>
+                </li>
+                <li>
+                    <span class="date">Apr 10</span>
+                    <a href="blog/book-launch-april-25-stratford-library.html">Book Launch, April 25, Stratford Library</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Apr 02</span>
+                    <a href="blog/two-book-launch-events-saskatoon-and-london.html">Two Book Launch Events (Saskatoon and London)</a>
+                    <span class="category">Books, Public Talk</span>
+                </li>
+                <li>
+                    <span class="date">Feb 21</span>
+                    <a href="blog/the-urban-environmental-history-of-west-ham-and-the-river-lea.html">The Urban Environmental History of West Ham and the River Lea</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2017</h2>
+                <ul>
+                <li>
+                    <span class="date">May 15</span>
+                    <a href="blog/west-ham-and-the-river-lea-a-social-and-environmental-history-of-londons-industrialized-marshland-1839-1914.html">West Ham and the River Lea: A Social and Environmental History of London&#x27;s Industrialized Marshland, 1839-1914</a>
+                    <span class="category">Books</span>
+                </li>
+                <li>
+                    <span class="date">May 09</span>
+                    <a href="blog/activehistory-ca-post-the-great-climate-silence-and-historians.html">ActiveHistory.ca Post: &quot;The great climate silence&quot; and Historians</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Mar 20</span>
+                    <a href="blog/activehistory-ca-post-map-the-history-of-redlining-it-works.html">ActiveHistory.ca post: Map the History of Redlining, It Works</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2016</h2>
+                <ul>
+                <li>
+                    <span class="date">Oct 03</span>
+                    <a href="blog/activehistory-ca-post-the-polish-government-the-holocaust-and-jan-grabowski.html">ActiveHistory.ca post: The Polish Government, the Holocaust and Jan Grabowski</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">May 31</span>
+                    <a href="blog/canadian-commodities-histories.html">Canadian Commodities Histories Map (draft)</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Feb 16</span>
+                    <a href="blog/greater-londons-railway-and-tube-stations-1836-2010.html">Greater London&#x27;s Railway and Tube stations, 1836-2010</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Jan 08</span>
+                    <a href="blog/british-commodities-vis.html">British Commodities Visualization</a>
+                    <span class="category">Digital History, London&#x27;s Industries and Global Environments</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2015</h2>
+                <ul>
+                <li>
+                    <span class="date">May 25</span>
+                    <a href="blog/mapping-infant-mortality-rates-in-london-and-west-ham.html">Mapping Infant Mortality Rates in London and West Ham</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Mar 31</span>
+                    <a href="blog/885.html">Interactive Map of London Industry 1893-1895</a>
+                    <span class="category">Work In Progress</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2014</h2>
+                <ul>
+                <li>
+                    <span class="date">Oct 15</span>
+                    <a href="blog/londons-text-mined-hinterlands-for-the-social-science-history-association.html">London&#x27;s Text-Mined Hinterlands for the Social Science History Association</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Sep 19</span>
+                    <a href="blog/voyant-tools.html">Trading Consequences Cinchona Data in Voyant Tools</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Aug 12</span>
+                    <a href="blog/digital-approaches-to-19th-century-globalization.html">Digital Approaches to 19th Century Globalization</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Aug 12</span>
+                    <a href="blog/mapping-supply-chains-for-19th-century-leather.html">Mapping Supply Chains for 19th Century Leather</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Jul 16</span>
+                    <a href="blog/pessimism-and-hope-when-teaching-global-environmental-history.html">Pessimism and Hope When Teaching Global Environmental History</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Mar 22</span>
+                    <a href="blog/trading-consequences-database-and-visualisations-launched.html">Database and Visualisations Launched</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Feb 13</span>
+                    <a href="blog/did-the-steam-engine-or-spinning-mule-lead-to-the-industrial-revolution.html">Did the Steam Engine or Spinning Mule lead to the Industrial Revolution?</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2013</h2>
+                <ul>
+                <li>
+                    <span class="date">Dec 10</span>
+                    <a href="blog/timeline-js-test.html">Timeline.js Test</a>
+                    <span class="category">Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Nov 29</span>
+                    <a href="blog/github-as-a-hgis-portal.html">Github as a HGIS portal?</a>
+                    <span class="category">Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Nov 19</span>
+                    <a href="blog/text-mining-19th-century-place-names.html">Text Mining 19th Century Place Names</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Sep 11</span>
+                    <a href="blog/stanford-named-entity-recognizer-ner-to-google-map-engine.html">Stanford Named Entity Recognizer (NER) to Google Map Engine</a>
+                    <span class="category">Digital History, Maps</span>
+                </li>
+                <li>
+                    <span class="date">Aug 06</span>
+                    <a href="blog/plant-diseases-in-the-19th-century.html">Plant Diseases in the 19th Century</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Jun 25</span>
+                    <a href="blog/the-giant-cost-of-past-pollution.html">The Giant Cost of Past Pollution</a>
+                    <span class="category">ActiveHistory.ca</span>
+                </li>
+                <li>
+                    <span class="date">May 28</span>
+                    <a href="blog/coal-location-date-relationships-text-mined-from-early-canada-online-canadiana-ca.html">Coal-location-date relationships text mined from Early Canada Online (Canadiana.ca)</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">May 06</span>
+                    <a href="blog/guest-post-on-kew-gardens-blog.html">Guest Post on Kew Gardens’ Blog</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Mar 06</span>
+                    <a href="blog/ten-most-frequent-letter-writters-in-the-kew-garden-directors-correspondence.html">Ten Most Frequent Letter Writers in the Kew Garden Directors&#x27; Correspondence</a>
+                    <span class="category">Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Mar 05</span>
+                    <a href="blog/how-to-build-a-macroscope.html">How to Build a Macroscope</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Jan 31</span>
+                    <a href="blog/trading-consequences-first-year.html">Trading Consequences&#x27; First Year</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2012</h2>
+                <ul>
+                <li>
+                    <span class="date">Dec 18</span>
+                    <a href="blog/gis-time.html">GIS and Time</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Dec 10</span>
+                    <a href="blog/londons-great-smog-60-years-on.html">London&#x27;s Great Smog, 60 Years On</a>
+                    <span class="category">ActiveHistory.ca</span>
+                </li>
+                <li>
+                    <span class="date">Nov 27</span>
+                    <a href="blog/soaps-ghost-pastures.html">Soap&#x27;s Ghost Pastures</a>
+                    <span class="category">London&#x27;s Industries and Global Environments</span>
+                </li>
+                <li>
+                    <span class="date">Nov 13</span>
+                    <a href="blog/remembering-the-war-of-191.html">Remembering the War of 1914</a>
+                    <span class="category">ActiveHistory.ca</span>
+                </li>
+                <li>
+                    <span class="date">Oct 11</span>
+                    <a href="blog/19th-century-changes-in-the-british-tallow-supply.html">19th Century Changes in the British Tallow Supply</a>
+                    <span class="category">Digging into Data, Maps</span>
+                </li>
+                <li>
+                    <span class="date">Sep 23</span>
+                    <a href="blog/walking-tour.html">Walking Tour</a>
+                    <span class="category">Public Talk</span>
+                </li>
+                <li>
+                    <span class="date">Aug 28</span>
+                    <a href="blog/open-house-london-walking-tour-september-22.html">Open House London Walking Tour: September 22</a>
+                    <span class="category">Public Talk</span>
+                </li>
+                <li>
+                    <span class="date">Jul 16</span>
+                    <a href="blog/2012-olympic-park-through-time.html">ActiveHistory.ca: 2012 Olympic Park Through Time</a>
+                    <span class="category">ActiveHistory.ca</span>
+                </li>
+                <li>
+                    <span class="date">Jul 13</span>
+                    <a href="blog/the-otter-environment-society-portal.html">The Otter: Environment &amp; Society Portal</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Jul 05</span>
+                    <a href="blog/natural-language-toolkit.html">Python and the Natural Language Toolkit</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">May 01</span>
+                    <a href="blog/celebrating-three-years-of-activehistory-ca.html">Celebrating Three Years of ActiveHistory.ca</a>
+                    <span class="category">ActiveHistory.ca</span>
+                </li>
+                <li>
+                    <span class="date">Apr 19</span>
+                    <a href="blog/new-publication.html">New Publication</a>
+                    <span class="category">Publications</span>
+                </li>
+                <li>
+                    <span class="date">Apr 03</span>
+                    <a href="blog/environmental-history-mobile-app.html">Environmental History Mobile App</a>
+                    <span class="category">Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Mar 13</span>
+                    <a href="blog/history-vs-geography-and-sourcemap-com.html">History vs. Geography and Sourcemap.com</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Mar 03</span>
+                    <a href="blog/west-ham-19th-century-industry-source-map.html">West Ham 19th Century Industry Source Map</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Mar 02</span>
+                    <a href="blog/digging-for-data-in-archives.html">Digging for Data in Archives</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Feb 10</span>
+                    <a href="blog/trading-consequences-a-digging-into-data-project.html">Trading Consequences: A Digging into Data Project</a>
+                    <span class="category">Digging into Data, Digital History</span>
+                </li>
+                <li>
+                    <span class="date">Jan 16</span>
+                    <a href="blog/eh-mobile-app-demo.html">EH Mobile App Demo</a>
+                    <span class="category">Digital History</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2011</h2>
+                <ul>
+                <li>
+                    <span class="date">Dec 21</span>
+                    <a href="blog/some-early-results-from-a-new-research-project.html">Some early results from a new research project</a>
+                    <span class="category">Maps</span>
+                </li>
+                <li>
+                    <span class="date">Sep 28</span>
+                    <a href="blog/historical-2012-olympic-tour-1st-edition.html">Historical 2012 Olympic Tour (1st Edition)</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Jul 28</span>
+                    <a href="blog/podcast-an-environmental-history-of-the-lower-lea-river-valley-site-of-the-2012-london-olympics.html">Podcast: An Environmental History of the Lower Lea River Valley, Site of the 2012 London Olympics</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Apr 11</span>
+                    <a href="blog/april-14th-public-lecture-%e2%80%9cfrom-a-pastoral-wetland-to-an-industrial-wasteland-and-back-again-an-environmental-history-of-the-lower-lea-river-valley-the-site-of-the-2012-london-olympics.html">April 14th Public Lecture: “From a Pastoral Wetland to an Industrial Wasteland, and Back Again? An Environmental History of the Lower Lea River Valley, the Site of the 2012 London Olympics.”</a>
+                    <span class="category">Public Talk</span>
+                </li>
+                <li>
+                    <span class="date">Apr 11</span>
+                    <a href="blog/cleaning-the-environmental-and-social-conditions-of-the-2012-olympic-park.html">Cleaning the environmental and social conditions of the 2012 Olympic Park</a>
+                    <span class="category">West Ham and the Lea in the News</span>
+                </li>
+                <li>
+                    <span class="date">Jan 24</span>
+                    <a href="blog/disseration-defended.html">Dissertation Defended</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2010</h2>
+                <ul>
+                <li>
+                    <span class="date">Nov 02</span>
+                    <a href="blog/west-ham-in-1945.html">West Ham in 1945</a>
+                    <span class="category">Maps</span>
+                </li>
+                <li>
+                    <span class="date">Jun 16</span>
+                    <a href="blog/green-light-for-green-corridor-from-olympic-park-to-thames.html">&quot;Green light for green corridor from Olympic Park to Thames&quot;</a>
+                    <span class="category">West Ham and the Lea in the News</span>
+                </li>
+                <li>
+                    <span class="date">Apr 23</span>
+                    <a href="blog/photo-essay.html">Photo Essay</a>
+                    <span class="category">Publications</span>
+                </li>
+                <li>
+                    <span class="date">Feb 10</span>
+                    <a href="blog/podcast-interview.html">Podcast Interview</a>
+                    <span class="category">West Ham and the Lea in the News</span>
+                </li>
+                <li>
+                    <span class="date">Jan 08</span>
+                    <a href="blog/remaking-the-bow-back-rivers-environmental-and-social-intervention-to-decrease-flooding-and-unemployment-in-west-ham-1905-1935.html">Remaking the Bow Back Rivers: environmental and social intervention to decrease flooding and unemployment in West Ham, 1905-1935</a>
+                    <span class="category">Research Abstracts</span>
+                </li>
+                <li>
+                    <span class="date">Jan 07</span>
+                    <a href="blog/historical-maps-on-the-internet.html">Historical Maps on the Internet</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2009</h2>
+                <ul>
+                <li>
+                    <span class="date">Dec 05</span>
+                    <a href="blog/the-river-lea-in-crisis-suburban-growth-and-environmental-decline-in-the-lea-valley-1855-1898.html">The River Lea in Crisis: Suburban growth and Environmental Decline in the Lea Valley, 1855-1898</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Oct 30</span>
+                    <a href="blog/olympic-site-begins-to-take-shape-but-the-lea-remains-polluted.html">Olympic site begins to take shape, but the Lea remains polluted</a>
+                    <span class="category">West Ham and the Lea in the News</span>
+                </li>
+                <li>
+                    <span class="date">Oct 12</span>
+                    <a href="blog/polllution-of-the-lea-in-the-guardian.html">The River Lea&#x27;s modern pollution problems covered in the Guardian</a>
+                    <span class="category">West Ham and the Lea in the News</span>
+                </li>
+                <li>
+                    <span class="date">Oct 05</span>
+                    <a href="blog/early-industrial-development-on-the-lower-river-lea.html">Early Industrial Development on the Lower River Lea</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Jun 16</span>
+                    <a href="blog/the-lea-a-suburban-industrial-river-1855-1915.html">The Lea: A Suburban Industrial River, 1855-1915.</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+            <div class="year-group">
+                <h2>2008</h2>
+                <ul>
+                <li>
+                    <span class="date">Apr 04</span>
+                    <a href="blog/water-famine-social-injustice-and-river-failure.html">Water Famine, Social Injustice, and River Failure</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Mar 03</span>
+                    <a href="blog/gis-map-of-west-hams-hybrid-landscape.html">GIS Map of West Ham&#x27;s Hybrid Landscape</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Feb 24</span>
+                    <a href="blog/west-ham-and-the-river-lea.html">West Ham and the River Lea</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                <li>
+                    <span class="date">Feb 20</span>
+                    <a href="blog/a-hybrid-landscape-on-the-edge-of-london.html">A Hybrid Landscape on the edge of London</a>
+                    <span class="category">Uncategorized</span>
+                </li>
+                </ul>
+            </div>
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Environmental &amp; Digital Historian</p>
+        </footer>
+    </div>
+</body>
+</html>

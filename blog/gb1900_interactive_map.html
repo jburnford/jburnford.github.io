@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB1900 Interactive Map - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>GB1900 Interactive Map</h1>
+            <p class="meta">September 19, 2018 | Categories: Uncategorized</p>
+        </header>
+        <article>
+            The GB1900 project asked the public to help transcript all the text found on the Second Edition County Series Ordnance Survey six-inch-to-the-mile maps of the United Kingdom published between 1888 and 1914. I downloaded the Abridge GB1900 Gazetteer, which removed the common repeating labelled including "F.P." for footpath. I brought this data into ArcGIS and used SQL queries to filter out interesting layers. My current research is focused on the use of Quebec timber in Britain in the second half of the nineteenth century and I've come to realize timber importers and saw mills were spread across the country, unlike most imported commodities that arrived in major ports like London and Liverpool. I layers for ports, timber and saw mills/pits. I worked on reducing false positives, by adding additional filters to remove terms like "Lane" or "street". With these relevant layers created, I became curious and decided to search for "works", the most common name for sites of industry (i.e. iron works, soap works, chemical works etc). With a growing collection of interesting layers, I decide to use the ArcOnline platform to share the results. With more time I hope to add layers for coal and mines and perhaps create a second map looking at workhouses, prisons, and schools, or churches or chapels. 
+<iframe src="https://arcg.is/LS0OL" width="100%" height="400" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

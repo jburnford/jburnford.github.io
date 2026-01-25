@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Consequences Cinchona Data in Voyant Tools - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Trading Consequences Cinchona Data in Voyant Tools</h1>
+            <p class="meta">September 19, 2014 | Categories: Digging into Data, Digital History, London&#x27;s Industries and Global Environments</p>
+        </header>
+        <article>
+            <img class="alignleft" src="http://upload.wikimedia.org/wikipedia/commons/2/2a/John_Eliot_Howard.jpg" alt="" width="169" height="244" />I am working on an abstract for the <a href="http://eseh.org/event/upcoming-conference/call-for-proposals/">ESEH in France </a>next summer. I plan to focus on the role of an industrialist, <a href="http://en.wikipedia.org/wiki/John_Eliot_Howard">J.E. Howard</a>, in supporting the efforts of British government officials and economic botanists to establish cinchona plantations in Asia. I've done a lot of archival research on this topic, but I thought it would be interesting to see what I could find in the Trading Consequences database. The <a href="http://tcqdev.edina.ac.uk/vis/locationCloud/index.php?com=cinchona">Location Cloud Visualization</a> clearly shows the geographic transfer of cinchona to India and Ceylon, but I needed to dig down past our web visualizations to see what the database has to say about a particular person. To do this, I extracted every sentence that mentions the commodity cinchona in the Trading Consequences corpus, ordered them by their year and exported a text file from the database. This yields a file with 3762 sentences that mention cinchona.
+
+Uploading this data into <a href="http://voyant-tools.org">Voyant Tools</a> makes it easy to explore some of the patterns in the text as it changes over the course of the nineteenth century. For example, we can see the initial importance of India (which would include mentions of the East India Company) and the growing significance of Ceylon and Java as the century went on. It is also notable that Peru and Peruvian were relatively less significant locations in these British government documents.
+
+<iframe src="http://voyant-tools.org/tool/TypeFrequenciesChart/?corpus=1411150150864.7361&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Aindia&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Aceylon&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Ajava&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Aperu&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Aperuvian&amp;stopList=1411150296322ma&amp;mode=document" width="1000" height="500"></iframe>
+
+Using the same tool, we can see the rise and decline in popularity of an alternative spelling of cinchona, "chinchona", during the middle of the 19th century.
+
+<iframe src="http://voyant-tools.org/tool/TypeFrequenciesChart/?corpus=1411150150864.7361&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Acinchona&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Achinchona&amp;stopList=1411150296322ma&amp;mode=document" width="1000" height="500"></iframe>
+
+[caption id="" align="alignleft" width="333"]<a href="http://ogimages.bl.uk/images/firemaps/maps_145_b_24/maps_145_b_24_%28f%29_f003r%5BSVC2%5D.jpg"><img src="http://ogimages.bl.uk/images/firemaps/maps_145_b_24/maps_145_b_24_%28f%29_f003r%5BSVC2%5D.jpg" alt="" width="333" height="395" /></a> Howard &amp; Son's factory at City Mills in West Ham[/caption]
+
+More to the point, we can search for the last names of five of the key individuals involved in the transfer of cinchona: <a href="http://en.wikipedia.org/wiki/Clements_Markham">Clement Markham</a>, <a href="http://en.wikipedia.org/wiki/Richard_Spruce">Richard Spruce</a>, the father and son, <a href="http://en.wikipedia.org/wiki/William_Hooker_%28botanist%29">William</a> and <a href="http://en.wikipedia.org/wiki/Joseph_Dalton_Hooker">Joseph Hooker</a>, and John Eliot Howard. Markham was a Indian Office geographer who led an exhibition to Peru to steal cinchona seeds. Spruce, a botanist, collected further seeds from New Granada. The Hookers were both directors of Kew Gardens, with Joseph taking over from his father in 1865. Howard was one of the sons in the Howard &amp; Sons company, which produced much of the quinine manufactured in Britain. In addition to his expertise as a manufacturer, Howard was a leading expert on the botany of cinchona.  The visualization below shows that while Markham, Spruce and William Hooker were key figures in the initial planning and transfers of the early 1860s, Howard gains significance in the corpus in the decades that follow.
+
+<iframe src="http://voyant-tools.org/tool/TypeFrequenciesChart/?corpus=1411150150864.7361&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Amarkham&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Aspruce&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Ahooker&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Ahoward&amp;stopList=1411150296322ma&amp;mode=document" width="1000" height="500"></iframe>
+
+The real power of Voyant is that once you identify an interesting trend in the data, it is possible to click on the spike for Howard in the chart above and update some of the other visualizations. Below you can see "Howard" as a key work in context during the spike and further down you can see the actual sentences where Howard is mentioned. With a little more work I could have included the URL for the original document page.
+<iframe src="http://voyant-tools.org/tool/DocumentTypeKwicsGrid/?corpus=1411150150864.7361&amp;docIdType=d1411099477875.136e4cc5-b404-27fb-60b7-4424873dedf8%3Ahoward&amp;tokenIdStart=163562" width="1000" height="500"></iframe>
+
+<iframe src="http://voyant-tools.org/tool/Reader/?corpus=1411150150864.7361&start=257251&limit=3650" width="1000" height="500"></iframe>
+        </article>
+        <div class="tags">Tags: Cinchona, Digital History, Digital Humanities, Economic Botany, Trading Consequences</div>
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

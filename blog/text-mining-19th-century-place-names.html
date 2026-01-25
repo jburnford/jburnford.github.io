@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Mining 19th Century Place Names - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Text Mining 19th Century Place Names</h1>
+            <p class="meta">November 19, 2013 | Categories: Digging into Data, Digital History, Maps</p>
+        </header>
+        <article>
+            <iframe src="https://www.google.com/fusiontables/embedviz?q=select+col1+from+187xfRi-8U8R2RZdhmEDBEjVabGxamgIljNoxW1M&amp;viz=MAP&amp;h=false&amp;lat=18.90438799674836&amp;lng=-4.16796875&amp;t=1&amp;z=2&amp;l=col1&amp;y=2&amp;tmplt=2&amp;hml=TWO_COL_LAT_LNG" frameborder="no" scrolling="no" width="500" height="300"></iframe>
+
+<em>By Jim Clifford</em>
+
+Nineteenth century place names are a major challenge for the Trading Consequences project. The <a href="https://www.google.ca/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CCsQFjAA&amp;url=http%3A%2F%2Fwww.ltg.ed.ac.uk%2Fclusters%2FEdinburgh_Geoparser&amp;ei=EpaLUqzrCIXY2AWp3YDoBg&amp;usg=AFQjCNEJw-JiqyRVBuyCKn76IrgV0eycJQ&amp;sig2=sS5fkiKrTCjjd38E9j6tJQ&amp;bvm=bv.56643336,d.b2I">Edinburgh Geoparser</a> uses the <a href="http://www.geonames.org/">Geonames</a> Gazetteer to supply crucial geographic information, including the place names themselves, their longitudes and latitudes, and population data that helps the algorithms determine which "Toronto" is most likely mentioned in the text (there are a lot of <a href="http://www.geonames.org/maps/showOnMap?q=Toronto">Torontos</a>). Based on the first results from our tests, the Geoparser using Geonames works remarkably well. However, it often fails for historic place names that are not in the Geonames Gazetteer. Where is "<a href="http://en.wikipedia.org/wiki/Lower_Canada">Lower Canada</a>" or the "<a href="http://en.wikipedia.org/wiki/Republic_of_New_Granada">Republic of New Granada</a>"? What about all of the colonies created during the Scramble for Africa, but renamed after decolonization? Some of these terms are in Geonames, while others are not: <a href="http://www.geonames.org/search.html?q=Ceylon&amp;country=">Ceylon</a> and <a href="http://www.geonames.org/search.html?q=Oil+Rivers+Protectorate&amp;country=">Oil Rivers Protectorate</a>. Geonames also lacks many of the regional terms often used in historical documents, such as "West Africa" or "Western Canada".
+
+To help reduce the number of missed place names or errors in our text mined results, we asked <a href="http://davidzylberberg.wordpress.com/about-2/">David Zylberberg</a>, who did great work annotating our test samples, to help us solve many of the problems he identified. A <strong>draft</strong> of his new Gazetteer of missing 19th century place names is displayed above. Some of these are place names David found in the 150 page test sample that the prototype system missed. This includes some common OCR errors and a few longer forms of place names that are found in Geonames, which don't totally fit within the 19th century place name gazetteer, but will still be helpful for our project. He also expanded beyond the place names he found in the annotation by identifying trends. Because our project focuses on commodities in the 19th century British world, he worked to identify abandoned mining towns in Canada and Australia. He also did a lot of work in identifying key place names in Africa, as he noticed that the system seemed to work in South Asia a lot better than it did in Africa. Finally, he worked on Eastern Europe, where many German place names changed in the aftermath of the Second World War. Unfortunately, some of these location were alternate names in Geonames and by changing the geoparser settings, we solved this problem, making David's work on Eastern Europe and a few other locations redundant.  Nonetheless, we now have the beginnings of a database of  place names and region names missing from the standard gazetteers and we plan to publish this database in the near future and invite others to use and add to it. This work is at an early stage, so we'd be very interested to hear from others about how they've dealt with similar issues related to text-mining historical documents.
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

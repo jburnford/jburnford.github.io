@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Most Frequent Letter Writers in the Kew Garden Directors&#x27; Correspondence - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Ten Most Frequent Letter Writers in the Kew Garden Directors&#x27; Correspondence</h1>
+            <p class="meta">March 06, 2013 | Categories: Digital History</p>
+        </header>
+        <article>
+            I've been informed that my original download missed a lot of the files. I'm going to recreated the two graphs below over the next few days with the missing data and rework this post.
+
+<p style="text-align: center;"><a href="../blog-images/top10.jpg"><img class="wp-image-641 aligncenter" alt="top10" src="../blog-images/top10.jpg" width="715" height="442" /></a></p>
+I'm working with Bea Alex on a blog post for the <a href="http://www.kew.org/news/kew-blogs/library-art-archives/directors-correspondence/">Kew Garden Directors' Correspondence</a> project. They shared their meta data collection with Trading Consequences and Bea reformatted it into a directory of 7438 xlm files (one for every letter digitized to date by the project). The metadata includes all the information found on the individual letter webpages (<a href="http://plants.jstor.org/visual/kldc13587?s=t">sample</a>). Bea and the rest of the team in Edinburgh focused on extracting commodity-place relationships from the description field. We're currently working with the data for coffee, cinchona, rubber, and palm to create an animated GIS time-map for the blog post we are writing. However, because this is one of the smallest collections we are processing in the Trading Consequences project, I decided to try and play around with the data a little more.
+
+<a href="http://en.wikipedia.org/wiki/XML">XML</a> files are pretty ubiquitous once you start working with large data sets. They are generally easier to read and more portable than standard relational databases and presumably have numerous other advantages. The syntax is familiar if you know HTML, but I've still found it challenging to learn how to pull information out of these files. As with most things, coding in <a href="http://www.wolfram.com/mathematica/">Mathematica</a>, instead of <a href="http://www.python.org/">Python</a>, makes it easier. It turned out to be relatively straight forward to import all 7438 xml files, have Mathmatica recognize the pattern of the "Creator" field and pull out a list of all of the letter authors. From there, it was easy to tally up the duplicates, sort them in order of frequency (borrowing a bit of code from <a href="http://williamjturkel.net/2012/11/19/basic-text-analysis-in-mathematica/">Bill Turkel</a>) and graph the top ten (of the 1689 total authors). <!--more-->
+
+With a few small changes, I managed to produce a similar post showing the frequency of letters by year in this collection. Neither of these graphs answer profound historical questions (though I am now interested in learning more about the top letter writers). Nevertheless, the process of creating the graphs taught me the tools need to extract information from a large directory of XML files, a skill I can put to use in the future. It has also confirmed that I really like functional programming approach available in Mathematica. I managed to do all of this work without a single loop and for some reason I find this approach a lot easier to understand and troubleshoot. Moreover, I find it is pretty easy to build functional code form blocks of sample code in the Mathematica documentation, even when I don't totally understand how it works at first, which is a huge advantage when you are learning to program (then again, perhaps I'm subconsciously justifying the expense of this proprietary software).
+
+[caption id="attachment_644" align="alignnone" width="645"]<a href="../blog-images/year_freq_kew_letters.jpg"><img class="wp-image-644 " alt="year_freq_kew_letters" src="../blog-images/year_freq_kew_letters-1024x293.jpg" width="645" height="185" /></a> Number of Letters by year. The first bar represents all of the letters with a missing date field. Click to make the image larger.[/caption]
+
+Here is a basic overview of the code it took to make the top ten letter writer graph above:
+
+<pre style="text-align: center;">These two steps creates a list of all of the files and the path to 
+the directory:
+filenames = Import["D:\\Dropbox\\file"]
+path = "D:\\Dropbox\\file\\"
+
+This is a simple function to import the files:
+importFile[x_] := Import[path &lt;&gt; filenames[[x]]]
+
+The <strong>Table</strong> function proved to be very useful
+as it repeated by Import over and over, placing
+the content of the xml files all into one big list:
+xmlFilesList = Table[importFile[x], {x, 1, 7438}];
+
+Next I adapted code from a Mathematica XML tutorial to 
+extract the names of the authors:
+namefind[x_] := 
+ Cases[Cases[x, XMLElement["attr", {"name" -&gt; "author"}, _], 
+   Infinity], XMLElement["attr", _, {name_}] -&gt; name, 2]
+
+authornames = Map[namefind, xmlfileslist];
+
+tallyauthornames = Tally[authornames]
+
+Code borrowed from Bill to sort based on the tally numbers:
+sortedauthorlist = Sort[tallyletterauthors, #1[[2]] &gt; #2[[2]] &amp;];
+
+Take[sortedauthorlist, 10];
+
+BarChart[Apply[Labeled, Reverse[%88, 2], {1}]];
+</pre>
+I expect there are better ways to do many of these processes, but this is what someone with very limited programming experience came up with in an afternoon.
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

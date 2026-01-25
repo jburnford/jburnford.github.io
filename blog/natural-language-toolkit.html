@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python and the Natural Language Toolkit - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Python and the Natural Language Toolkit</h1>
+            <p class="meta">July 05, 2012 | Categories: Digging into Data, Digital History</p>
+        </header>
+        <article>
+            [caption id="attachment_326" align="alignleft" width="300" caption="A graph showing the use of different words in a corpus of the U.S. Presidential Inaugural Addresses."]<a href="../blog-images/dispersionplot.png"><img class="size-medium wp-image-326" title="dispersionplot" src="../blog-images/dispersionplot-300x226.png" alt="" width="300" height="226" /></a>[/caption]
+
+Since the end of the academic year, I've been able to focus a lot more attention on my post-doc research. This included a research trip in London archives and a week long course on databases at the Digital Humanities Institute in Victoria. Now I've started focusing on learning a programing language called Python. In the short-term, I don't need to learn advanced computer skills for the <a href="http://tradingconsequences.blogs.edina.ac.uk/">Trading Consequences</a>, as we have a team of highly skilled computer and linguistic experts. However, I do need a basic understanding of what we are actually doing when we text mine historical documents and looking forward to the end of the grant, I would like to be able to continued to work with the database. I would also like to develop the skills to continue this kind of research on my own in the future.
+
+I always intended to start with the <a href="http://williamjturkel.net/2011/11/28/whats-next-for-the-programming-historian/">Programming Historian</a>, but the new version will not come out for another few weeks, so instead, I began working through <a href="http://learnpythonthehardway.org/book/">Learning Python the Hard Way</a> over a few days in May. This was interesting, but solely focused on teaching programing and not particularly connected to the kind of research I would like to do. A few days ago I took a closer look at <a href="https://sites.google.com/site/naturallanguagetoolkit/book">Natural Language Processing with Python</a>, written by Steven Bird, Edward Loper and one of Trading Consequences team members, Ewan Klein. Reading the preface, it became clear the book was accessible people with no background in programming. The early chapters included both an introduction to computational linguistics and Python.<!--more-->
+
+Having worked through the first chapter, I would argue it is a lot more interesting to learn to program using this approach. There is no "Hello World" section and instead, after a very quick introduction to doing basic math in Python, the book starts playing with a series of nine texts (i.e. Moby Dick, Inaugural Address Corpus, Sense and Sensibility), and in doing so it demonstrates the utility of the toolkit. Before explaining what a "<a href="http://www.penzilla.net/tutorials/python/functions/">function</a>" is in Python, the book shows us how they work by using --<strong> <span style="font-family: Consolas;">&gt;&gt;&gt; text1.concordance("monstrous")</span></strong> -- to search for all of the instances of the word "monstrous" in Moby Dick and displaying them in context. <a href="../blog-images/Screenshot-from-2012-07-05-062156.png"><img class="alignleft size-full wp-image-351" title="Screenshot from 2012-07-05 06:21:56" src="../blog-images/Screenshot-from-2012-07-05-062156.png" alt="" width="724" height="450" /></a>Throughout the rest of the first chapter, the authors alternate between demonstrating Natural Language methods and then explaining the programing concepts used in the previous examples. Throughout the process they have you doing really interesting things, which reinforce the value in learning to program. For example, already on page 6 you create a visualization (see above) of the frequency of different terms in US Presidential Inaugural Addresses. In the pages that followed, they take you through some of the many challenges involved in teaching computers to deal with language.
+
+As <a href="http://ianmilligan.ca/2012/05/28/mining-the-internet-graveyard-exploring-canadas-digital-collections-projects-presentation-at-the-canadian-historical-association/">historians begin to face</a> the growing number large collections of digital historical sources (think about the size of the <a href="http://archive.org/index.php">Internet Archive</a> or <a href="http://www.canadiana.ca/en/home">Canadiana.ca</a>), we'll need to learn more about natural language processing. <a href="http://en.wikipedia.org/wiki/Natural_language_processing">Wikipedia</a> currently defines Natural Language Processing as "a field of <a title="Computer science" href="http://en.wikipedia.org/wiki/Computer_science">computer science</a>, <a title="Artificial intelligence" href="http://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a> (also called <a title="Machine learning" href="http://en.wikipedia.org/wiki/Machine_learning">machine learning</a>),<sup id="cite_ref-0"><a href="http://en.wikipedia.org/wiki/Natural_language_processing#cite_note-0">[1]</a></sup> and <a title="Linguistics" href="http://en.wikipedia.org/wiki/Linguistics">linguistics</a> concerned with the interactions between <a title="Computers" href="http://en.wikipedia.org/wiki/Computers">computers</a> and <a title="Natural language" href="http://en.wikipedia.org/wiki/Natural_language">human (natural) languages</a>. Specifically, it is the process of a computer extracting meaningful information from natural language input and/or producing natural language output." The Natural Language Toolkit, which is designed for ease of use, is an ideal starting place (along with the soon to be released Programming Historian 2) for historians interested diving into computer programming.
+
+&nbsp;
+        </article>
+        <div class="tags">Tags: Natural Language Toolkit, NLTK, Python</div>
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

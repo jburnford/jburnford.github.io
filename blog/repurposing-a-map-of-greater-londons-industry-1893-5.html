@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repurposing a Map of Greater London&#x27;s Industry (1893-5) - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Repurposing a Map of Greater London&#x27;s Industry (1893-5)</h1>
+            <p class="meta">June 11, 2018 | Categories: ActiveHistory.ca</p>
+        </header>
+        <article>
+            [Originally published on ActiveHistory.ca]
+<a href="http://arcg.is/2gH3V5o"><img class="wp-image-20364 size-full aligncenter" src="http://activehistory.ca/wp-content/uploads/2016/11/screencapturevisualization.png" alt="screencapturevisualization" width="667" height="440" /></a>
+
+A few years ago, I worked with some students to develop a database of all the factories we could find on very detailed 5 feet to the mile maps of London from the second half of the nineteenth century. This database is central to my academic research on the environmental history of industrialization in Greater London. I created maps using this historical GIS database for my first book and I'm busy working on a second major project with this spatial data at its centre. But I've also been thinking of how to make the HGIS data accessible and interesting to a wider public audience. I've created a number of interactive maps using <a href="https://jburnford.carto.com/viz/461f3434-d7b5-11e4-ad69-0e9d821ea90d/public_map">Carto.com</a> and <a href="https://spatialsk.maps.arcgis.com/apps/StorytellingSwipe/index.html?appid=a366ebdc607b4c8fa77f8242d7d4760d">StoryMaps</a> and shared them over social media. Each time they are shared by other historians, but the statistics suggest they've not reached a large audience. I'm hoping this post might elicit suggestions from public historians on whether these interactive maps are worthy of more effort on my part to reach a wider audience and how I might succeed in doing so. Build it and they will come is clearly not working.
+
+<iframe src="http://arcg.is/2gHhW2L" width="1080" height="720" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+<!--more-->
+
+The Ordnance Survey (OS) revised their detailed five feet to a mile maps of London between 1893 and 1895, producing 759 sheets, each measuring 74 by 105 cm.<a href="#_ftn1" name="_ftnref1">[1]</a> These maps provide a highly detailed record of the built environment of the largest city in the world at the end of the nineteenth century. They record most buildings, streets, railway lines, rivers, docks and industrial sites.
+
+The interactive map (below) displays all of the factories identified on the OS maps, along with the docks and major waterways. As you zoom in on a particular region of London, a modern map appears in the background. Clicking on an individual factory brings up more information with the name found on the map and the type of industry. The map also works on mobile devises, allowing anyone in London to walk the streets of Bermondsey or along the Limehouse Cut Canal and identify the former industrial use of the posh redeveloped buildings, parks and vacant lots.
+
+A few things stand out from this map. Gasworks, railway engineering works, Thames Ironworks shipyard and the <a href="https://en.wikipedia.org/wiki/Royal_Arsenal">Royal Arsenal </a>were the largest factories in the city (two of which are commemorated by their association with the early years of the Arsenal Football Club and West Ham United FC). You can also see the large concentration of industry in the Lower Lea Valley and Silvertown. Much of this was located in West Ham, an independent county borough located on the eastern edge of late nineteenth century London. Finally, you can see the importance of water, which reduced the cost of transporting coal, which was the main source of energy for these factories. Most of the factories were located along the Rivers Thames, Lea, and Wandle, Deptford Creek or one of the canals (Surrey, Limehouse, Regents). In the early twentieth century, electricity freed industry from its reliance on rivers and a lot of it migrated north and west into other Greater London suburbs.
+
+Very few of these factories remain in operation. Some were already in decline by the turn of the twentieth century, with numerous large tanneries labeled as closed in the 1893-5 maps and the Thames Iron Works shipyard closing in 1912. The major shock came with the bombing raids of the Second World War and the rapid de-industrialization in the decades that followed. The large Tate &amp; Lyle sugar refinery remains in Silvertown and there are lots of small workshops spread across the city, but Greater London now has a tiny industrial workforce and the city has almost entirely transitioned to a service economy.
+
+[1] “Ordnance Survey Maps, London, Five Feet to the Mile, 1893-1896,” National Library of Scotland Map Images, accessed November 10, 2015, http://maps.nls.uk/os/london-1890s/info.html.
+
+Future further reading:
+
+Jim Clifford, <em>West Ham and the River Lea: A Social and Environmental History of London's Industrialized Marshland, 1839-1914, </em>Vancouver: University of British Columbia Press, 2017.
+
+<em>Steven Langlois and Anne Janhunen worked with me to digitize all of the factories and SSHRC funded this research as a part of the London's Ghost Acres Insight Development Grant project.</em>
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

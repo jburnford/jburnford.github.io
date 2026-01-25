@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EH Mobile App Demo - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>EH Mobile App Demo</h1>
+            <p class="meta">January 16, 2012 | Categories: Digital History</p>
+        </header>
+        <article>
+            <img alt="" src="http://niche-canada.org/files/ehmobileappphoto.jpg?1326715661" title="ipad" class="alignleft" width="600" height="450" />By Sean Kheraj:
+
+After a year of fumbling our way through various efforts to produce an <a href="http://www.seankheraj.com/?page_id=1003" target="_blank">environmental history mobile application</a> for iOS, <a href="http://www.jimclifford.ca/" target="_blank">Jim Clifford</a> and I are finally ready to demo Environmental History Mobile 1.0 Beta. As we mentioned in <a href="http://www.seankheraj.com/?p=1113" target="_blank">our previous update</a>, the goal of this project was to create an iOS mobile application that would facilitate the dissemination of online content relevant to the environmental history community, including news, blogs, and podcasts. What you can try out below is a demo of our first attempt to aggregate all of that content into a simple application.
+
+Please keep in mind that not all of the components of the application in the web demo will function properly, as it would on an iPhone or iPod Touch. Nevertheless, you can click through most of the different sections of the application, including:
+<!--more-->
+<strong>EH Top News</strong>
+
+<strong></strong>This top button on our first tab is our attempt to aggregate environmental history news sources and blogs from across the web. We created a new website, <a href="http://envhist.com" target="_blank">http://envhist.com</a> as a way to bring together content from a collection of relevant blogs and other online sources of environmental history content. We are currently looking for content for this section of the app and we invite all environmental history bloggers to <a href="http://twitter.com/envhist" target="_blank">contact us</a> about adding their RSS feeds to <a href="http://envhist.com" target="_blank">http://envhist.com</a>.
+
+<strong>EH Tweets</strong>
+
+<strong></strong>Twitter has rapidly grown into one the best channels for environmental history content on the web. A large community of <a href="https://twitter.com/#!/search/twitterstorians" target="_blank">#twitterstorians</a> have coalesced around the hashtag <a href="https://twitter.com/#!/search/envhist" target="_blank">#envhist</a> as real-time tool for sharing links and discussing environmental history matters on Twitter. <a href="http://www.wilkohardenberg.net/" target="_blank">Wilko von Hardenberg</a> recently posted this <a href="http://hawksey.info/tagsexplorer/?key=0AuF-P4tEJAB-dFBJZnVQLXlSaF8temZoOHhsWHlZM1E&amp;sheet=ob5" target="_blank">visualization</a> of #envhist activity on Twitter. To tap into this active and ongoing online conversation, we've added this button to take you directly to a stream of tweets with the #envhist tag (unfortunately, this button currently doesn't work on the web demo).
+
+<strong>NiCHE News</strong>
+
+<strong></strong>To keep users in the loop on all <a href="http://niche-canada.org/" target="_blank">NiCHE</a> activites, we've added a feed of all NiCHE news and annoucements.
+
+<strong>H-Environment</strong>
+
+<strong></strong>The <a href="http://www.h-net.org/~environ/" target="_blank">H-Environment</a> email listserv continues to be an active source of news, announcements, and occasionally debates about environmental history. This feed keeps an updated list of the last twenty posts to H-Environment.
+
+<strong>EHTV</strong>
+
+<strong></strong>NiCHE's web video series <a href="http://niche-canada.org/ehtv" target="_blank">EHTV</a> has published ten short web documentaries about environmental history research. This button takes you to links to watch all of these videos in the app.
+
+The remaining tabs take you to posts from <a href="http://niche-canada.org/otter" target="_blank">The Otter</a> and episodes of <a href="http://niche-canada.org/naturespast" target="_blank">Nature's Past</a>. Take and look and have fun. Post your feedback in the comments section below.
+<iframe src="http://seattleclouds.com/myapplicationsimulatorview.aspx?id=EHApp1&amp;ownerun=cljim22" frameborder="0" width="420" height="850"></iframe>
+<div style="text-align: center;"><a style="font-family: Verdana,Tahoma; font-size: x-small; color: #aaa;" href="http://seattleclouds.com">Create your own iPhone app</a></div>
+
+Post first published on The Otter: <a href="http://niche-canada.org/node/10271">http://niche-canada.org/node/10271</a>
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

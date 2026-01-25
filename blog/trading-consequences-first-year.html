@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Consequences&#x27; First Year - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Trading Consequences&#x27; First Year</h1>
+            <p class="meta">January 31, 2013 | Categories: Digging into Data, Digital History</p>
+        </header>
+        <article>
+            Co-Authored with <a href="http://homepages.inf.ed.ac.uk/balex/">Beatrice Alex</a>
+
+Trading Consequences is a Digging Into Data funded collaboration between commodity historians, computational linguists, computer scientists and librarians. We have been working for a year to develop a system that will<a href="http://en.wikipedia.org/wiki/Text_mining"> text mine</a> more than two million pages of digitized historical documents to extract relevant information about the nineteenth-century commodity trade. We are particularly interested in identifying some new environmental consequences of the growing quantity of natural resources imported into Britain during the century.
+
+During our first year we've gathered the digitized text data from a number of vendors, honed our key historical questions, created a list of more than four hundred commodities imported into Britain, and developed an early working prototype. In the process we've learned a lot about each others' disciplines, making it increasingly possible for historians, computational linguists, and visualization experts to discuss and solve research challenges.
+
+Our initial prototype has limited functionality and focuses on a smaller same of our corpus of documents. In the months ahead it will then become increasingly powerful and populated with more and more data. Late last year, we completed the first prototype. Here's a picture of the overall architecture:
+<a href="http://tradingconsequences.blogs.edina.ac.uk/files/2012/11/system-arch1.png"><img class="aligncenter size-full wp-image-337" title="System Architecture" src="http://tradingconsequences.blogs.edina.ac.uk/files/2012/11/system-arch1.png" alt="" width="402" height="391" /></a>
+<h1><!--more-->Text Mining</h1>
+Our project team has delivered the first prototype of the Trading Consequences system. The system takes in documents from a number of different collections. The Text Mining component consists of an initial preprocessing stage which converts each document to a consistent format (in <a href="http://en.wikipedia.org/wiki/XML">XML</a>). Depending on the corpus that we're processing, a language identification step may be performed to ensure that the current document is in English. (We plan to also look at French documents later in the project.) The<a href="http://en.wikipedia.org/wiki/Optical_character_recognition"> OCR</a>-ed text is then automatically improved by correcting and normalising a number of issues. Optical character recognition, where a computer tries to identify the correct words on a scanned page, regularly fails with the<a href="http://en.wikipedia.org/wiki/Long_s"> long s</a> from the early nineteenth century (i.e. <em><strong><span style="font-family: 'Times New Roman';">ſ </span></strong></em>) and with end of line hyphenation. Fixing these problems reduced the numbers of errors considerably.
+
+The main processing of the TM component involves various types of shallow linguistic analysis of the text, lexicon and gazetteer lookup,<a href="http://en.wikipedia.org/wiki/Named_entity_recognition"> named entity recognition</a> and geo-grounding, and relation extraction. Put more simply, we look for relationships between one of our four-hundred-odd commodities and places in the text (i.e. <strong>Ontario <em>cheese</em> </strong>producers shipped three tons of <strong><em>cheddar </em></strong>to <strong>London</strong>.) We determine which commodities were traded when and in relation to which locations. We also determine whether locations are mentioned as points of origin, transit or destination and whether vocabulary relating to diseases and disasters appears in the text. All additional information which we mine from the text is added back into the XML-formatted document as different types of annotation.
+<h1>Populating the Commodities Database</h1>
+The entire annotated XML corpus is <a href="http://en.wikipedia.org/wiki/Parsing">parsed </a>to create a<a href="http://en.wikipedia.org/wiki/Relational_database"> relational database</a> (RDB). This process extracts and stores not just metadata about the individual document, but also detailed information that results from the text mining, such as named entities, relations, and how these are expressed in the relevant document.
+<h1>Visualisation</h1>
+Both the visualisation and the query interface access the database so that users can either search the collections directly through textual queries or browse the data in a more exploratory manner through the visualisations. For the prototype, we have created a static web-based visualization that represents a subset of the data taken from the database. This visualization sketch is based on a map that shows the location of commodity mentions by country. We are currently working on dynamic visualization of the mined information which will be accessible via a query interface that we are busy improving. The visualisation and query interface will allow historians to explore the results of the text mining through innovative new tools, while at the same time allowing research to drill down and find links to documents in their original repositories.
+
+<a href="http://tradingconsequences.blogs.edina.ac.uk/files/2012/11/map1.png"><img class="alignleft size-large wp-image-351" title="map" src="http://tradingconsequences.blogs.edina.ac.uk/files/2012/11/map1-1024x871.png" alt="" width="584" height="496" /></a>
+
+[caption id="attachment_607" align="alignleft" width="270"]<a href="http://en.wikipedia.org/wiki/Clements_Markham"><img class=" wp-image-607  " src="../blog-images/Clements_Markham_-_NPG.jpg" alt="Clements Markham" width="270" height="253" /></a> Clements Markham[/caption]
+
+The early prototype provides a great opportunity for the historians to learn more about the process and to provide feedback to help identify problems in the text mining stage. A map for cinchona, the plant whose bark was processed into quinine, an anti-malarial drug, included Markham, a suburb located north of Toronto. The historians recognized that this sentence would have actually referred to Clements Markham, the British official who smuggled cinchona seeds out of Peru. Subsequently, the computational linguists adapted the code that helps distinguish people from places to allow this distinction. In the months ahead we will continue to identify and solve problems, while at the same time adding to the complexity of the text mining to database to visualisation pipeline. Once we have a more advanced prototype working on the web, we would love to have feedback from more commodity historians. Please contact Jim Clifford if you would be interested in testing out this research tool later this year.
+
+[caption id="attachment_608" align="alignleft" width="800"]<img class="size-full wp-image-608" src="../blog-images/800px-MarkhamCivicCenter8.jpg" alt="Markham Civic Centre" width="800" height="533" /> Markham Civic Centre[/caption]
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

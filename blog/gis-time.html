@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS and Time - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>GIS and Time</h1>
+            <p class="meta">December 18, 2012 | Categories: Digging into Data, Digital History, Maps, The Otter</p>
+        </header>
+        <article>
+            [This is my first post for <a href="http://niche-canada.org/node/10552">The Otter</a> since I passed on the editorial duties to Josh MacFadyen in the summer]
+
+One of the major weaknesses in using GIS for historical research are the limitations in showing change over time. GIS was designed with geography in mind and until recently historians needed to adapt the technology to meet our needs. <a href="http://niche-canada.org/files/images/Map2-ModificationsOfHorseshoeFalls.jpg"><img class="alignright" alt="" src="http://niche-canada.org/files/images/Map2-ModificationsOfHorseshoeFalls.jpg" width="93" height="74" /></a>Generally this meant creating a series of maps to show change overtime or as Dan MacFarlane did <a href="http://niche-canada.org/node/10547">last week</a>, include labels identifying how different layers represent different time periods. More recently, ArcGIS and Quantum GIS introduced features to recognize a time field in data and make it possible to include a time-line slider bar or animate the time series data in a video.
+
+<iframe src="http://player.vimeo.com/video/55720524?badge=0&amp;autoplay=1&amp;loop=1" height="349" width="450" allowfullscreen="" frameborder="0"></iframe>
+<a href="http://vimeo.com/55720524">UK Tallow Imports, 1865-1904</a> from <a href="http://vimeo.com/user15310735">Jim Clifford</a> on <a href="http://vimeo.com">Vimeo</a>.
+<!--more-->
+I am currently studying the sources of raw material imported into Britain during the nineteenth century as a way to connect the environmental consequences of manufacturing in London with the ecological transformations taking place in other parts of the world. One of the first industries I'm studying is soap making. These factories relied on an increasingly global supply of fat (tallow, palm oil, coconut oil, and cottonseed oil), potash, essential (i.e. fragrant) oils, and pine resin. As a part of this research I've started a small database tracing the source of some of these products. Tallow is particularly interesting, as the Russian's dominated the trade through to the 1860s, when large herds of cattle and sheep raised on American and Australasia grasslands drove down the price of tallow and led to the collapse of Russian exports to the UK. The most obvious way to visualize this data is to make a graph using the features included in Excel.
+
+<a href="../blog-images/neoeuropevsrussia-1024x513.png" rel="attachment wp-att-527"><img class="wp-image-527 alignnone" alt="neoeuropevsrussia" src="../blog-images/neoeuropevsrussia-1024x513.png" width="450" height="292" /></a>
+
+I also experimented, using a slightly different dataset, with the <a href="http://sourcemap.com/">Source Map platform</a>, to create a series of maps showing change over time. These maps visualize the changing geography of Britain's tallow supply, but it would be impractical to create or present fifty maps, so they only work to show the general trend using averaged data from three years in the middle of the decades:
+
+<strong>British Tallow Imports 1864-1866(Total imports: £2,737,000)</strong>
+<iframe height="300" width="500" src="http://sourcemap.com/embed/4292"  frameborder="0"></iframe>
+
+<strong>British Tallow Imports 1874-1876 (Total imports: £2,407,000)</strong>
+<iframe src="http://sourcemap.com/embed/4293" height="250" width="450" frameborder="0"></iframe>
+
+I wanted to see how I could best represent this data in GIS and I also wanted to learn the new <a href="http://blogs.esri.com/esri/esritrainingmatters/2010/09/08/mapping-time-in-arcgis-10/">time functions in ArcGIS</a>. The result is the video (above), showing the changing source of tallow, based on quantity, from 1865 through to 1904. The advantage of this time series video is that it shows the volatility of Britain's tallow supply, with significant booms and busts from each of the regions. Whether this particular animated map provides any insight not available from the Excel graph is up for debate, but the method might become essential as we create significantly larger text mined datasets in the <a href="http://tradingconsequences.blogs.edina.ac.uk/">Trading Consequence</a> project.
+
+For readers familiar with ArcGIS and who have a copy of version 10, I've include the <a href="http://www.jimclifford.ca/2012/12/18/gis-time/tallow_xy/" rel="attachment wp-att-567">Data File</a>. QGIS has an experimental add-on called <a href="Time Manager">Time Manager</a>, but it might not function properly for the nineteenth century yet. We will try and develop a lesson for this feature in the future, but for now I'll provide instructions for people with copies of ArcGIS. The hardest part of the process was rearranging my data into a format that would work with the ArcGIS time function. First of all, the dates need to be listed in a column, not across the top row. It is possible to cut and past using Excel and switch your rows with your columns, by right clicking and using the "Special Paste" options. Don't use "Date" as the field name and this might confuse the database. I've used "t" instead and included a simple list of years from 1865-1904 (the dates repeat for each location). The other fields I include are the quantity of tallow, a code for the geographic location and the latitude and longitude of where I want the quantities represented on the map. <a href="http://www.jimclifford.ca/2012/12/18/gis-time/screenshot-from-2012-12-17-114549/" rel="attachment wp-att-579"><img class="aligncenter size-full wp-image-579" alt="Screenshot from 2012-12-17 11:45:49" src="../blog-images/Screenshot-from-2012-12-17-114549.png" width="546" height="138" /></a>You can use a spreadsheet program, like Excel, to manipulate this data, but I generally find it is best to save it as a CSV file before importing it into ArcGIS. Once you have a CSV file (or once you've downloaded my tallow_xy.csv file below), you can launch ArcGIS. It would be possible, and perhaps preferable, to create a database table for each location and avoid repeating the dates over and over again for each location, but that would make it more complicated.
+
+Once you launch ArcGIS 10 you can import the CSV using the import XY data option. It should automatically identify the fields called x and y as the spatial data. It will then instruct you to export the data so the program will add a unique identifier number (making it a part of your database). Right click on the layer and chose Export Data. It will then give you the option to add this new layer to the map. If you are using my sample data, I would suggest choosing a simple world map as the base layer. The next step is to tell ArcGIS which field includes the time data. Double click on the layer and find the Time tab in the preferences menu. Choose "t" as the time field and  if you click "calculate" it should give you the time range of 1865 to 1904. Do not click the "Display data cumulatively" check box. Next you will need to change the <a href="http://help.arcgis.com/en/arcgisdesktop/10.0/help/index.html#//00s500000034000000">symbology</a> of the layer to display the points as circles that represent the quantity of tallow from each place.  I used proportional symbols, but you could also choose graduated symbols. Finally, you need to find the time slider menu button (it has a little clock face). Enable the time slider and it should allow you to slide through the years or click play to see an animation similar to the video above (play with the setting to slow down the animation).
+<a href="http://www.jimclifford.ca/2012/12/18/gis-time/tallow_xy/" rel="attachment wp-att-567">Data File</a>
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

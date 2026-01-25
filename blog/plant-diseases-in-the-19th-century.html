@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Diseases in the 19th Century - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Plant Diseases in the 19th Century</h1>
+            <p class="meta">August 06, 2013 | Categories: Digging into Data, Digital History, London&#x27;s Industries and Global Environments</p>
+        </header>
+        <article>
+            [caption id="attachment_704" align="alignleft" width="300"]<a href="http://archive.org/details/diseasesoftropic00cookrich"><img class=" wp-image-704 " alt="tropical_disease_word_cloud" src="../blog-images/tropical_disease_word_cloud-300x174.png" width="300" height="174" /></a> A word cloud of diseases found in The Diseases of Tropical Plants by Melville Thurston Cook[/caption]
+
+During the 19th century British industrialists and botanists searched the world for economically useful plants. They moved seeds and plants between continents and developed networks of  trade and plantations to supply British industries and consumers. This global network also spread diseases. <a href="http://uoguelph.academia.edu/StuartMcCook">Stuart McCook </a>is working on the history of Coffee Rust (Hemileia Vastatrix) and there are a few books that examine the diseases that prevented Brazil from developing rubber plantations. Building on this work, we're using the <a href="http://tradingconsequences.blogs.edina.ac.uk/">Trading Consequences</a> text mining pipeline to try explore the wider trends of plant diseases as they spread through the trade and plantation network.
+
+We need a list of diseases with both the scientific and common names from the time period. The Internet Archive provides a number of text books from the end of the 19th and start of the 20th century. They were written by American botanists, but one book in particular attempts a global survey of tropical plant diseases (<a href="http://archive.org/details/diseasesoftropic00cookrich"><em>The Diseases of Tropical Plants</em></a>). Because these books are organized in an encyclopedic fashion, it is relatively easy to have a student go through and create a list of plant disease. We're  working on expanding our list from other sources of the next few weeks. Once the list is complete we'll add them to our pipeline and extract relationships between mentions of these diseases, locations, dates and commodities in our corpus of 19th century documents. This should allow us to track Sooty Mould, Black Rot, Fleshy Fungi, Coffee Leaf Rust and hundreds of other diseases at points in time when they became enough of a problem to appear in our document collection.
+
+&nbsp;
+        </article>
+        
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>

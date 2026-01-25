@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github as a HGIS portal? - Jim Clifford Blog Archive</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --accent: #3b82f6;
+            --border: #262626;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        article {
+            margin-top: 2rem;
+        }
+        article p {
+            margin-bottom: 1.2rem;
+        }
+        article a {
+            color: var(--accent);
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        article ul, article ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        article li {
+            margin-bottom: 0.5rem;
+        }
+        article h2, article h3, article h4 {
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+        .tags {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="blog-archive.html" class="back-link">&larr; Back to Archive</a>
+            <h1>Github as a HGIS portal?</h1>
+            <p class="meta">November 29, 2013 | Categories: Digital History</p>
+        </header>
+        <article>
+            <img class="alignleft" alt="" src="http://wpforce.net/media/github-social.png" width="244" height="97" />I've been a part of a lot of discussions lately about the need for an effective way to  share HGIS data. As the number of researchers using GIS for history/historical geography increases, the need to find ways of sharing resources and avoiding duplicated efforts also increases. One way forward is for more of us to post our data on individual websites (see the <a href="http://maps.library.utoronto.ca/dvhmp/">Don Valley project</a>). We could then try to link the data together through some kind of federated search portal (like <a href="http://www.nines.org/">NINES.org</a>). Ideally, however, it would be nice to have a system where individuals and teams could collaborate on work in progress or expand upon data created by others then share it again. Simple websites don't provide an easy way for people to upload data back to the source. Github provides a platform for sharing code and a system for collaboration. It is widely used by the open-source software community. I've created a <a href="https://github.com/jburnford/hgis-data">test repository</a> and it seems like it is possible to share a few different kinds of vector data, including shapefiles, KML and geojson, all of which work with QGIS (and some work with ArcGIS). Is this an established platform that we could attempt to adapt to the needs of the HGIS community? Or is <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a> too confusing and difficult and the soft limits of 100 MB per file and 1 GB per repository too small for our needs? Do we need a system where we can also share scanned and georeferenced maps? Is there another existing option that we could agree on or do we need to wait until someone has the time, skills and funding to build something better suited to our needs?
+        </article>
+        <div class="tags">Tags: HGIS</div>
+        <footer>
+            <p><a href="index.html">Jim Clifford</a> - Blog Archive</p>
+        </footer>
+    </div>
+</body>
+</html>
