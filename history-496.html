@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HIST 496: Mapping Settler Colonialism | Jim Clifford</title>
+    <meta name="description" content="Student projects from HIST 496 exploring settler colonialism in Saskatchewan through digital mapping and GIS methods.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #06b6d4;
+            --primary-dark: #0891b2;
+            --accent: #8b5cf6;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --border: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { color: #67e8f9; }
+
+        .header {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .back-link {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .header .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .projects {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-title a {
+            color: var(--text);
+        }
+
+        .project-title a:hover {
+            color: var(--primary);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        .project-link:hover {
+            border-color: var(--primary);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .related-note {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .project-image {
+                height: 200px;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="back-link">&larr; Back to Main Site</a>
+        <h1>HIST 496: Mapping Settler Colonialism</h1>
+        <p class="subtitle">Student Digital History Projects | University of Saskatchewan</p>
+    </header>
+
+    <div class="intro">
+        <p>These student projects use Geographic Information Systems (GIS) and digital mapping methods to explore the history of settler colonialism in Saskatchewan. The projects examine topics including the 1885 North-West Resistance, reserve land surrenders, CCF Indigenous policy, residential schools, and demographic change from 1911 to 1961.</p>
+    </div>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <img class="project-image" src="images/batoche.png" alt="Mapping Batoche">
+            <div class="project-content">
+                <h2 class="project-title"><a href="https://arcg.is/1LyaGj2" target="_blank">Mapping Batoche</a></h2>
+                <div class="project-links">
+                    <a href="https://arcg.is/1LyaGj2" class="project-link" target="_blank">StoryMap</a>
+                    <a href="https://www.arcgis.com/apps/dashboards/98bfa9c3ecba49b59babdc1aeabaf70a" class="project-link" target="_blank">Dashboard</a>
+                </div>
+                <p class="project-description">This project revolves around the Battle of Batoche, one of the last conflicts of the 1885 North-West Resistance. The Mapping Batoche team used ArcGIS Online to digitize eleven pre-existing maps. Ten of these maps depict the battle, while the remaining map provides information about the Batoche river lots and their owners around the time of the Resistance. The project's StoryMap presents a narration of the lead-up, events, aftermath, and cultural remembrance of the Battle of Batoche and the wider Resistance. The dashboard allows users to flip through the battle maps and river lots map one by one with an accompanying battle legend.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img class="project-image" src="images/tommy-douglas.png" alt="Settler Colonialism in Tommy Douglas's Saskatchewan">
+            <div class="project-content">
+                <h2 class="project-title"><a href="https://arcg.is/18KHaf1" target="_blank">Settler Colonialism in Tommy Douglas's Saskatchewan</a></h2>
+                <div class="project-links">
+                    <a href="https://arcg.is/18KHaf1" class="project-link" target="_blank">StoryMap</a>
+                </div>
+                <p class="project-description">Having won a landslide victory in the 1944 Saskatchewan general election, the Saskatchewan Co-Operative Commonwealth Federation (CCF), led by Tommy Douglas, had little in the way of stopping its agenda. One of the primary goals of Douglas's administration was to eliminate inequalities. Seeing markers of poverty and supposed social deviancy in Saskatchewan's northern Indigenous population, the CCF adopted a colonial and assimilatory policy platform in the region. Through socioeconomic development schemes, from fur and fish monopolies to regional colonies, they sought to eliminate distinct Indigeneity and to assimilate status Indians and Metis. In tracing the assimilation project of the CCF, this project highlights the government's neglect and marginalization of Indigenous voices and ways of life.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img class="project-image" src="images/surrendered-soil.png" alt="Surrendered Soil">
+            <div class="project-content">
+                <h2 class="project-title"><a href="https://arcg.is/0Sv1OS" target="_blank">Surrendered Soil: Saskatchewan First Nation Reserve Land Surrenders and Agriculture, 1877-1933</a></h2>
+                <div class="project-links">
+                    <a href="https://arcg.is/0Sv1OS" class="project-link" target="_blank">StoryMap</a>
+                </div>
+                <p class="project-description">Between 1877 and 1933, First Nations with reserves that fell within the modern borders of Saskatchewan lost just over 33% of their reserve land that was originally surveyed for them. The selection of land to be surrendered was not random, but strategic and deliberate for the benefit of the settler population and for the federal government, and to the detriment of First Nations and their ability to use their reserve lands for agriculture. This project adds to the pre-existing literature surrounding the targeted surrender of good agricultural lands on First Nations reserves using Geographic Information Systems (GIS), combining data from the Dominion Land Survey Field Books and soil science classification systems.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img class="project-image" src="images/communities.jpg" alt="Saskatchewan Communities and Population Map">
+            <div class="project-content">
+                <h2 class="project-title"><a href="https://arcg.is/T4Oeq" target="_blank">Saskatchewan Communities and Population Census Data Map</a></h2>
+                <div class="project-links">
+                    <a href="https://arcg.is/T4Oeq" class="project-link" target="_blank">Interactive Map</a>
+                </div>
+                <p class="project-description">This project combines two datasets: historical census population data and a public history database of Saskatchewan communities. The census component maps population for the years 1911, 1921, 1931, 1941, 1951, and 1961, allowing users to explore demographic change over time. The communities component contains over 600 Saskatchewan communities with their community type, incorporation dates, founding dates, rail line arrivals, post offices, churches, schools, historical sites, economy, and short histories. Together, these datasets help contextualize settler-colonial expansion while highlighting the limits of census data for representing Metis and Indigenous identities. As Canadian census divisions were designed to support governance rather than to represent Indigenous territorial boundaries, kinship networks, or land-use practices, Metis communities were often undercounted, misclassified, or rendered invisible within census categories.</p>
+                <p class="related-note">Related projects: Settler Colonialism in Tommy Douglas's Saskatchewan, Prelude to Colonial Policy</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img class="project-image" src="images/prelude.jpg" alt="Prelude to Settler Colonial Policy">
+            <div class="project-content">
+                <h2 class="project-title"><a href="https://arcg.is/101Xi00" target="_blank">Prelude to Settler Colonial Policy</a></h2>
+                <div class="project-links">
+                    <a href="https://arcg.is/101Xi00" class="project-link" target="_blank">StoryMap</a>
+                </div>
+                <p class="project-description">Prelude to Settler Colonial Policy is a story map which acts as background for the history explored in "Settler Colonialism in Tommy Douglas's Saskatchewan", the Saskatchewan Communities map, and the Population of Saskatchewan Census Data Map. These sub-projects together show how settler-colonialism has, over a long period of time, worked to undermine the livelihoods of Saskatchewan's Indigenous people, and has displaced and disrupted their traditional communities. This story map includes an interactive ArcGIS map that shows treaty boundaries, Indigenous cultural regions, and geolocated approximate locations of nineteenth century Metis communities using data from Native-Land.ca and the Gabriel Dumont Institute's Saskatchewan Metis Communities Historical Overview.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img class="project-image" src="images/muskowekwan.jpg" alt="Muskowekwan Indian Residential School">
+            <div class="project-content">
+                <h2 class="project-title"><a href="https://storymaps.arcgis.com/stories/2d1f70d3c3894faea927db3c8ebf3741" target="_blank">Mapping Experiences at Muskowekwan Indian Residential School</a></h2>
+                <div class="project-links">
+                    <a href="https://storymaps.arcgis.com/stories/2d1f70d3c3894faea927db3c8ebf3741" class="project-link" target="_blank">StoryMap</a>
+                </div>
+                <p class="project-description">The Muskowekwan Indian Residential School stands today as the only institution of its kind in Saskatchewan still standing. The Survivors of Muskowekwan IRS have elected to keep the structure as a memorial to the events that took place. The experiences and records of the IRS System elaborate the genocide that occurred within Canada.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>HIST 496 Student Projects | Department of History | University of Saskatchewan</p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">Jim Clifford</a> | <a href="https://hgis.usask.ca/">HGIS Lab</a></p>
+    </footer>
+</body>
+</html>
