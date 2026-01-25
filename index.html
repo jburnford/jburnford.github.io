@@ -58,7 +58,7 @@
         header {
             background: var(--gradient);
             color: var(--white);
-            padding: 5rem 1.5rem;
+            padding: 4rem 1.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -83,32 +83,26 @@
         }
 
         .profile-photo {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center top;
-            border: 5px solid rgba(255,255,255,0.9);
-            margin-bottom: 1.5rem;
+            border: 4px solid rgba(255,255,255,0.9);
+            margin-bottom: 1.25rem;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.05);
         }
 
         header h1 {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.02em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         header .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.95;
             font-weight: 400;
         }
@@ -117,76 +111,58 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
         }
 
         /* Sections */
         section {
             background: var(--white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        section:hover {
-            box-shadow: var(--shadow-md);
         }
 
         section h2 {
             font-family: 'Playfair Display', Georgia, serif;
             color: var(--text);
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 3px solid var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
             display: inline-block;
         }
 
         section > p {
-            margin-bottom: 1.25rem;
-            font-size: 1.05rem;
-        }
-
-        section > p:last-of-type {
-            margin-bottom: 0;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
         /* Research Areas */
         .research-areas {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.5rem;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
         .research-areas span {
-            background: linear-gradient(135deg, var(--bg-alt) 0%, var(--white) 100%);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            background: var(--bg-alt);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 500;
             color: var(--text);
             border: 1px solid var(--border);
-            transition: all 0.2s ease;
-        }
-
-        .research-areas span:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
         }
 
         /* Publications */
         .publication {
-            margin-bottom: 1.75rem;
-            padding-bottom: 1.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
             border-bottom: 1px solid var(--border);
-            transition: transform 0.2s ease;
         }
 
         .publication:last-child {
@@ -196,28 +172,25 @@
         }
 
         .publication h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
             color: var(--text);
         }
 
         .publication h3 a {
             color: var(--text);
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s ease;
         }
 
         .publication h3 a:hover {
             color: var(--primary);
-            border-bottom-color: var(--primary);
         }
 
         .publication .meta {
             color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .publication .meta em {
@@ -227,28 +200,21 @@
 
         /* Projects */
         .project {
-            margin-bottom: 1.5rem;
-            padding: 1.25rem;
-            border-radius: 12px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
             background: var(--bg);
             border: 1px solid var(--border);
-            transition: all 0.2s ease;
         }
 
         .project:last-child {
             margin-bottom: 0;
         }
 
-        .project:hover {
-            border-color: var(--primary-light);
-            transform: translateX(4px);
-            box-shadow: var(--shadow);
-        }
-
         .project h3 {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
         }
 
         .project h3 a {
@@ -256,44 +222,84 @@
         }
 
         .project p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-light);
             margin-bottom: 0;
-            line-height: 1.6;
+            line-height: 1.5;
+        }
+
+        /* Expandable sections */
+        details {
+            margin-top: 1rem;
+        }
+
+        details summary {
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-alt);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.2s ease;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::before {
+            content: '+';
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        details[open] summary::before {
+            content: '-';
+        }
+
+        details summary:hover {
+            background: var(--border);
+        }
+
+        details .expandable-content {
+            padding-top: 1rem;
         }
 
         /* Links Grid */
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
         }
 
         .link-item {
-            padding: 1.25rem 1rem;
+            padding: 1rem 0.75rem;
             background: var(--bg);
-            border-radius: 12px;
+            border-radius: 8px;
             text-align: center;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.2s ease;
         }
 
         .link-item:hover {
             border-color: var(--primary);
-            background: var(--white);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
         .link-item span {
             display: block;
             font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.15rem;
             color: var(--text);
         }
 
@@ -303,97 +309,74 @@
 
         .link-item small {
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         /* Contact */
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
         }
 
         .contact-item {
-            padding: 1.25rem;
+            padding: 1rem;
             background: var(--bg);
-            border-radius: 12px;
+            border-radius: 8px;
             border: 1px solid var(--border);
         }
 
         .contact-item strong {
             display: block;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.25rem;
             color: var(--primary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         .contact-item a {
             font-weight: 500;
+            font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid var(--border);
             background: var(--white);
-        }
-
-        footer p {
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             header {
-                padding: 3.5rem 1rem;
+                padding: 3rem 1rem;
             }
 
             header h1 {
-                font-size: 2.25rem;
+                font-size: 2rem;
             }
 
             .profile-photo {
-                width: 140px;
-                height: 140px;
+                width: 120px;
+                height: 120px;
             }
 
             section {
-                padding: 1.75rem;
-                border-radius: 12px;
+                padding: 1.25rem;
             }
 
             section h2 {
-                font-size: 1.5rem;
+                font-size: 1.35rem;
             }
 
             .container {
-                padding: 2rem 1rem;
+                padding: 1.5rem 1rem;
             }
         }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        section {
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        section:nth-child(2) { animation-delay: 0.1s; }
-        section:nth-child(3) { animation-delay: 0.15s; }
-        section:nth-child(4) { animation-delay: 0.2s; }
-        section:nth-child(5) { animation-delay: 0.25s; }
-        section:nth-child(6) { animation-delay: 0.3s; }
-        section:nth-child(7) { animation-delay: 0.35s; }
-        section:nth-child(8) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
@@ -408,16 +391,14 @@
     <main class="container">
         <section>
             <h2>About</h2>
-            <p>I am an environmental and digital historian of Britain, Canada, and the British World during the long nineteenth century. My research explores the connections between rapid industrialization and urbanization in London and environmental transformations across the globe, using advanced computational methods including Historical GIS, Linked Open Data, and large language models to analyze large-scale historical corpora.</p>
-            <p>I am an Associate Professor in the Department of History at the University of Saskatchewan, where I teach environmental, transnational, and digital history. I am a co-editor of <a href="https://www.tandfonline.com/journals/vhim20"><em>Historical Methods</em></a> and <a href="https://activehistory.ca/">ActiveHistory.ca</a>, and a faculty member at the <a href="https://hgis.usask.ca/">Historical GIS Lab</a>.</p>
-            <p>My book <a href="https://www.ubcpress.ca/west-ham-and-the-river-lea"><em>West Ham and the River Lea: A Social and Environmental History of London's Industrialized Marshland, 1839-1914</em></a> (UBC Press, 2017) examined how environmental degradation in London's industrial marshlands sparked political change. Ongoing projects include a collaboration with Stephane Castonguay and Cheryl Troupe tracing Britain's "ghost acres" in the forests and ports of the St. Lawrence Valley and the Saskatchewan River's grasslands. I also co-led <a href="https://rememberrebuild.ca">Remember Rebuild Saskatchewan</a>, an interdisciplinary project documenting the pandemic's impact on health equity through community archives and oral histories.</p>
+            <p>I am an environmental and digital historian of Britain, Canada, and the British World during the long nineteenth century. My research explores the connections between rapid industrialization and urbanization in London and environmental transformations across the globe.</p>
+            <p>I am a co-editor of <a href="https://www.tandfonline.com/journals/vhim20"><em>Historical Methods</em></a> and <a href="https://activehistory.ca/">ActiveHistory.ca</a>, and a faculty member at the <a href="https://hgis.usask.ca/">Historical GIS Lab</a>.</p>
             <div class="research-areas">
                 <span>Environmental History</span>
                 <span>Digital History</span>
                 <span>Historical GIS</span>
                 <span>Global Commodities</span>
                 <span>Urban History</span>
-                <span>Public Health</span>
             </div>
         </section>
 
@@ -426,12 +407,11 @@
             <div class="publication">
                 <h3><a href="https://www.ubcpress.ca/west-ham-and-the-river-lea">West Ham and the River Lea: A Social and Environmental History of London's Industrialized Marshland, 1839-1914</a></h3>
                 <p class="meta">UBC Press, 2017 | Nature | History | Society Series</p>
-                <p class="meta">Examines how environmental degradation in London's industrial marshlands sparked political change and the emergence of social democracy.</p>
             </div>
         </section>
 
         <section>
-            <h2>Articles &amp; Chapters</h2>
+            <h2>Recent Publications</h2>
 
             <div class="publication">
                 <h3><a href="https://doi.org/10.3138/chr-2024-0055">Logging and Settlement beyond the Rapids: Unmaking Algonquin Space in the Ottawa Valley, 1817-61</a></h3>
@@ -440,227 +420,258 @@
 
             <div class="publication">
                 <h3><a href="https://doi.org/10.1093/oxfordhb/9780197502679.013.34">Mapping Commodity Histories: Historical GIS and Canadian Forest Products</a></h3>
-                <p class="meta">With J. MacFadyen and S. Castonguay. <em>The Oxford Handbook of Commodity History</em>, Oxford University Press, 2024</p>
+                <p class="meta">With J. MacFadyen and S. Castonguay. <em>Oxford Handbook of Commodity History</em>, 2024</p>
             </div>
 
             <div class="publication">
                 <h3><a href="https://ualbertapress.ca/9781772127850/digital-memory-agents-in-canada/">Digital History Making during a Crisis: A COVID-19 Archive</a></h3>
-                <p class="meta">With E. Dyck and C. Harkema. In <em>Digital Memory Agents in Canada</em>, University of Alberta Press, 2024</p>
+                <p class="meta">With E. Dyck and C. Harkema. <em>Digital Memory Agents in Canada</em>, 2024</p>
             </div>
 
-            <div class="publication">
-                <h3><a href="https://doi.org/10.1016/j.jhg.2022.05.002">British Ghost Acres and Environmental Changes in the Laurentian Forest</a></h3>
-                <p class="meta">With S. Castonguay. <em>Journal of Historical Geography</em> 78, 2022</p>
-            </div>
+            <details>
+                <summary>View all publications</summary>
+                <div class="expandable-content">
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.1016/j.jhg.2022.05.002">British Ghost Acres and Environmental Changes in the Laurentian Forest</a></h3>
+                        <p class="meta">With S. Castonguay. <em>Journal of Historical Geography</em> 78, 2022</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="http://books.openedition.org/pur/164763">Les Hectares Fantomes de l'industrialisation Britannique et La Foret Laurentienne, 1793-1900</a></h3>
-                <p class="meta">With S. Castonguay. In <em>Ecrire l'histoire Environnementale Au XXIe Siecle</em>, Presses universitaires de Rennes, 2022</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="http://books.openedition.org/pur/164763">Les Hectares Fantomes de l'industrialisation Britannique et La Foret Laurentienne</a></h3>
+                        <p class="meta">With S. Castonguay. <em>Ecrire l'histoire Environnementale</em>, 2022</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="https://doi.org/10.3197/096734019X15463432086982">London's Soap Industry and the Development of Global Ghost Acres in the Nineteenth Century</a></h3>
-                <p class="meta"><em>Environment and History</em> 27(3), 471-497, 2021</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.3197/096734019X15463432086982">London's Soap Industry and the Development of Global Ghost Acres</a></h3>
+                        <p class="meta"><em>Environment and History</em> 27(3), 2021</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="https://upittpress.org/books/9780822946106/">London's Rapid Growth</a></h3>
-                <p class="meta">Chapter in <em>A Mighty Capital Under Threat: The Environmental History of London, 1800-2000</em>, University of Pittsburgh Press, 2020</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="https://upittpress.org/books/9780822946106/">London's Rapid Growth</a></h3>
+                        <p class="meta"><em>A Mighty Capital Under Threat</em>, University of Pittsburgh Press, 2020</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="https://doi.org/10.1080/01615440.2015.1116419">Geoparsing History: Locating Commodities in Ten Million Pages of Nineteenth-Century Sources</a></h3>
-                <p class="meta">With B. Alex, C.M. Coates, E. Klein, and A. Watson. <em>Historical Methods</em> 49(3), 2016</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.1080/01615440.2015.1116419">Geoparsing History: Locating Commodities in Ten Million Pages</a></h3>
+                        <p class="meta">With B. Alex et al. <em>Historical Methods</em> 49(3), 2016</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="https://doi.org/10.1093/llc/fqv046">Trading Consequences: A Case Study of Combining Text Mining and Visualization to Facilitate Document Exploration</a></h3>
-                <p class="meta">With U. Hinrichs, B. Alex, A. Watson, A. Quigley, E. Klein, and C.M. Coates. <em>Digital Scholarship in the Humanities</em> 30(suppl 1), 2015</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.1093/llc/fqv046">Trading Consequences: Text Mining and Visualization</a></h3>
+                        <p class="meta">With U. Hinrichs et al. <em>Digital Scholarship in the Humanities</em>, 2015</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="https://ucalgary.scholaris.ca/server/api/core/bitstreams/1a205b13-7a2c-4008-ad0a-30caa67bd9b1/content">Maitland's Moment: Turning Nova Scotian Forests into Ships for the Global Commodity Trade</a></h3>
-                <p class="meta">With T. Peace and J. Burns. In <em>Moving Natures: Mobility and Environment in Canadian History</em>, University of Calgary Press, 2016</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="https://ucalgary.scholaris.ca/server/api/core/bitstreams/1a205b13-7a2c-4008-ad0a-30caa67bd9b1/content">Maitland's Moment: Turning Nova Scotian Forests into Ships</a></h3>
+                        <p class="meta">With T. Peace and J. Burns. <em>Moving Natures</em>, 2016</p>
+                    </div>
 
-            <div class="publication">
-                <h3><a href="https://upittpress.org/books/9780822961857/">The River Lea in West Ham: A River's Role in Shaping Industrialization</a></h3>
-                <p class="meta">In <em>Urban Rivers: Re-making Rivers, Cities and Space</em>, University of Pittsburgh Press, 2012</p>
-            </div>
+                    <div class="publication">
+                        <h3><a href="https://upittpress.org/books/9780822961857/">The River Lea in West Ham: A River's Role in Shaping Industrialization</a></h3>
+                        <p class="meta"><em>Urban Rivers</em>, University of Pittsburgh Press, 2012</p>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Interdisciplinary publications</summary>
+                <div class="expandable-content">
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.59668/2033.19032">Virtual Reality in History Education</a></h3>
+                        <p class="meta">With P. MacDowell et al. <em>Journal of Applied Instructional Design</em>, 2025</p>
+                    </div>
+
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.1136/bmjph-2024-000965">Co-occurrence of Depression, Anxiety and Increased Alcohol Use During COVID-19</a></h3>
+                        <p class="meta">With N. Muhajarine et al. <em>BMJ Public Health</em>, 2025</p>
+                    </div>
+
+                    <div class="publication">
+                        <h3><a href="https://doi.org/10.2196/46643">Capturing the Wider Health Impacts of COVID-19</a></h3>
+                        <p class="meta">With N. Muhajarine et al. <em>JMIR Research Protocols</em>, 2023</p>
+                    </div>
+                </div>
+            </details>
         </section>
 
         <section>
-            <h2>Interdisciplinary</h2>
-
-            <div class="publication">
-                <h3><a href="https://doi.org/10.59668/2033.19032">Virtual Reality in History Education: Instructional Design Considerations for Designing Authentic, Deep, and Meaningful Learning</a></h3>
-                <p class="meta">With P. MacDowell, J. Jaunzems-Fernuk, A. Ghani, and B. Hoy. <em>Journal of Applied Instructional Design</em> 14(1), 2025</p>
-            </div>
-
-            <div class="publication">
-                <h3><a href="https://doi.org/10.1136/bmjph-2024-000965">Co-occurrence of Depression, Anxiety and Increased Alcohol Use During the Late Stage of the COVID-19 Pandemic in Saskatchewan, Canada</a></h3>
-                <p class="meta">With N. Muhajarine, J. Dixon, M.S. Ahmed, A. Bukhari, D.A. Adeyinka, et al. <em>BMJ Public Health</em> 3(1), 2025</p>
-            </div>
-
-            <div class="publication">
-                <h3><a href="https://doi.org/10.2196/46643">Capturing and Documenting the Wider Health Impacts of the COVID-19 Pandemic Through the Remember Rebuild Saskatchewan Initiative</a></h3>
-                <p class="meta">With N. Muhajarine, J. Dixon, E. Dyck, et al. <em>JMIR Research Protocols</em>, 2023</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Digital Projects</h2>
+            <h2>Projects</h2>
 
             <div class="project">
                 <h3><a href="https://rememberrebuild.ca/">Remember Rebuild Saskatchewan</a></h3>
-                <p>SSHRC and CIHR funded interdisciplinary project documenting the pandemic's impact through community archives and oral histories. Includes the <a href="https://covid19archive.usask.ca/">Saskatchewan COVID-19 Archive</a>.</p>
+                <p>SSHRC and CIHR funded project documenting the pandemic's impact through community archives and oral histories.</p>
             </div>
 
             <div class="project">
                 <h3><a href="https://hgiscanada.usask.ca/">Historical GIS Research Canada</a></h3>
-                <p>Hosts GIS polygons for Canadian census 1851-1921 and tabular data from these census years.</p>
+                <p>GIS polygons for Canadian census 1851-1921 and tabular data.</p>
             </div>
 
-            <div class="project">
-                <h3><a href="https://lincsproject.ca/">LINCS Project</a></h3>
-                <p>Linked Infrastructure for Networked Cultural Scholarship. Created over 10,000 persistent identifiers for Canadians of historical significance.</p>
-            </div>
+            <details>
+                <summary>View all projects</summary>
+                <div class="expandable-content">
+                    <div class="project">
+                        <h3><a href="https://lincsproject.ca/">LINCS Project</a></h3>
+                        <p>Created over 10,000 persistent identifiers for Canadians of historical significance.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3><a href="https://covid19archive.usask.ca/">Saskatchewan COVID-19 Archive</a></h3>
+                        <p>Digital archive of pandemic experiences in Saskatchewan.</p>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Work in progress</summary>
+                <div class="expandable-content">
+                    <div class="project">
+                        <h3><a href="https://jburnford.github.io/philosophical-transactions-ocr-1665-1869/">Philosophical Transactions Archive (1665-1869)</a></h3>
+                        <p>OCR digitization of the world's first scientific journal. 8,128 articles across 106,829 pages.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3><a href="https://jburnford.github.io/early_encyclopedia_britannica/">Early Encyclopaedia Britannica Corpus (1771-1842)</a></h3>
+                        <p>OCR digitization of the first seven editions. Over 174,000 articles.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3><a href="https://jburnford.github.io/JosephBanksKG/">Sir Joseph Banks Knowledge Graph (1765-1820)</a></h3>
+                        <p>Interactive visualizations of correspondence networks. 7,124 documents, 6,441 people.</p>
+                    </div>
+                </div>
+            </details>
         </section>
 
         <section>
-            <h2>Work in Progress</h2>
+            <h2>Videos &amp; Exhibits</h2>
 
             <div class="project">
-                <h3><a href="https://jburnford.github.io/philosophical-transactions-ocr-1665-1869/">Philosophical Transactions Archive (1665-1869)</a></h3>
-                <p>OCR digitization of the world's first scientific journal. 8,128 articles across 106,829 pages from the Royal Society of London, featuring work by Newton, Hooke, Faraday, Darwin, and 3,920 other authors.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://jburnford.github.io/early_encyclopedia_britannica/">Early Encyclopaedia Britannica Corpus (1771-1842)</a></h3>
-                <p>OCR digitization of the first seven editions of the Encyclopaedia Britannica. Over 174,000 articles spanning 71 years of documented knowledge.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://jburnford.github.io/JosephBanksKG/">Sir Joseph Banks Knowledge Graph (1765-1820)</a></h3>
-                <p>Interactive visualizations of Sir Joseph Banks' correspondence networks. 7,124 documents involving 6,441 people, with network graphs and topic analysis.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Videos &amp; Virtual Exhibits</h2>
-
-            <div class="project">
-                <h3><a href="https://www.youtube.com/watch?v=qUBU7vBw1qQ">Agnes Deans Cameron's Magic Lantern Tour and Settler Colonialism on the Canadian Prairies</a></h3>
-                <p>360 VR video (2024). With A.M. Ghani, T. Foran, C. Woloschuk, G. Shaw.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://www.youtube.com/watch?v=RsGMdgJEGIs">The Wrights' Timber Slide and Timber Colonialism in the Ottawa Valley</a></h3>
-                <p>360 VR video (2024). With A.M. Ghani, T. Foran, C. Woloschuk, G. Shaw.</p>
+                <h3><a href="https://www.youtube.com/watch?v=qUBU7vBw1qQ">Agnes Deans Cameron's Magic Lantern Tour</a></h3>
+                <p>360 VR video on settler colonialism on the Canadian Prairies (2024).</p>
             </div>
 
             <div class="project">
                 <h3><a href="https://www.spatial.io/s/Feeding-Edwardian-London-63deb6e205e5d17a2b3cce88?share=8147719053308666965">Feeding Edwardian London</a></h3>
-                <p>Virtual reality exhibit exploring links between London flour mills, the port of Montreal, and settler colonialism during the Saskatchewan wheat boom.</p>
+                <p>VR exhibit on links between London flour mills, Montreal, and the Saskatchewan wheat boom.</p>
             </div>
 
-            <div class="project">
-                <h3><a href="https://www.livingmaps.org/groundbreakers">Ground Breakers: Olympic Park AR Tour</a></h3>
-                <p>Augmented reality walking tour of the Olympic Park in London, England. Collaboration with the Ground Breakers Project.</p>
-            </div>
+            <details>
+                <summary>View all videos and exhibits</summary>
+                <div class="expandable-content">
+                    <div class="project">
+                        <h3><a href="https://www.youtube.com/watch?v=RsGMdgJEGIs">The Wrights' Timber Slide and Timber Colonialism</a></h3>
+                        <p>360 VR video on the Ottawa Valley (2024).</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://www.youtube.com/watch?v=yYz1m_7FtS8">Clarnico</a></h3>
-                <p>Video exploring London's industrial heritage. With Heritage 5G.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://www.livingmaps.org/groundbreakers">Ground Breakers: Olympic Park AR Tour</a></h3>
+                        <p>Augmented reality walking tour in London, England.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://www.youtube.com/watch?v=YsSoOysbfvg">Stratford Railyards</a></h3>
-                <p>Video exploring London's railway heritage. With Heritage 5G.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://www.youtube.com/watch?v=yYz1m_7FtS8">Clarnico</a></h3>
+                        <p>Video exploring London's industrial heritage.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://rememberrebuild.ca/remember-lives-not-numbers/">Remember Lives Not Numbers</a></h3>
-                <p>Online memorial for Saskatchewan residents who died from COVID-19.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://www.youtube.com/watch?v=YsSoOysbfvg">Stratford Railyards</a></h3>
+                        <p>Video exploring London's railway heritage.</p>
+                    </div>
 
-            <div class="project">
-                <h3>Walking Tour StoryMaps</h3>
-                <p><a href="https://arcg.is/1SjG0X">London (English)</a> | <a href="https://arcg.is/1CnHbK">Montreal (French)</a> - Digital content for public walking tours.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://rememberrebuild.ca/remember-lives-not-numbers/">Remember Lives Not Numbers</a></h3>
+                        <p>Online memorial for Saskatchewan COVID-19 deaths.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3>Walking Tour StoryMaps</h3>
+                        <p><a href="https://arcg.is/1SjG0X">London</a> | <a href="https://arcg.is/1CnHbK">Montreal</a></p>
+                    </div>
+                </div>
+            </details>
         </section>
 
         <section>
-            <h2>Data &amp; Visualizations</h2>
+            <h2>Data</h2>
 
             <div class="project">
-                <h3><a href="https://public.tableau.com/app/profile/jim.clifford/vizzes">Tableau Data Visualizations</a></h3>
+                <h3><a href="https://public.tableau.com/app/profile/jim.clifford/vizzes">Tableau Visualizations</a></h3>
                 <p>Interactive visualizations of historical trade and commodity data.</p>
             </div>
 
-            <div class="project">
-                <h3><a href="https://zenodo.org/records/15068764">Quebec Arrivals Database, 1817-1839</a></h3>
-                <p>Quebec gazette/La gazette de Quebec data from BAnQ collections. With D. Allan.</p>
-            </div>
+            <details>
+                <summary>View all datasets</summary>
+                <div class="expandable-content">
+                    <div class="project">
+                        <h3><a href="https://zenodo.org/records/15068764">Quebec Arrivals Database, 1817-1839</a></h3>
+                        <p>Quebec gazette data from BAnQ collections. With D. Allan.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://zenodo.org/records/3583723">London's Ghost Acres: British Imports Database, 1856-1906</a></h3>
-                <p>Database of trade statistics tracking commodity imports to Britain and their environmental origins.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://zenodo.org/records/3583723">London's Ghost Acres: British Imports, 1856-1906</a></h3>
+                        <p>Trade statistics tracking commodity imports to Britain.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://zenodo.org/records/6324226">Canadian Timber Ghost Acres Data</a></h3>
-                <p>Data on Canadian timber exports and British ghost acres. With S. Castonguay.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://zenodo.org/records/6324226">Canadian Timber Ghost Acres Data</a></h3>
+                        <p>Canadian timber exports and British ghost acres. With S. Castonguay.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://zenodo.org/records/3581824">British Tallow Imports Database, 1800-1901</a></h3>
-                <p>British imports database used in "London's Soap Industry and the Development of Global Ghost Acres."</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://zenodo.org/records/3581824">British Tallow Imports, 1800-1901</a></h3>
+                        <p>Data for "London's Soap Industry and Global Ghost Acres."</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://zenodo.org/records/3581649">HGIS Data: Greater London Industry, 1865-1875</a></h3>
-                <p>Historical GIS dataset based on the First Series of Ordnance Survey London Town Plans.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://zenodo.org/records/3581649">HGIS: Greater London Industry, 1865-1875</a></h3>
+                        <p>Based on First Series Ordnance Survey London Town Plans.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://zenodo.org/records/3581740">HGIS Data: Greater London Industry, 1893-1895</a></h3>
-                <p>Historical GIS dataset based on the First Revised Series of Ordnance Survey London Town Plans.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://zenodo.org/records/3581740">HGIS: Greater London Industry, 1893-1895</a></h3>
+                        <p>Based on First Revised Series Ordnance Survey.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/7ESLQ0">Historical Canadian Persons Dataset</a></h3>
-                <p>Linked data augmenting the Dictionary of Canadian Biography with Wikidata and census records. With S. Brown and the LINCS team.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/7ESLQ0">Historical Canadian Persons Dataset</a></h3>
+                        <p>Linked data from Dictionary of Canadian Biography. With LINCS team.</p>
+                    </div>
+                </div>
+            </details>
         </section>
 
         <section>
-            <h2>Teaching Resources</h2>
+            <h2>Teaching</h2>
+            <details>
+                <summary>View teaching resources</summary>
+                <div class="expandable-content">
+                    <div class="project">
+                        <h3><a href="https://pressbooks.library.upei.ca/geospatialhumanities/">Introduction to Geospatial Humanities</a></h3>
+                        <p>Open educational resource. With J. MacFadyen and B. Hoy.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://pressbooks.library.upei.ca/geospatialhumanities/">Introduction to Geospatial Humanities</a></h3>
-                <p>Open educational resource. With J. MacFadyen and B. Hoy.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://programminghistorian.org/lessons/googlemaps-googleearth">Intro to Google Maps and Google Earth</a></h3>
+                        <p>Programming Historian tutorial.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://programminghistorian.org/lessons/googlemaps-googleearth">Intro to Google Maps and Google Earth</a></h3>
-                <p>Programming Historian tutorial. With J. MacFadyen and D. Macfarlane.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://programminghistorian.org/lessons/qgis-layers">Installing QGIS and Adding Layers</a></h3>
+                        <p>Programming Historian tutorial.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://programminghistorian.org/lessons/qgis-layers">Installing QGIS and Adding Layers</a></h3>
-                <p>Programming Historian tutorial. With J. MacFadyen and D. Macfarlane.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://programminghistorian.org/lessons/vector-layers-qgis">Creating New Vector Layers in QGIS</a></h3>
+                        <p>Programming Historian tutorial.</p>
+                    </div>
 
-            <div class="project">
-                <h3><a href="https://programminghistorian.org/lessons/vector-layers-qgis">Creating New Vector Layers in QGIS</a></h3>
-                <p>Programming Historian tutorial. With J. MacFadyen and D. Macfarlane.</p>
-            </div>
-
-            <div class="project">
-                <h3><a href="https://programminghistorian.org/lessons/georeferencing-qgis">Georeferencing in QGIS</a></h3>
-                <p>Programming Historian tutorial. With J. MacFadyen and D. Macfarlane.</p>
-            </div>
+                    <div class="project">
+                        <h3><a href="https://programminghistorian.org/lessons/georeferencing-qgis">Georeferencing in QGIS</a></h3>
+                        <p>Programming Historian tutorial.</p>
+                    </div>
+                </div>
+            </details>
         </section>
 
         <section>
@@ -668,31 +679,27 @@
             <div class="links-grid">
                 <a href="https://artsandscience.usask.ca/profile/JClifford" class="link-item">
                     <span>University Profile</span>
-                    <small>USask Arts & Science</small>
+                    <small>USask</small>
                 </a>
                 <a href="https://scholar.google.ca/citations?user=RBhCqv0AAAAJ" class="link-item">
                     <span>Google Scholar</span>
-                    <small>Publications & Citations</small>
+                    <small>Citations</small>
                 </a>
                 <a href="https://hgis.usask.ca/" class="link-item">
                     <span>HGIS Lab</span>
-                    <small>Historical GIS Lab</small>
+                    <small>Research Lab</small>
                 </a>
                 <a href="https://activehistory.ca/" class="link-item">
-                    <span>ActiveHistory.ca</span>
+                    <span>ActiveHistory</span>
                     <small>Public History</small>
                 </a>
                 <a href="https://zenodo.org/communities/jim_s_clifford/records" class="link-item">
                     <span>Zenodo</span>
-                    <small>Research Data</small>
+                    <small>Data</small>
                 </a>
                 <a href="https://orcid.org/0000-0003-2004-5161" class="link-item">
                     <span>ORCID</span>
-                    <small>0000-0003-2004-5161</small>
-                </a>
-                <a href="https://rememberrebuild.ca" class="link-item">
-                    <span>Remember Rebuild</span>
-                    <small>COVID-19 Archive</small>
+                    <small>ID</small>
                 </a>
                 <a href="https://www.tandfonline.com/journals/vhim20" class="link-item">
                     <span>Historical Methods</span>
