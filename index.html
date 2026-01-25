@@ -954,6 +954,14 @@
                     { name: 'Philosophical Transactions', url: 'https://jburnford.github.io/philosophical-transactions-ocr-1665-1869/', type: 'project' },
                     { name: 'Joseph Banks KG', url: 'https://jburnford.github.io/JosephBanksKG/', type: 'project' }
                 ]
+            },
+            {
+                id: 'hgislod',
+                name: 'From HGIS to a Linked Open Data Knowledge Graph',
+                year: 2026,
+                streams: ['hgis', 'textmining'],
+                desc: 'SSHRC Connections Grant (with S. Brown, C. Troupe, C. Crompton, B. Hoy)',
+                outputs: []
             }
         ];
 
@@ -1216,7 +1224,7 @@
             const primaryColor = streams[d.streams[0]].color;
 
             icon.style.background = primaryColor;
-            icon.textContent = d.year.toString().slice(-2);
+            icon.textContent = d.year.toString();
             title.textContent = d.name;
             subtitle.textContent = d.desc;
 
