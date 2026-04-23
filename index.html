@@ -117,14 +117,34 @@
   .portrait .cap{font-family: var(--mono); font-size: 0.65rem; color: var(--ink-3); letter-spacing: 0.06em; margin-top: 8px; text-transform: uppercase;}
 
   /* ======= themes timeline ======= */
-  .themes{margin-top: 8px;}
-  .themes-svg{width:100%; height: auto; display:block; font-family: var(--mono);}
+  .themes{margin-top: 8px; position: relative;}
+  .themes-svg{width:100%; height: auto; display:block; font-family: var(--mono); overflow: visible;}
   .themes-axis{font-size: 10px; fill: var(--ink-3); letter-spacing: 0.08em;}
   .thread-row{transition: opacity .2s;}
   .themes:hover .thread-row{opacity: 0.35;}
   .themes:hover .thread-row:hover{opacity: 1;}
   .thread-label{font-family: var(--serif); font-size: 13px; fill: var(--ink); font-style: italic;}
   .thread-count{font-family: var(--mono); font-size: 10px; fill: var(--ink-3);}
+  .dot{cursor: pointer; transition: r .15s;}
+  .dot:hover, .dot:focus{outline: none;}
+  .dot:hover{r: 5;}
+  .dot:focus{r: 5; stroke: var(--ink); stroke-width: 1;}
+
+  .tl-pop{
+    position: absolute; z-index: 20;
+    background: var(--ink); color: var(--paper);
+    padding: 10px 12px; max-width: 280px;
+    font-family: var(--sans); font-size: 0.8rem; line-height: 1.4;
+    pointer-events: none;
+    opacity: 0; transform: translate(-50%, calc(-100% - 10px));
+    transition: opacity .12s;
+    box-shadow: 0 4px 12px oklch(0.22 0.028 260 / 0.25);
+  }
+  .tl-pop.on{opacity: 1;}
+  .tl-pop .yr{font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ochre); display: block; margin-bottom: 4px;}
+  .tl-pop .ttl{font-weight: 500;}
+  .tl-pop .sub{display: block; margin-top: 5px; font-family: var(--mono); font-size: 0.68rem; color: oklch(0.78 0.015 260); letter-spacing: 0.02em;}
+  .tl-pop::after{content: ""; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--ink);}
 
   .map-wrap{margin-top: 32px;}
   .map-caption{display:flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 0.68rem; color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin-bottom: 12px;}
@@ -315,51 +335,135 @@
             <rect x="160.0" y="46" width="819.9" height="24" fill="none" stroke="oklch(0.32 0.07 250 / 0.4)" stroke-width="0.5"/>
             <text x="150" y="62" text-anchor="end" class="thread-label">Industrial London</text>
             <text x="990" y="62" class="thread-count">1 book · 6 articles</text>
-            <circle cx="644.5" cy="58" r="3" fill="oklch(0.32 0.07 250)"/>
+            <circle class="dot" cx="458.2" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2012" data-title="The River Lea in West Ham"
+                    data-sub="Chapter · Urban Rivers (U Pittsburgh Press)"
+                    data-href="https://upittpress.org/books/9780822961857/"/>
+            <circle class="dot" cx="644.5" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2017" data-title="West Ham and the River Lea"
+                    data-sub="Book · UBC Press · Nature, History, Society"
+                    data-href="https://www.ubcpress.ca/west-ham-and-the-river-lea"/>
             <text x="651.5" y="61" class="thread-count" style="font-size:9px;">West Ham published</text>
+            <circle class="dot" cx="756.3" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2020" data-title="Greater London's Rapid Growth"
+                    data-sub="Chapter · A Mighty Capital Under Threat (U Pittsburgh Press)"
+                    data-href="https://upittpress.org/books/9780822946106/"/>
+            <circle class="dot" cx="980.0" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="London's 19th-Century Industrial Geography"
+                    data-sub="Swipe map · Ordnance Survey 1865–95"
+                    data-href="https://jimclifford.ca/london_industry_map/"/>
           </g>
           <g class="thread-row">
             <rect x="607.2" y="84" width="372.7" height="24" fill="oklch(0.50 0.12 60 / 0.1)"/>
             <rect x="607.2" y="84" width="372.7" height="24" fill="oklch(0.50 0.12 60 / 0.55)"/>
             <text x="150" y="100" text-anchor="end" class="thread-label">Ghost Acres</text>
-            <text x="990" y="100" class="thread-count">6 articles · 2 chapters</text>
-            <circle cx="607.2" cy="96" r="3" fill="oklch(0.50 0.12 60)"/>
+            <text x="990" y="100" class="thread-count">5 articles · 3 chapters</text>
+            <circle class="dot" cx="607.2" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2016" data-title="Maitland's Moment: Nova Scotia's Forests and the Global Commodity Trade"
+                    data-sub="Chapter · Moving Natures (U Calgary Press) · Peace, Clifford &amp; Burns"
+                    data-href="https://prism.ucalgary.ca/bitstream/1880/51203/4/Moving_natures_2016_chapter01.pdf"/>
             <text x="614.2" y="99" class="thread-count" style="font-size:9px;">Maitland's Moment</text>
-            <circle cx="793.6" cy="96" r="3" fill="oklch(0.50 0.12 60)"/>
+            <circle class="dot" cx="793.6" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2021" data-title="London's Soap Industry and the Development of Global Ghost Acres in the Nineteenth Century"
+                    data-sub="Article · Environment and History"
+                    data-href="https://doi.org/10.3197/096734019X15463432086982"/>
             <text x="800.6" y="99" class="thread-count" style="font-size:9px;">Soap Industry</text>
-            <circle cx="942.7" cy="96" r="3" fill="oklch(0.50 0.12 60)"/>
+            <circle class="dot" cx="830.9" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2022" data-title="British Ghost Acres and Environmental Changes in the Laurentian Forest"
+                    data-sub="Article · Journal of Historical Geography · Clifford &amp; Castonguay"
+                    data-href="https://doi.org/10.1016/j.jhg.2022.05.002"/>
+            <circle class="dot" cx="834.9" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2022" data-title="Les hectares fantômes de l'industrialisation britannique et la forêt laurentienne, 1793–1900"
+                    data-sub="Chapter · Écrire l'histoire environnementale (Rennes) · Castonguay &amp; Clifford"
+                    data-href="https://books.openedition.org/pur/164763"/>
+            <circle class="dot" cx="905.4" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Mapping Commodity Histories: Historical GIS and Canadian Forest Products"
+                    data-sub="Chapter · Oxford Handbook of Commodity History"
+                    data-href="https://doi.org/10.1093/oxfordhb/9780197502679.013.34"/>
           </g>
           <g class="thread-row">
             <rect x="309.1" y="122" width="670.8" height="24" fill="oklch(0.48 0.06 150 / 0.1)"/>
             <rect x="309.1" y="122" width="670.8" height="24" fill="oklch(0.48 0.06 150 / 0.55)"/>
             <text x="150" y="138" text-anchor="end" class="thread-label">Digital Humanities</text>
-            <text x="990" y="138" class="thread-count">4 projects · 3 articles</text>
-            <circle cx="309.1" cy="134" r="3" fill="oklch(0.48 0.06 150)"/>
+            <text x="990" y="138" class="thread-count">4 projects · 4 articles</text>
+            <circle class="dot" cx="309.1" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2008" data-title="HGIS research programme begins"
+                    data-sub="Spatial databases · census geographies · text-mining pipelines"/>
             <text x="316.1" y="137" class="thread-count" style="font-size:9px;">HGIS</text>
-            <circle cx="607.2" cy="134" r="3" fill="oklch(0.48 0.06 150)"/>
+            <circle class="dot" cx="346.4" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2009" data-title="ActiveHistory.ca launched"
+                    data-sub="Public-history platform · founding editor &amp; webmaster"
+                    data-href="https://activehistory.ca/"/>
+            <circle class="dot" cx="383.6" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2010" data-title="What is Active History?"
+                    data-sub="Article · Left History"
+                    data-href="https://doi.org/10.25071/1913-9632.35817"/>
+            <circle class="dot" cx="570.0" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2015" data-title="Trading Consequences: Combining Text Mining and Visualization"
+                    data-sub="Article · Digital Scholarship in the Humanities · Hinrichs, Clifford et al."
+                    data-href="https://doi.org/10.1093/llc/fqv046"/>
+            <circle class="dot" cx="607.2" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2016" data-title="Geoparsing History: Locating Commodities in Ten Million Pages"
+                    data-sub="Article · Historical Methods"
+                    data-href="https://doi.org/10.1080/01615440.2015.1116419"/>
             <text x="614.2" y="137" class="thread-count" style="font-size:9px;">Geoparsing History</text>
+            <circle class="dot" cx="905.4" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Virtual Reality in History Education"
+                    data-sub="Article · Journal of Applied Instructional Design · MacDowell, Clifford et al."
+                    data-href="https://doi.org/10.59668/2033.19032"/>
+            <circle class="dot" cx="980.0" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="Claude Code for Historians Workshop"
+                    data-sub="SSHRC Connections Grant"
+                    data-href="https://jburnford.github.io/claude_code_workshop/workshop-event.html"/>
           </g>
           <g class="thread-row">
             <rect x="644.5" y="160" width="335.4" height="24" fill="oklch(0.52 0.13 40 / 0.1)"/>
             <rect x="644.5" y="160" width="335.4" height="24" fill="oklch(0.52 0.13 40 / 0.55)"/>
             <text x="150" y="176" text-anchor="end" class="thread-label">Settler Colonialism</text>
             <text x="990" y="176" class="thread-count">2 articles · 2 VR · 1 game</text>
-            <circle cx="942.7" cy="172" r="3" fill="oklch(0.52 0.13 40)"/>
-            <text x="872.7" y="175" class="thread-count" style="font-size:9px;" text-anchor="start">D2L Award 2025</text>
+            <circle class="dot" cx="905.4" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Agnes Deans Cameron VR"
+                    data-sub="360° video · Cameron's 1908 expedition through northwestern Canada"
+                    data-href="https://www.youtube.com/watch?v=qUBU7vBw1qQ"/>
+            <circle class="dot" cx="942.7" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2025" data-title="Logging and Settlement beyond the Rapids: Unmaking Algonquin Space in the Ottawa Valley, 1817–61"
+                    data-sub="Article · Canadian Historical Review · Clifford &amp; Huckerby"
+                    data-href="https://doi.org/10.3138/chr-2024-0055"/>
+            <circle class="dot" cx="946.7" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2025" data-title="D2L Innovation Award — Homesteaders Board Game"
+                    data-sub="Educational game on settler colonialism · international teaching award"
+                    data-href="https://news.usask.ca/articles/community/2025/usask-team-wins-international-teaching-award-for-canadian-history-game.php"/>
+            <text x="872.7" y="175" class="thread-count" style="font-size:9px;" text-anchor="start">D2L Award</text>
           </g>
           <g class="thread-row">
             <rect x="756.3" y="198" width="223.6" height="24" fill="oklch(0.48 0.09 240 / 0.1)"/>
             <rect x="756.3" y="198" width="223.6" height="24" fill="oklch(0.48 0.09 240 / 0.55)"/>
             <text x="150" y="214" text-anchor="end" class="thread-label">Pandemic</text>
             <text x="990" y="214" class="thread-count">3 articles · community archive</text>
-            <circle cx="793.6" cy="210" r="3" fill="oklch(0.48 0.09 240)"/>
+            <circle class="dot" cx="793.6" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2021" data-title="Remember Rebuild Saskatchewan"
+                    data-sub="Community archive · SSHRC/CIHR-funded pandemic documentation"
+                    data-href="https://rememberrebuild.ca/"/>
             <text x="800.6" y="213" class="thread-count" style="font-size:9px;">Remember Rebuild</text>
+            <circle class="dot" cx="868.2" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2023" data-title="Capturing the Wider Health Impacts of COVID-19: Protocol"
+                    data-sub="Article · JMIR Research Protocols · Muhajarine et al."
+                    data-href="https://doi.org/10.2196/46643"/>
+            <circle class="dot" cx="905.4" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Digital History Making during a Crisis: A COVID-19 Archive"
+                    data-sub="Chapter · Digital Memory Agents in Canada (U Alberta Press)"
+                    data-href="https://ualbertapress.ca/9781772127850/digital-memory-agents-in-canada/"/>
+            <circle class="dot" cx="942.7" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2025" data-title="Co-Occurrence of Depression, Anxiety and Increased Alcohol Use during COVID-19"
+                    data-sub="Article · BMJ Public Health · Muhajarine et al."
+                    data-href="https://doi.org/10.1136/bmjph-2024-000965"/>
           </g>
           <g>
             <line x1="980" y1="30" x2="980" y2="290" stroke="oklch(0.66 0.12 70)" stroke-width="1"/>
             <text x="975" y="26" text-anchor="end" class="thread-count" style="fill: oklch(0.50 0.12 60); font-size: 10px; letter-spacing: 0.1em;">NOW</text>
           </g>
         </svg>
+        <div class="tl-pop" id="tl-pop" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -673,7 +777,7 @@
           <div class="stats"><span>StoryMap</span></div>
           <span class="go">↗</span>
         </a>
-        <a class="proj" href="https://zenodo.org/communities/jim_s_clifford/records">
+        <a class="proj" href="https://zenodo.org/communities/jim_s_clifford/records?q=&l=list&p=1&s=10">
           <div class="tag">Open Datasets</div>
           <h4>Zenodo · Ghost Acres datasets</h4>
           <p>Quebec Arrivals 1817–1839 · Canadian Timber · British Imports.</p>
@@ -920,6 +1024,60 @@ document.querySelectorAll('#railnav a').forEach(a => {
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
   });
 });
+
+// ============ Timeline dot popups ============
+(() => {
+  const pop = document.getElementById('tl-pop');
+  if(!pop) return;
+  const dots = document.querySelectorAll('[data-pop]');
+  let active = null;
+
+  const show = (el) => {
+    active = el;
+    const yr = el.dataset.year;
+    const title = el.dataset.title;
+    const sub = el.dataset.sub;
+    const href = el.dataset.href;
+    pop.innerHTML =
+      (yr ? `<span class="yr">${yr}</span>` : '') +
+      `<span class="ttl">${title}</span>` +
+      (sub ? `<span class="sub">${sub}</span>` : '') +
+      (href ? `<span class="sub" style="color: oklch(0.82 0.04 70);">↗ click to open</span>` : '');
+    // Position relative to the popup's offsetParent (.themes)
+    const host = pop.offsetParent || document.body;
+    const hostRect = host.getBoundingClientRect();
+    const dotRect = el.getBoundingClientRect();
+    const x = dotRect.left + dotRect.width/2 - hostRect.left;
+    const y = dotRect.top - hostRect.top;
+    pop.style.left = x + 'px';
+    pop.style.top = y + 'px';
+    pop.classList.add('on');
+    pop.setAttribute('aria-hidden', 'false');
+  };
+  const hide = () => {
+    active = null;
+    pop.classList.remove('on');
+    pop.setAttribute('aria-hidden', 'true');
+  };
+
+  dots.forEach(el => {
+    el.addEventListener('mouseenter', () => show(el));
+    el.addEventListener('mouseleave', hide);
+    el.addEventListener('focus', () => show(el));
+    el.addEventListener('blur', hide);
+    if (el.dataset.href) {
+      el.addEventListener('click', () => window.open(el.dataset.href, '_blank', 'noopener'));
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.open(el.dataset.href, '_blank', 'noopener');
+        }
+      });
+    }
+  });
+  window.addEventListener('scroll', () => { if (active) show(active); }, { passive: true });
+  window.addEventListener('resize', () => { if (active) show(active); });
+})();
 </script>
 </body>
 </html>
