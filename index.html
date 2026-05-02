@@ -178,6 +178,42 @@
     content: "★"; color: var(--ochre); font-size: 0.8em; margin-left: 6px;
   }
 
+  .si-contents{
+    list-style: none; padding: 16px 20px 18px; margin: 0 0 0 84px;
+    border-left: 3px solid var(--ochre); background: var(--paper-2);
+    border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .si-contents.hidden{display:none;}
+  .si-contents .si-head{
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ochre-deep); margin-bottom: 10px;
+  }
+  .si-contents .si-note{
+    font-size: 0.85rem; color: var(--ink-2); margin: 0 0 14px; max-width: 62ch;
+  }
+  .si-contents ol{
+    list-style: none; padding: 0; margin: 0; counter-reset: si;
+  }
+  .si-contents ol li{
+    counter-increment: si;
+    display: grid; grid-template-columns: 28px 1fr 60px;
+    gap: 12px; padding: 8px 0; border-top: 1px dashed var(--rule);
+    align-items: baseline; font-size: 0.9rem;
+  }
+  .si-contents ol li:first-child{border-top: 0;}
+  .si-contents ol li::before{
+    content: counter(si, decimal-leading-zero);
+    font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.04em;
+  }
+  .si-contents .si-author{font-family: var(--mono); font-size: 0.78rem; color: var(--ink-2); margin-right: 8px;}
+  .si-contents .si-title{color: var(--ink);}
+  .si-contents .si-pages{font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); text-align: right; letter-spacing: 0.04em;}
+  @media (max-width: 600px){
+    .si-contents{margin-left: 0;}
+    .si-contents ol li{grid-template-columns: 24px 1fr; }
+    .si-contents .si-pages{grid-column: 2; text-align: left; padding-top: 2px;}
+  }
+
   /* ======= projects ======= */
   .proj-grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0; border: 1px solid var(--rule);}
   .proj{
@@ -297,7 +333,7 @@
       <div class="map-wrap" id="mapwrap">
         <div class="map-caption">
           <span>Fig. 01 — Research threads, 2004 → now</span>
-          <span>5 threads · 16 publications · 14 grants</span>
+          <span>5 threads · 17 publications · 14 grants</span>
         </div>
         <div class="themes" style="margin-top: 4px;">
         <svg class="themes-svg" viewBox="0 0 1000 320" preserveAspectRatio="none">
@@ -380,6 +416,9 @@
                     data-pop="1" data-year="2024" data-title="Mapping Commodity Histories: Historical GIS and Canadian Forest Products"
                     data-sub="Chapter · Oxford Handbook of Commodity History"
                     data-href="https://doi.org/10.1093/oxfordhb/9780197502679.013.34"/>
+            <circle class="dot" cx="980.0" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="Thinking Through Forests: Colonialism, Capitalism, and the Global Timber Trade"
+                    data-sub="Article · JHG Special Issue intro · Clifford &amp; Lučić"/>
           </g>
           <g class="thread-row">
             <rect x="309.1" y="122" width="670.8" height="24" fill="oklch(0.48 0.06 150 / 0.1)"/>
@@ -508,7 +547,7 @@
 
     <!-- ========== PUBLICATIONS ========== -->
     <section id="publications">
-      <div class="sec-head"><span class="n">§ 03</span><h2>Selected Publications</h2><span class="meta" id="pubmeta">16 items</span></div>
+      <div class="sec-head"><span class="n">§ 03</span><h2>Selected Publications</h2><span class="meta" id="pubmeta">17 items</span></div>
       <div class="pubs-controls" id="pubsctl">
         <button class="filter-chip on" data-filter="all">All</button>
         <span class="sep"></span>
@@ -517,10 +556,58 @@
         <button class="filter-chip" data-filter="dh">Digital Humanities</button>
         <button class="filter-chip" data-filter="settler">Settler Colonialism</button>
         <button class="filter-chip" data-filter="covid">Pandemic</button>
-        <span class="pubs-count mono" id="pubcount">showing 16</span>
+        <span class="pubs-count mono" id="pubcount">showing 17</span>
       </div>
 
       <ul class="pub-list" id="publist">
+        <li class="pub featured" data-tags="ghost settler">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>Thinking Through Forests: Colonialism, Capitalism, and the Global Timber Trade</h4>
+            <div class="authors mono">Clifford, J. &amp; Lučić, I.</div>
+            <div class="venue">Journal of Historical Geography — Introduction to the Special Issue on Timber Colonialism</div>
+            <div class="abstract">Co-authored introduction to a special issue on timber colonialism, situating eight case studies — from northern Scandinavia and Patagonia to Sierra Leone, Lingít Aaní, Labrador/Nitassinan, and the Russian North — within a global history of forests, empire, and capitalism.</div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="si-contents" data-tags="ghost settler" aria-label="Special issue contents">
+          <div class="si-head">Special Issue · Co-edited with Iva Lučić · 8 articles</div>
+          <p class="si-note">Articles in the <em>Journal of Historical Geography</em> Special Issue on Timber Colonialism. Listed in order of pagination.</p>
+          <ol>
+            <li>
+              <div><span class="si-author">Peruchi Moretto, S.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2026.03.004">Deforestation processes and (re)forestation practices in Southern Brazil, in the twentieth and twenty-first centuries</a></span></div>
+              <div class="si-pages">50–60</div>
+            </li>
+            <li>
+              <div><span class="si-author">Borovoy, V.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.11.007">The European North of Russia as a timber colony, 1890–1930</a></span></div>
+              <div class="si-pages">63–72</div>
+            </li>
+            <li>
+              <div><span class="si-author">Tytelman, C.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.11.010">Timber Colonialism in Labrador/Nitassinan: The case of the Labrador Boundary</a></span></div>
+              <div class="si-pages">77–88</div>
+            </li>
+            <li>
+              <div><span class="si-author">Hunter, R. A.</span><span class="si-title">A Dynamic Timber Frontier: An Archaeological Perspective on Lumbering in Algonquin Provincial Park (1836–1930)</span></div>
+              <div class="si-pages">108–121</div>
+            </li>
+            <li>
+              <div><span class="si-author">Daheur, J.</span><span class="si-title">From Ash to Timber Capitalism: Market Incentives and the Ecology of German Settlement in Central Poland (1650–1870)</span></div>
+              <div class="si-pages">174–185</div>
+            </li>
+            <li>
+              <div><span class="si-author">Kraemer, M.</span><span class="si-title">The Forests of Sheet'ká: Failed Timber Colonialism in Lingít Aaní</span></div>
+              <div class="si-pages">200–210</div>
+            </li>
+            <li>
+              <div><span class="si-author">Östlund, L., Fernández Génova, M., Cáceres, M. &amp; Eriksson, E.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.06.006">Timber colonialism in the periphery: Timber frontiers and indigenous peoples land use in northern Scandinavia and southern Patagonia in the late 19th and early 20th century</a></span></div>
+              <div class="si-pages">213–225</div>
+            </li>
+            <li>
+              <div><span class="si-author">Munro, P. G.</span><span class="si-title">Timber Colonialism and Forest Reserve Imaginaries: colonial constructions, legal legacies and governance conflicts in Sierra Leone's Kambui Hills</span></div>
+              <div class="si-pages">331–340</div>
+            </li>
+          </ol>
+        </li>
         <li class="pub featured" data-tags="london ghost">
           <div class="yr">2017</div>
           <div class="body">
@@ -994,6 +1081,7 @@ const pubs = document.querySelectorAll('.pub');
 const chips = document.querySelectorAll('.filter-chip');
 const pubCount = document.getElementById('pubcount');
 
+const siBlocks = document.querySelectorAll('.si-contents');
 function applyFilter(f){
   let n = 0;
   pubs.forEach(p => {
@@ -1001,6 +1089,11 @@ function applyFilter(f){
     const show = f === 'all' || tags.includes(f);
     p.classList.toggle('hidden', !show);
     if(show) n++;
+  });
+  siBlocks.forEach(b => {
+    const tags = (b.dataset.tags || '').split(' ');
+    const show = f === 'all' || tags.includes(f);
+    b.classList.toggle('hidden', !show);
   });
   pubCount.textContent = 'showing ' + n;
 }
