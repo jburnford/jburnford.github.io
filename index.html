@@ -239,6 +239,11 @@
   .proj-wip:hover{background: var(--paper);}
   .wip-dot{display:inline-flex; align-items:center; gap:5px; color: var(--ochre-deep);}
   .wip-dot::before{content:""; width:5px; height:5px; border-radius:50%; background: var(--ochre-deep); animation: wipPulse 1.8s ease-in-out infinite;}
+  .not-pr{
+    color: var(--ochre-deep); font-weight: 600;
+    border: 1px solid var(--ochre); padding: 1px 6px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
   @keyframes wipPulse{0%,100%{opacity:0.4;} 50%{opacity:1;}}
 
   .proj .tag{font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ochre-deep); margin-bottom: 10px;}
@@ -794,6 +799,13 @@
           <div class="stats"><span><strong>Since 2009</strong></span><span>Founding editor</span></div>
           <span class="go">↗</span>
         </a>
+        <a class="proj" href="https://working-papers-in-critical-search.github.io/home/">
+          <div class="tag">Working Paper Series</div>
+          <h4>Working Papers in Critical Search</h4>
+          <p>Open-access series I co-edit with Jo Guldi (Emory) for drafts, method notes, and dataset documentation at the intersection of history, computation, and political economy. Paper 001 — <em>Why a Working Paper Series on Critical Search Now</em> (Guldi &amp; Clifford) — launches the series.</p>
+          <div class="stats"><span><strong>Since 2026</strong></span><span>Co-editor</span><span class="not-pr">Not peer-reviewed</span></div>
+          <span class="go">↗</span>
+        </a>
         <a class="proj" href="https://hgiscanada.usask.ca/">
           <div class="tag">Spatial Data</div>
           <h4>Historical GIS Research Canada</h4>
@@ -933,6 +945,13 @@
           <h4>HGIS Canada · LOD for RAG</h4>
           <p>Linked open data rebuild of the HGIS Canada census corpus, grounded to Wikidata for richer cross-links — designed to improve chatbot answers to everyday history questions.</p>
           <div class="stats"><span>Wikidata-grounded</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="https://jimclifford.ca/wheat/">
+          <div class="tag">Interactive Map</div>
+          <h4>Canadian Grain Elevators, 1911–1944</h4>
+          <p>Interactive map of every grain elevator licensed in Canada between 1911 and 1944, tracing the build-out of the Prairie wheat economy.</p>
+          <div class="stats"><span><strong>1911–1944</strong></span><span class="wip-dot">In progress</span></div>
           <span class="go">↗</span>
         </a>
       </div>
