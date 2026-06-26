@@ -1,6 +1,6 @@
 # jimclifford.ca
 
-Personal academic site for Jim Clifford — Associate Professor of History, University of Saskatchewan.
+Personal academic site for Jim Clifford — Professor of History, University of Saskatchewan.
 
 Hosted on GitHub Pages from this repo (`jburnford/jburnford.github.io`) and served at **https://jimclifford.ca** (apex) and **https://www.jimclifford.ca**.
 
