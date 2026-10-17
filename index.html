@@ -118,33 +118,25 @@
 
   /* ======= themes timeline ======= */
   .themes{margin-top: 8px; position: relative;}
-  .themes-svg{width:100%; height: auto; display:block; font-family: var(--mono); overflow: visible;}
-  .themes-axis{font-size: 10px; fill: var(--ink-3); letter-spacing: 0.08em;}
-  .thread-row{transition: opacity .2s;}
-  .themes:hover .thread-row{opacity: 0.35;}
-  .themes:hover .thread-row:hover{opacity: 1;}
-  .thread-label{font-family: var(--serif); font-size: 13px; fill: var(--ink); font-style: italic;}
-  .thread-count{font-family: var(--mono); font-size: 10px; fill: var(--ink-3);}
-  .dot{cursor: pointer; transition: r .15s;}
-  .dot:hover, .dot:focus{outline: none;}
-  .dot:hover{r: 5;}
-  .dot:focus{r: 5; stroke: var(--ink); stroke-width: 1;}
-
-  .tl-pop{
-    position: absolute; z-index: 20;
-    background: var(--ink); color: var(--paper);
-    padding: 10px 12px; max-width: 280px;
-    font-family: var(--sans); font-size: 0.8rem; line-height: 1.4;
-    pointer-events: none;
-    opacity: 0; transform: translate(-50%, calc(-100% - 10px));
-    transition: opacity .12s;
-    box-shadow: 0 4px 12px oklch(0.22 0.028 260 / 0.25);
-  }
-  .tl-pop.on{opacity: 1;}
-  .tl-pop .yr{font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ochre); display: block; margin-bottom: 4px;}
-  .tl-pop .ttl{font-weight: 500;}
-  .tl-pop .sub{display: block; margin-top: 5px; font-family: var(--mono); font-size: 0.68rem; color: oklch(0.78 0.015 260); letter-spacing: 0.02em;}
-  .tl-pop::after{content: ""; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--ink);}
+  .timeline-scroll{overflow-x:auto; padding:8px 0; overscroll-behavior-x:contain;}
+  .timeline-scroll:focus-visible{outline:2px solid var(--accent); outline-offset:4px;}
+  .themes-svg{width:100%; min-width:1000px; height:auto; display:block; font-family:var(--mono);}
+  .themes-axis{font-size:11px; fill:var(--ink-3); letter-spacing:0.04em;}
+  .thread-row{transition:opacity .2s;}
+  .themes:has(.dot:hover) .thread-row:not(:has(.dot:hover)),
+  .themes:has(.dot:focus) .thread-row:not(:has(.dot:focus)){opacity:.4;}
+  .thread-label{font-family:var(--serif); font-size:13px; fill:var(--ink); font-style:italic;}
+  .thread-count{font-family:var(--mono); font-size:10px; fill:var(--ink-3);}
+  .dot{cursor:pointer; stroke:var(--paper); stroke-width:1.5; paint-order:stroke fill;}
+  .dot:hover, .dot:focus, .dot[aria-pressed="true"]{outline:none; stroke:var(--ink); stroke-width:2.5;}
+  .timeline-help{font-size:.78rem; color:var(--ink-3); margin:8px 0;}
+  .tl-pop{border:1px solid var(--rule); border-left:3px solid var(--ochre-deep); background:var(--paper-2); padding:16px 20px; min-height:118px; font-size:.9rem;}
+  .tl-pop .yr{display:block; font-family:var(--mono); font-size:.7rem; color:var(--ochre-deep); margin-bottom:4px;}
+  .tl-pop .ttl{font-family:var(--serif); font-weight:500;}
+  .tl-pop .sub{display:block; color:var(--ink-2); font-size:.8rem; margin-top:5px;}
+  .tl-pop a{display:inline-block; margin-top:8px; font-size:.8rem;}
+  @media(max-width:600px){.map-caption{flex-wrap:wrap; gap:6px;} }
+  @media(prefers-reduced-motion:reduce){.thread-row{transition:none;}}
 
   .map-wrap{margin-top: 32px;}
   .map-caption{display:flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 0.68rem; color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin-bottom: 12px;}
@@ -348,7 +340,11 @@
           <span>5 threads · 19 publications · 14 grants</span>
         </div>
         <div class="themes" style="margin-top: 4px;">
-        <svg class="themes-svg" viewBox="0 0 1000 320" preserveAspectRatio="none">
+        <p class="timeline-help" id="timeline-help">Select a milestone to explore the work. Scroll horizontally on smaller screens.</p>
+        <div class="timeline-scroll" tabindex="0" role="region" aria-label="Research timeline" aria-describedby="timeline-help">
+        <svg class="themes-svg" viewBox="0 0 1240 320" role="group" aria-labelledby="timeline-title timeline-desc">
+          <title id="timeline-title">Research threads, 2004–2026</title>
+          <desc id="timeline-desc">Five research threads with milestone buttons arranged by year. Select a button to read its details below the chart.</desc>
           <g class="themes-axis">
             <line x1="160" y1="290" x2="980" y2="290" stroke="oklch(0.72 0.015 85)" stroke-width="0.6"/>
             <g>
@@ -514,7 +510,8 @@
             <text x="975" y="26" text-anchor="end" class="thread-count" style="fill: oklch(0.50 0.12 60); font-size: 10px; letter-spacing: 0.1em;">NOW</text>
           </g>
         </svg>
-        <div class="tl-pop" id="tl-pop" aria-hidden="true"></div>
+        </div>
+        <div class="tl-pop" id="tl-pop" aria-live="polite" aria-atomic="true">Select a milestone above to see its title, publication details, and available link.</div>
         </div>
       </div>
     </section>
@@ -1215,58 +1212,76 @@ document.querySelectorAll('#railnav a').forEach(a => {
   });
 });
 
-// ============ Timeline dot popups ============
+// ============ Timeline milestone details ============
 (() => {
-  const pop = document.getElementById('tl-pop');
-  if(!pop) return;
-  const dots = document.querySelectorAll('[data-pop]');
-  let active = null;
-
-  const show = (el) => {
-    active = el;
-    const yr = el.dataset.year;
-    const title = el.dataset.title;
-    const sub = el.dataset.sub;
-    const href = el.dataset.href;
-    pop.innerHTML =
-      (yr ? `<span class="yr">${yr}</span>` : '') +
-      `<span class="ttl">${title}</span>` +
-      (sub ? `<span class="sub">${sub}</span>` : '') +
-      (href ? `<span class="sub" style="color: oklch(0.82 0.04 70);">↗ click to open</span>` : '');
-    // Position relative to the popup's offsetParent (.themes)
-    const host = pop.offsetParent || document.body;
-    const hostRect = host.getBoundingClientRect();
-    const dotRect = el.getBoundingClientRect();
-    const x = dotRect.left + dotRect.width/2 - hostRect.left;
-    const y = dotRect.top - hostRect.top;
-    pop.style.left = x + 'px';
-    pop.style.top = y + 'px';
-    pop.classList.add('on');
-    pop.setAttribute('aria-hidden', 'false');
-  };
-  const hide = () => {
-    active = null;
-    pop.classList.remove('on');
-    pop.setAttribute('aria-hidden', 'true');
-  };
-
-  dots.forEach(el => {
-    el.addEventListener('mouseenter', () => show(el));
-    el.addEventListener('mouseleave', hide);
-    el.addEventListener('focus', () => show(el));
-    el.addEventListener('blur', hide);
-    if (el.dataset.href) {
-      el.addEventListener('click', () => window.open(el.dataset.href, '_blank', 'noopener'));
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          window.open(el.dataset.href, '_blank', 'noopener');
-        }
-      });
+  const panel = document.getElementById('tl-pop');
+  const dots = [...document.querySelectorAll('.themes [data-pop]')];
+  if (!panel) return;
+  const show = el => {
+    dots.forEach(dot => dot.setAttribute('aria-pressed', String(dot === el)));
+    panel.replaceChildren();
+    const row = el.closest('.thread-row');
+    for (const [className, value] of [
+      ['yr', el.dataset.year + ' · ' + row.querySelector('.thread-label').textContent],
+      ['ttl', el.dataset.title], ['sub', el.dataset.sub]
+    ]) {
+      if (!value) continue;
+      const span = document.createElement('span');
+      span.className = className;
+      span.textContent = value;
+      panel.append(span);
     }
+    if (el.dataset.href) {
+      const link = document.createElement('a');
+      link.href = el.dataset.href;
+      link.textContent = 'Explore this work ↗';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', 'Explore ' + el.dataset.title + ' (opens in a new tab)');
+      panel.append(link);
+    }
+  };
+  document.querySelectorAll('.thread-row').forEach(row => {
+    const years = new Map();
+    row.querySelectorAll('[data-pop]').forEach(dot => {
+      const group = years.get(dot.dataset.year) || [];
+      group.push(dot);
+      years.set(dot.dataset.year, group);
+    });
+    years.forEach(group => {
+      if (group.length < 2) return;
+      const x = group[0].getAttribute('cx');
+      const y = Number(group[0].getAttribute('cy'));
+      group.forEach((dot, i) => {
+        dot.setAttribute('cx', x);
+        dot.setAttribute('cy', y + (i - (group.length - 1) / 2) * 14);
+      });
+    });
+    // Place brief milestone labels above their bands to keep markers visible.
+    row.querySelectorAll('text[style]').forEach(label => {
+      label.setAttribute('y', Number(row.querySelector('circle').getAttribute('cy')) - 18);
+    });
   });
-  window.addEventListener('scroll', () => { if (active) show(active); }, { passive: true });
-  window.addEventListener('resize', () => { if (active) show(active); });
+  dots.forEach((dot, index) => {
+    dot.setAttribute('r', '5');
+    dot.setAttribute('aria-label', dot.dataset.year + ': ' + dot.dataset.title);
+    dot.setAttribute('aria-controls', 'tl-pop');
+    dot.setAttribute('aria-pressed', 'false');
+    dot.addEventListener('click', () => show(dot));
+    dot.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        show(dot);
+      }
+      const step = {ArrowRight:1, ArrowDown:1, ArrowLeft:-1, ArrowUp:-1}[event.key];
+      if (step) {
+        event.preventDefault();
+        const next = dots[(index + step + dots.length) % dots.length];
+        next.focus();
+        show(next);
+      }
+    });
+  });
 })();
 </script>
 </body>

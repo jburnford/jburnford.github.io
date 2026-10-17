@@ -123,7 +123,7 @@ To add a milestone dot with a hover popup:
         data-href="https://doi.org/..."/>
 ```
 
-The popup JS at the bottom of `index.html` wires up any `[data-pop]` element automatically — hover shows the popup, click opens `data-href` in a new tab, keyboard Enter/Space also triggers.
+The timeline JS at the bottom of `index.html` wires up any `[data-pop]` element automatically. Click or press Enter/Space to select a milestone and show its details below the chart. A separate link opens the work in a new tab. Arrow keys move between milestones. Same-year milestones stack vertically. The chart scrolls horizontally on narrow screens.
 
 A couple of "anchor" milestones also have a text label next to the dot for visual orientation (e.g. "West Ham published", "Soap Industry"). Keep those as-is unless the rearrangement warrants it.
 
@@ -150,7 +150,7 @@ im.save('images/jim-clifford.jpg', 'JPEG', quality=85, optimize=True, progressiv
 - **"Enforce HTTPS"** should be enabled in the repo Pages settings. If the toggle gets unchecked, re-enable it at https://github.com/jburnford/jburnford.github.io/settings/pages.
 - **Project sub-sites** (old `jburnford.github.io/<name>/` URLs) auto-redirect to `jimclifford.ca/<name>/`.
 - **Headshot** is local. No external image dependencies.
-- **Timeline** uses a custom HTML popup layer over the SVG. Hover, focus, and click all work; mobile requires a tap-then-tap pattern.
+- **Timeline** uses an SVG with a persistent HTML detail panel. Milestones support touch, click, and keyboard selection.
 
 ## Design origin
 
