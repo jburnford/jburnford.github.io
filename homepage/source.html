@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jim Clifford — Digital & Environmental Historian</title>
+<meta name="description" content="Jim Clifford is a Professor of History at the University of Saskatchewan and Co-Editor of Historical Methods, working on digital humanities, HGIS, environmental history, and settler colonialism."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --paper: oklch(0.975 0.006 85);
+    --paper-2: oklch(0.955 0.008 85);
+    --rule: oklch(0.86 0.012 85);
+    --ink: oklch(0.22 0.028 260);
+    --ink-2: oklch(0.35 0.028 260);
+    --ink-3: oklch(0.52 0.020 260);
+    --navy: oklch(0.32 0.07 250);
+    --accent: oklch(0.48 0.09 240);
+    --accent-ink: oklch(0.32 0.10 245);
+    --ochre: oklch(0.66 0.12 70);
+    --ochre-deep: oklch(0.50 0.12 60);
+    --moss: oklch(0.48 0.06 150);
+    --rust: oklch(0.52 0.13 40);
+    --serif: 'Roboto Slab', 'Rockwell', Georgia, serif;
+    --sans: 'Work Sans', -apple-system, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "liga" 1;
+  }
+  h1, h2, h3, h4{font-family: var(--serif); font-weight: 500;}
+  /* subtle paper grain */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image: radial-gradient(oklch(0.8 0.02 85 / 0.18) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: multiply;
+    opacity: 0.35;
+  }
+  a{color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid oklch(0.48 0.09 240 / 0.3); transition: border-color .15s, color .15s;}
+  a:hover{color: var(--ochre-deep); border-color: var(--ochre-deep);}
+  .mono{font-family: var(--mono); font-feature-settings:"tnum" 1;}
+  .caps{text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem;}
+
+  /* ======= layout ======= */
+  .page{position:relative; z-index:1; display:grid; grid-template-columns: 220px minmax(0, 1fr); max-width: 1320px; margin: 0 auto; padding: 0 32px;}
+  @media (max-width: 900px){ .page{grid-template-columns: 1fr; padding: 0 20px;} }
+
+  /* ======= left rail ======= */
+  .rail{position: sticky; top: 0; height: 100vh; padding: 48px 20px 32px 0; display:flex; flex-direction:column; gap: 24px; border-right: 1px solid var(--rule);}
+  @media (max-width: 900px){ .rail{position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--rule); padding: 20px 0;} }
+  .sig{font-family: var(--serif); font-weight: 600; font-size: 1.1rem; line-height: 1.15; letter-spacing: -0.01em;}
+  .sig em{font-style: normal; color: var(--ink-2); font-weight: 400; display:block; font-size: 0.72rem; margin-top: 6px; font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase;}
+  .rail-nav{display:flex; flex-direction:column; gap: 2px; margin-top: 8px;}
+  .rail-nav a{
+    display:flex; align-items: baseline; gap: 10px;
+    padding: 6px 0; border: 0; color: var(--ink-3);
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color .15s;
+  }
+  .rail-nav a .num{color: oklch(0.7 0.02 260); min-width: 22px;}
+  .rail-nav a:hover, .rail-nav a.active{color: var(--ink);}
+  .rail-nav a.active .num{color: var(--ochre-deep);}
+  .rail-foot{margin-top:auto; font-family: var(--mono); font-size: 0.65rem; color: var(--ink-3); line-height: 1.5; letter-spacing: 0.04em;}
+  .rail-foot a{border:0; color: var(--ink-2);}
+
+  /* ======= main column ======= */
+  main{padding: 48px 0 120px 40px; min-width: 0;}
+  @media (max-width: 900px){ main{padding: 24px 0 80px;} }
+
+  section{padding: 72px 0; border-top: 1px solid var(--rule);}
+  section:first-of-type{border-top: 0; padding-top: 0;}
+  .sec-head{display:flex; align-items: baseline; gap: 16px; margin-bottom: 32px;}
+  .sec-head .n{font-family: var(--mono); font-size: 0.72rem; color: var(--ochre-deep); letter-spacing: 0.1em;}
+  .sec-head h2{font-family: var(--serif); font-weight: 500; font-size: 1.5rem; margin: 0; letter-spacing: -0.01em;}
+  .sec-head .meta{margin-left:auto; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.08em;}
+
+  /* ======= hero ======= */
+  .hero{padding-top: 8px; padding-bottom: 0; border: 0;}
+  .hero h1{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin: 0 0 0.35em;
+  }
+  .hero h1 .sub{display:block; font-weight: 300; font-size: 0.4em; color: var(--ink-2); letter-spacing: -0.01em; margin-top: 0.4em; line-height: 1.15;}
+  .hero .kicker{font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; color: var(--ochre-deep); text-transform: uppercase; margin-bottom: 20px;}
+  .hero .lede{font-size: 1.08rem; color: var(--ink-2); max-width: 54ch; line-height: 1.55; margin: 0 0 24px;}
+  .hero .lede strong{color: var(--ink); font-weight: 600;}
+  .badges{display:flex; flex-wrap:wrap; gap: 6px; margin-bottom: 28px;}
+  .badge{font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); padding: 4px 8px; border: 1px solid var(--rule); background: var(--paper-2);}
+  .hero-links{display:flex; flex-wrap:wrap; gap: 18px 24px; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em;}
+  .hero-links a{border:0; color: var(--ink-2); display:inline-flex; align-items:center; gap: 6px;}
+  .hero-links a::before{content:"→"; color: var(--ochre-deep);}
+  .hero-links a:hover{color: var(--ink);}
+
+  /* ======= about + headshot ======= */
+  .about-grid{display:grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: start;}
+  @media (max-width: 780px){ .about-grid{grid-template-columns: 1fr;} }
+  .about p{margin: 0 0 1em; color: var(--ink-2); max-width: 60ch;}
+  .about p:first-child{font-size: 1.05rem; color: var(--ink);}
+  .about p strong{color: var(--ink); font-weight: 600;}
+  .portrait{border: 1px solid var(--rule); background: var(--paper-2); padding: 10px;}
+  .portrait img, .portrait svg{width: 100%; height: auto; display:block;}
+  .portrait .cap{font-family: var(--mono); font-size: 0.65rem; color: var(--ink-3); letter-spacing: 0.06em; margin-top: 8px; text-transform: uppercase;}
+
+  /* ======= themes timeline ======= */
+  .themes{margin-top: 8px; position: relative;}
+  .timeline-scroll{overflow-x:auto; padding:8px 0; overscroll-behavior-x:contain;}
+  .timeline-scroll:focus-visible{outline:2px solid var(--accent); outline-offset:4px;}
+  .themes-svg{width:100%; min-width:1000px; height:auto; display:block; font-family:var(--mono);}
+  .themes-axis{font-size:11px; fill:var(--ink-3); letter-spacing:0.04em;}
+  .thread-row{transition:opacity .2s;}
+  .themes:has(.dot:hover) .thread-row:not(:has(.dot:hover)),
+  .themes:has(.dot:focus) .thread-row:not(:has(.dot:focus)){opacity:.4;}
+  .thread-label{font-family:var(--serif); font-size:13px; fill:var(--ink); font-style:italic;}
+  .thread-count{font-family:var(--mono); font-size:10px; fill:var(--ink-3);}
+  .dot{cursor:pointer; stroke:var(--paper); stroke-width:1.5; paint-order:stroke fill;}
+  .dot:hover, .dot:focus, .dot[aria-pressed="true"]{outline:none; stroke:var(--ink); stroke-width:2.5;}
+  .timeline-help{font-size:.78rem; color:var(--ink-3); margin:8px 0;}
+  .tl-pop{border:1px solid var(--rule); border-left:3px solid var(--ochre-deep); background:var(--paper-2); padding:16px 20px; min-height:118px; font-size:.9rem;}
+  .tl-pop .yr{display:block; font-family:var(--mono); font-size:.7rem; color:var(--ochre-deep); margin-bottom:4px;}
+  .tl-pop .ttl{font-family:var(--serif); font-weight:500;}
+  .tl-pop .sub{display:block; color:var(--ink-2); font-size:.8rem; margin-top:5px;}
+  .tl-pop a{display:inline-block; margin-top:8px; font-size:.8rem;}
+  @media(max-width:600px){.map-caption{flex-wrap:wrap; gap:6px;} }
+  @media(prefers-reduced-motion:reduce){.thread-row{transition:none;}}
+
+  .map-wrap{margin-top: 32px;}
+  .map-caption{display:flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 0.68rem; color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin-bottom: 12px;}
+
+  /* ======= publications ======= */
+  .pubs-controls{display:flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; align-items: center;}
+  .filter-chip{font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink-2); cursor: pointer; transition: all .15s;}
+  .filter-chip:hover{border-color: var(--ink-3); color: var(--ink);}
+  .filter-chip.on{background: var(--ink); color: var(--paper); border-color: var(--ink);}
+  .pubs-controls .sep{width: 1px; height: 14px; background: var(--rule); margin: 0 4px;}
+  .pubs-count{margin-left:auto; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.06em;}
+  .pub-list{list-style: none; padding: 0; margin: 0;}
+  .pub{
+    display:grid; grid-template-columns: 64px 1fr 80px;
+    gap: 20px; padding: 18px 0; border-top: 1px solid var(--rule);
+    align-items: baseline; cursor: pointer;
+    transition: background .15s;
+  }
+  .pub:hover{background: oklch(0.96 0.01 85);}
+  .pub:last-child{border-bottom: 1px solid var(--rule);}
+  .pub .yr{font-family: var(--mono); font-size: 0.78rem; color: var(--ochre-deep); letter-spacing: 0.04em;}
+  .pub .body h4{margin: 0 0 4px; font-weight: 500; font-size: 1.02rem; line-height: 1.3; letter-spacing: -0.005em;}
+  .pub .body .authors{font-size: 0.88rem; color: var(--ink-2);}
+  .pub .body .venue{font-style: italic; color: var(--ink-2); font-size: 0.88rem;}
+  .pub .type{font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); text-align: right; white-space: nowrap;}
+  .pub .abstract{grid-column: 2 / 4; padding-top: 12px; color: var(--ink-2); font-size: 0.94rem; max-width: 62ch; display:none;}
+  .pub.open .abstract{display:block;}
+  .pub .abstract a{font-size: 0.82rem;}
+  .pub.hidden{display: none;}
+  .pub.featured .body h4::after{
+    content: "★"; color: var(--ochre); font-size: 0.8em; margin-left: 6px;
+  }
+
+  .si-contents{
+    list-style: none; padding: 16px 20px 18px; margin: 0 0 0 84px;
+    border-left: 3px solid var(--ochre); background: var(--paper-2);
+    border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .si-contents.hidden{display:none;}
+  .si-contents .si-head{
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ochre-deep); margin-bottom: 10px;
+  }
+  .si-contents .si-note{
+    font-size: 0.85rem; color: var(--ink-2); margin: 0 0 14px; max-width: 62ch;
+  }
+  .si-contents ol{
+    list-style: none; padding: 0; margin: 0; counter-reset: si;
+  }
+  .si-contents ol li{
+    counter-increment: si;
+    display: grid; grid-template-columns: 28px 1fr 60px;
+    gap: 12px; padding: 8px 0; border-top: 1px dashed var(--rule);
+    align-items: baseline; font-size: 0.9rem;
+  }
+  .si-contents ol li:first-child{border-top: 0;}
+  .si-contents ol li::before{
+    content: counter(si, decimal-leading-zero);
+    font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.04em;
+  }
+  .si-contents .si-author{font-family: var(--mono); font-size: 0.78rem; color: var(--ink-2); margin-right: 8px;}
+  .si-contents .si-title{color: var(--ink);}
+  .si-contents .si-pages{font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); text-align: right; letter-spacing: 0.04em;}
+  @media (max-width: 600px){
+    .si-contents{margin-left: 0;}
+    .si-contents ol li{grid-template-columns: 24px 1fr; }
+    .si-contents .si-pages{grid-column: 2; text-align: left; padding-top: 2px;}
+  }
+
+  /* ======= projects ======= */
+  .proj-grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0; border: 1px solid var(--rule);}
+  .proj{
+    padding: 20px; overflow: hidden; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    background: var(--paper-2); position: relative; cursor: pointer; transition: background .15s;
+    display: flex; flex-direction: column; min-height: 180px;
+  }
+  .proj:hover{background: var(--paper);}
+  .proj-subhead{
+    display:flex; align-items:baseline; gap: 16px; margin: 28px 0 12px;
+  }
+  .proj-subhead:first-of-type{margin-top: 6px;}
+  .proj-subhead-label{
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); font-weight: 500;
+  }
+  .proj-subhead-meta{
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .proj-subhead-rule{flex: 1; height: 1px; background: var(--rule); align-self: center;}
+  .proj-wip{background: repeating-linear-gradient(-45deg, var(--paper-2) 0 10px, oklch(0.94 0.01 85) 10px 11px);}
+  .proj-wip:hover{background: var(--paper);}
+  .wip-dot{display:inline-flex; align-items:center; gap:5px; color: var(--ochre-deep);}
+  .wip-dot::before{content:""; width:5px; height:5px; border-radius:50%; background: var(--ochre-deep); animation: wipPulse 1.8s ease-in-out infinite;}
+  .not-pr{
+    color: var(--ochre-deep); font-weight: 600;
+    border: 1px solid var(--ochre); padding: 1px 6px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .pub .venue .not-pr{
+    color: var(--ink-3); font-weight: 400;
+    border: none; padding: 0;
+    letter-spacing: 0; text-transform: none;
+    font-size: 0.78rem; font-style: normal;
+  }
+  .pub .venue .not-pr::before{content: "· "; color: var(--ink-3);}
+  @keyframes wipPulse{0%,100%{opacity:0.4;} 50%{opacity:1;}}
+
+  .proj .tag{font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ochre-deep); margin-bottom: 10px;}
+  .proj h4{margin: 0 0 6px; font-size: 1.05rem; font-weight: 500; line-height: 1.25; letter-spacing: -0.005em;}
+  .proj p{margin: 0; font-size: 0.88rem; color: var(--ink-2); line-height: 1.45; overflow-wrap: anywhere; word-break: break-word;}
+  .proj .stats{margin-top: auto; padding-top: 14px; display:flex; gap: 14px; font-family: var(--mono); font-size: 0.65rem; color: var(--ink-3); letter-spacing: 0.06em;}
+  .proj .stats strong{color: var(--ink); font-weight: 600;}
+  .proj .go{position: absolute; top: 20px; right: 20px; font-family: var(--mono); color: var(--ink-3); transition: color .15s, transform .15s;}
+  .proj:hover .go{color: var(--ochre-deep); transform: translate(2px, -2px);}
+
+  /* ======= teaching & funding ======= */
+  .two-col{display:grid; grid-template-columns: 1fr 1fr; gap: 48px;}
+  @media (max-width: 780px){ .two-col{grid-template-columns: 1fr;} }
+  .card{border: 1px solid var(--rule); padding: 20px; background: var(--paper-2); margin-bottom: 12px;}
+  .card h4{margin: 0 0 6px; font-size: 1rem; font-weight: 500;}
+  .card .sub{font-family: var(--mono); font-size: 0.7rem; color: var(--ochre-deep); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px;}
+  .card p{margin: 6px 0 0; color: var(--ink-2); font-size: 0.92rem;}
+  .card.award{border-left: 3px solid var(--ochre);}
+  .proj-static{cursor: default;}
+  .proj-static h4 a{border: 0;}
+  .proj-static h4 a:hover{color: var(--ochre-deep);}
+  .proj .links{display:flex; flex-wrap: wrap; gap: 6px 16px; padding-top: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em;}
+  .proj .links a{color: var(--ochre-deep); border: 0;}
+  .proj .links a:hover{text-decoration: underline;}
+
+  .funding-list{list-style: none; padding: 0; margin: 0;}
+  .funding-item{display:grid; grid-template-columns: 88px 1fr 60px; gap: 16px; padding: 14px 0; border-top: 1px solid var(--rule); align-items: baseline;}
+  .funding-item:last-child{border-bottom: 1px solid var(--rule);}
+  .funding-item .yrs{font-family: var(--mono); font-size: 0.72rem; color: var(--ochre-deep);}
+  .funding-item .title{font-size: 0.95rem;}
+  .funding-item .title .agency{display:block; font-size: 0.78rem; color: var(--ink-3); margin-top: 2px; font-family: var(--mono); letter-spacing: 0.04em;}
+  .funding-item .role{font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-3); text-align:right;}
+  .funding-item.pi .role{color: var(--ochre-deep);}
+
+  /* ======= contact ======= */
+  .contact-grid{display:grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 32px; border: 1px solid var(--rule); background: var(--paper-2);}
+  @media (max-width: 780px){ .contact-grid{grid-template-columns: 1fr;} }
+  .contact-grid dt{font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px;}
+  .contact-grid dd{margin: 0 0 16px; font-size: 1rem;}
+
+  footer{padding: 48px 0 0; margin-top: 48px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); letter-spacing: 0.04em; display:flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;}
+  footer a{color: var(--ink-2); border: 0;}
+
+  /* ======= small data strips ======= */
+  .datastrip{display:flex; gap: 24px; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.06em; padding: 10px 0 24px; border-bottom: 1px dashed var(--rule); margin-bottom: 24px; flex-wrap: wrap;}
+  .datastrip .n{font-family: var(--serif); font-size: 1.3rem; color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; margin-right: 6px;}
+  .datastrip > div{display:flex; align-items: baseline; text-transform: uppercase;}
+
+  @media print{
+    .rail{display:none;}
+    .page{grid-template-columns: 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <aside class="rail">
+    <div class="sig">Jim Clifford<em>Digital &amp; Environmental Historian</em></div>
+    <nav class="rail-nav" id="railnav">
+      <a href="#hero"><span class="num">01</span> Overview</a>
+      <a href="#about"><span class="num">02</span> About</a>
+      <a href="#publications"><span class="num">03</span> Publications</a>
+      <a href="#projects"><span class="num">04</span> Digital Projects</a>
+      <a href="#talks"><span class="num">05</span> Talks</a>
+      <a href="#teaching"><span class="num">06</span> Teaching</a>
+      <a href="#funding"><span class="num">07</span> Funding</a>
+      <a href="#contact"><span class="num">08</span> Contact</a>
+    </nav>
+    <div class="rail-foot">
+      University of Saskatchewan<br/>
+      Dept. of History<br/>
+      <a href="mailto:jim.clifford@usask.ca">jim.clifford@usask.ca</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero">
+      <div class="kicker">52.13°N · 106.67°W — Treaty 6 Territory · Saskatoon</div>
+
+      <p class="lede">Mapping the distant landscapes that sustained industrial cities.</p>
+      <div class="badges">
+        <span class="badge">Professor</span>
+        <span class="badge">Co-Editor · Historical Methods</span>
+        <span class="badge">HGIS Lab</span>
+        <span class="badge">Dyslexic</span>
+      </div>
+      <div class="hero-links">
+        <a href="https://scholar.google.ca/citations?user=RBhCqv0AAAAJ">Google Scholar</a>
+        <a href="https://orcid.org/0000-0003-2004-5161">ORCID</a>
+        <a href="https://hgis.usask.ca/">HGIS Lab</a>
+        <a href="https://www.tandfonline.com/journals/vhim20">Historical Methods</a>
+      </div>
+
+      <!-- TIMELINE / THEMES -->
+      <div class="map-wrap" id="mapwrap">
+        <div class="map-caption">
+          <span>Fig. 01 — Research threads, 2004 → now</span>
+          <span>5 threads · 23 publications · 15 grants</span>
+        </div>
+        <div class="themes" style="margin-top: 4px;">
+        <p class="timeline-help" id="timeline-help">Select a milestone to explore the work. Scroll horizontally on smaller screens. *2027: forthcoming.</p>
+        <div class="timeline-scroll" tabindex="0" role="region" aria-label="Research timeline" aria-describedby="timeline-help">
+        <svg class="themes-svg" viewBox="0 0 1300 320" role="group" aria-labelledby="timeline-title timeline-desc">
+          <title id="timeline-title">Research threads, 2004–2027</title>
+          <desc id="timeline-desc">Five research threads with milestone buttons arranged by year. Select a button to read its details below the chart.</desc>
+          <g class="themes-axis">
+            <line x1="160" y1="290" x2="1017.3" y2="290" stroke="oklch(0.72 0.015 85)" stroke-width="0.6"/>
+            <g>
+              <text x="197.3" y="308" text-anchor="middle">2005</text>
+              <text x="309.1" y="308" text-anchor="middle">2008</text>
+              <text x="420.9" y="308" text-anchor="middle">2011</text>
+              <text x="532.7" y="308" text-anchor="middle">2014</text>
+              <text x="644.5" y="308" text-anchor="middle">2017</text>
+              <text x="756.3" y="308" text-anchor="middle">2020</text>
+              <text x="868.1" y="308" text-anchor="middle">2023</text>
+              <text x="1017.3" y="308" text-anchor="middle">2027*</text>
+              <g stroke="oklch(0.72 0.015 85)" stroke-width="0.6">
+                <line x1="197.3" y1="290" x2="197.3" y2="295"/>
+                <line x1="309.1" y1="290" x2="309.1" y2="295"/>
+                <line x1="420.9" y1="290" x2="420.9" y2="295"/>
+                <line x1="532.7" y1="290" x2="532.7" y2="295"/>
+                <line x1="644.5" y1="290" x2="644.5" y2="295"/>
+                <line x1="756.3" y1="290" x2="756.3" y2="295"/>
+                <line x1="868.1" y1="290" x2="868.1" y2="295"/>
+                <line x1="979.9" y1="290" x2="979.9" y2="295"/>
+                <line x1="1017.3" y1="290" x2="1017.3" y2="295"/>
+              </g>
+            </g>
+            <g stroke="oklch(0.86 0.012 85)" stroke-width="0.5" stroke-dasharray="2 4">
+              <line x1="383.6" y1="30" x2="383.6" y2="290"/>
+              <line x1="644.5" y1="30" x2="644.5" y2="290"/>
+              <line x1="830.9" y1="30" x2="830.9" y2="290"/>
+            </g>
+          </g>
+          <g class="thread-row">
+            <rect x="160.0" y="46" width="819.9" height="24" fill="oklch(0.32 0.07 250 / 0.08)"/>
+            <rect x="160.0" y="46" width="484.5" height="24" fill="oklch(0.32 0.07 250 / 0.55)"/>
+            <rect x="160.0" y="46" width="819.9" height="24" fill="none" stroke="oklch(0.32 0.07 250 / 0.4)" stroke-width="0.5"/>
+            <text x="150" y="62" text-anchor="end" class="thread-label">Industrial London</text>
+            <text x="1050" y="62" class="thread-count">1 book · 6 articles</text>
+            <circle class="dot" cx="458.2" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2012" data-title="The River Lea in West Ham"
+                    data-sub="Chapter · Urban Rivers (U Pittsburgh Press)"
+                    data-href="https://upittpress.org/books/9780822961857/"/>
+            <circle class="dot" cx="644.5" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2017" data-title="West Ham and the River Lea"
+                    data-sub="Book · UBC Press · Nature, History, Society"
+                    data-href="https://www.ubcpress.ca/west-ham-and-the-river-lea"/>
+            <text x="651.5" y="61" class="thread-count" style="font-size:9px;">West Ham published</text>
+            <circle class="dot" cx="756.3" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2020" data-title="Greater London's Rapid Growth"
+                    data-sub="Chapter · A Mighty Capital Under Threat (U Pittsburgh Press)"
+                    data-href="https://upittpress.org/books/9780822946106/"/>
+            <circle class="dot" cx="980.0" cy="58" r="3" fill="oklch(0.32 0.07 250)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="London's 19th-Century Industrial Geography"
+                    data-sub="Swipe map · Ordnance Survey 1865–95"
+                    data-href="https://jimclifford.ca/london_industry_map/"/>
+          </g>
+          <g class="thread-row">
+            <rect x="607.2" y="84" width="410.1" height="24" fill="oklch(0.50 0.12 60 / 0.1)"/>
+            <rect x="607.2" y="84" width="372.7" height="24" fill="oklch(0.50 0.12 60 / 0.55)"/>
+            <rect x="979.9" y="84" width="37.4" height="24" fill="oklch(0.50 0.12 60 / 0.25)" stroke="oklch(0.50 0.12 60)" stroke-width="0.8" stroke-dasharray="3 3" pointer-events="none"/>
+            <text x="150" y="100" text-anchor="end" class="thread-label">Ghost Acres</text>
+            <text x="1050" y="100" class="thread-count">5 articles · 4 chapters</text>
+            <circle class="dot" cx="607.2" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2016" data-title="Maitland's Moment: Nova Scotia's Forests and the Global Commodity Trade"
+                    data-sub="Chapter · Moving Natures (U Calgary Press) · Peace, Clifford &amp; Burns"
+                    data-href="https://prism.ucalgary.ca/bitstream/1880/51203/4/Moving_natures_2016_chapter01.pdf"/>
+            <text x="614.2" y="99" class="thread-count" style="font-size:9px;">Maitland's Moment</text>
+            <circle class="dot" cx="793.6" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2021" data-title="London's Soap Industry and the Development of Global Ghost Acres in the Nineteenth Century"
+                    data-sub="Article · Environment and History"
+                    data-href="https://doi.org/10.3197/096734019X15463432086982"/>
+            <text x="800.6" y="99" class="thread-count" style="font-size:9px;">Soap Industry</text>
+            <circle class="dot" cx="830.9" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2022" data-title="British Ghost Acres and Environmental Changes in the Laurentian Forest"
+                    data-sub="Article · Journal of Historical Geography · Clifford &amp; Castonguay"
+                    data-href="https://doi.org/10.1016/j.jhg.2022.05.002"/>
+            <circle class="dot" cx="834.9" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2022" data-title="Les hectares fantômes de l'industrialisation britannique et la forêt laurentienne, 1793–1900"
+                    data-sub="Chapter · Écrire l'histoire environnementale (Rennes) · Castonguay &amp; Clifford"
+                    data-href="https://books.openedition.org/pur/164763"/>
+            <circle class="dot" cx="905.4" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Mapping Commodity Histories: Historical GIS and Canadian Forest Products"
+                    data-sub="Chapter · Oxford Handbook of Commodity History"
+                    data-href="https://doi.org/10.1093/oxfordhb/9780197502679.013.34"/>
+            <circle class="dot" cx="980.0" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="Thinking Through Forests: Colonialism, Capitalism, and the Global Timber Trade"
+                    data-sub="Article · JHG Special Issue intro · Clifford &amp; Lučić"/>
+            <circle class="dot" cx="1017.3" cy="96" r="3" fill="oklch(0.50 0.12 60)" tabindex="0" role="button"
+                    data-pop="1" data-year="2027" data-title="London Timber Consumption and Its Hinterland: The Conversion of Data on Imported Timber Commodities from Foreign Ports, 1880–1900"
+                    data-sub="Forthcoming chapter · Forest of Numbers · Castonguay &amp; Clifford · De Gruyter Oldenbourg"
+                    data-href="https://doi.org/10.1515/9783112258149-008"/>
+          </g>
+          <g class="thread-row">
+            <rect x="309.1" y="122" width="670.8" height="24" fill="oklch(0.48 0.06 150 / 0.1)"/>
+            <rect x="309.1" y="122" width="670.8" height="24" fill="oklch(0.48 0.06 150 / 0.55)"/>
+            <text x="150" y="138" text-anchor="end" class="thread-label">Digital Humanities</text>
+            <text x="1050" y="138" class="thread-count">6 projects · 4 articles</text>
+            <circle class="dot" cx="309.1" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2008" data-title="HGIS research programme begins"
+                    data-sub="Spatial databases · census geographies · text-mining pipelines"/>
+            <text x="316.1" y="137" class="thread-count" style="font-size:9px;">HGIS</text>
+            <circle class="dot" cx="346.4" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2009" data-title="ActiveHistory.ca launched"
+                    data-sub="Public-history platform · founding editor &amp; webmaster"
+                    data-href="https://activehistory.ca/"/>
+            <circle class="dot" cx="383.6" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2010" data-title="What is Active History?"
+                    data-sub="Article · Left History"
+                    data-href="https://doi.org/10.25071/1913-9632.35817"/>
+            <circle class="dot" cx="570.0" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2015" data-title="Trading Consequences: Combining Text Mining and Visualization"
+                    data-sub="Article · Digital Scholarship in the Humanities · Hinrichs, Clifford et al."
+                    data-href="https://doi.org/10.1093/llc/fqv046"/>
+            <circle class="dot" cx="607.2" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2016" data-title="Geoparsing History: Locating Commodities in Ten Million Pages"
+                    data-sub="Article · Historical Methods"
+                    data-href="https://doi.org/10.1080/01615440.2015.1116419"/>
+            <text x="614.2" y="137" class="thread-count" style="font-size:9px;">Geoparsing History</text>
+            <circle class="dot" cx="905.4" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Virtual Reality in History Education"
+                    data-sub="Article · Journal of Applied Instructional Design · MacDowell, Clifford et al."
+                    data-href="https://doi.org/10.59668/2033.19032"/>
+            <circle class="dot" cx="980.0" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="HGIS to LOD Workshop"
+                    data-sub="SSHRC Connections Grant"
+                    data-href="https://jburnford.github.io/claude_code_workshop/workshop-event.html"/>
+            <circle class="dot" cx="980.0" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="An Atlas of Imperial Careers"
+                    data-sub="Career atlas · Colonial Office and India Office careers, 1820–1966 · ~47,000 officials · 22,485 transitions"
+                    data-href="https://jimclifford.ca/col_matching/"/>
+            <circle class="dot" cx="980.0" cy="134" r="3" fill="oklch(0.48 0.06 150)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="Encyclopædia Britannica, 1771–1860"
+                    data-sub="Historical corpus · Eight editions · 211,451 articles · 41,842 topics"
+                    data-href="https://jimclifford.ca/britannica-wiki/"/>
+          </g>
+          <g class="thread-row">
+            <rect x="644.5" y="160" width="335.4" height="24" fill="oklch(0.52 0.13 40 / 0.1)"/>
+            <rect x="644.5" y="160" width="335.4" height="24" fill="oklch(0.52 0.13 40 / 0.55)"/>
+            <text x="150" y="176" text-anchor="end" class="thread-label">Settler Colonialism</text>
+            <text x="1050" y="176" class="thread-count">2 articles · 2 VR · 1 game</text>
+            <circle class="dot" cx="905.4" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Agnes Deans Cameron VR"
+                    data-sub="360° video · Cameron's 1908 expedition through northwestern Canada"
+                    data-href="https://www.youtube.com/watch?v=qUBU7vBw1qQ"/>
+            <circle class="dot" cx="942.7" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2025" data-title="Logging and Settlement beyond the Rapids: Unmaking Algonquin Space in the Ottawa Valley, 1817–61"
+                    data-sub="Article · Canadian Historical Review · Clifford &amp; Huckerby"
+                    data-href="https://doi.org/10.3138/chr-2024-0055"/>
+            <circle class="dot" cx="946.7" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2025" data-title="D2L Innovation Award — Homesteaders Board Game"
+                    data-sub="Educational game on settler colonialism · international teaching award"
+                    data-href="https://news.usask.ca/articles/community/2025/usask-team-wins-international-teaching-award-for-canadian-history-game.php"/>
+            <text x="872.7" y="175" class="thread-count" style="font-size:9px;" text-anchor="start">D2L Award</text>
+            <circle class="dot" cx="980.0" cy="172" r="3" fill="oklch(0.52 0.13 40)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="Mapping Métis Displacement in the Shadow of Settler Colonialism"
+                    data-sub="SSHRC Insight Grant · 2026–31 · PI: Cheryl Troupe · Co-I: Jim Clifford · Métis land occupancy and the impacts of settler colonialism in Saskatchewan"/>
+          </g>
+          <g class="thread-row">
+            <rect x="756.3" y="198" width="223.6" height="24" fill="oklch(0.48 0.09 240 / 0.1)"/>
+            <rect x="756.3" y="198" width="223.6" height="24" fill="oklch(0.48 0.09 240 / 0.55)"/>
+            <text x="150" y="214" text-anchor="end" class="thread-label">Pandemic</text>
+            <text x="1050" y="214" class="thread-count">3 articles · 1 chapter · community archive</text>
+            <circle class="dot" cx="793.6" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2021" data-title="Remember Rebuild Saskatchewan"
+                    data-sub="Community archive · SSHRC/CIHR-funded pandemic documentation"
+                    data-href="https://rememberrebuild.ca/"/>
+            <text x="800.6" y="213" class="thread-count" style="font-size:9px;">Remember Rebuild</text>
+            <circle class="dot" cx="868.2" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2023" data-title="Capturing the Wider Health Impacts of COVID-19: Protocol"
+                    data-sub="Article · JMIR Research Protocols · Muhajarine et al."
+                    data-href="https://doi.org/10.2196/46643"/>
+            <circle class="dot" cx="905.4" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2024" data-title="Digital History Making during a Crisis: A COVID-19 Archive"
+                    data-sub="Chapter · Digital Memory Agents in Canada (U Alberta Press)"
+                    data-href="https://ualbertapress.ca/9781772127850/digital-memory-agents-in-canada/"/>
+            <circle class="dot" cx="942.7" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2025" data-title="Co-Occurrence of Depression, Anxiety and Increased Alcohol Use during COVID-19"
+                    data-sub="Article · BMJ Public Health · Muhajarine et al."
+                    data-href="https://doi.org/10.1136/bmjph-2024-000965"/>
+            <circle class="dot" cx="980.0" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
+                    data-pop="1" data-year="2026" data-title="Pandemic Politics: Developing Vaccines in Canada's Anti-vax Heartland"
+                    data-sub="Article · Canadian Journal of Health History · Dyck, Clifford, Cameron, Chassé, Braun &amp; Muhajarine"
+                    data-href="https://utppublishing.com/doi/10.3138/cjhh.726-102024"/>
+          </g>
+          <g>
+            <line pointer-events="none" x1="980" y1="30" x2="980" y2="290" stroke="oklch(0.66 0.12 70)" stroke-width="1"/>
+            <text x="975" y="26" text-anchor="end" class="thread-count" style="fill: oklch(0.50 0.12 60); font-size: 10px; letter-spacing: 0.1em;">NOW</text>
+          </g>
+        </svg>
+        </div>
+        <div class="tl-pop" id="tl-pop" aria-live="polite" aria-atomic="true">Select a milestone above to see its title, publication details, and available link.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about">
+      <div class="sec-head"><span class="n">§ 02</span><h2>About</h2><span class="meta">Biography</span></div>
+      <div class="about-grid about">
+        <div>
+          <p>
+            I am a Professor of History at the <strong>University of Saskatchewan</strong> and
+            Co-Editor of <a href="https://www.tandfonline.com/journals/vhim20"><em>Historical Methods</em></a>. My work
+            is driven by a dual commitment: advancing <strong>digital methodologies and HGIS</strong>, while ensuring
+            those tools remain firmly rooted in historical practice. I build and apply digital approaches to engage with
+            the big questions of our time — <strong>urban environments</strong>, <strong>environmental justice</strong>,
+            <strong>public health</strong>, <strong>global commodities</strong>, and <strong>settler colonialism</strong>.
+          </p>
+          <p>
+            My first book, <em>West Ham and the River Lea</em> (UBC Press, 2017), examined the local environmental and public
+            health consequences of industrialization in East London. I've since followed those consequences outward —
+            tracing <strong>tallow</strong> from London's soap factories to grasslands around the world, and <strong>timber</strong>
+            from railway construction sites back to the forests of the Ottawa Valley. This is the research programme I call
+            <em>ghost acres</em>: the distant lands that sustained industrial cities.
+          </p>
+          <p>
+            At the <a href="https://hgis.usask.ca/">Historical GIS Lab</a>, I build spatial databases and text-mining pipelines,
+            map settler colonialism on the Canadian prairies, make virtual-reality experiences for public history, and help
+            document Saskatchewan's experience of the pandemic through the
+            <a href="https://rememberrebuild.ca/">Remember Rebuild</a> community archive.
+          </p>
+          <p>
+            I am <a href="https://activehistory.ca/blog/2019/10/28/dyslexia-awareness-month-advocacy/">severely dyslexic</a> and
+            advocate for neurodivergent students in my teaching, research, and service work.
+          </p>
+        </div>
+        <figure class="portrait" style="margin:0;">
+          <img src="images/jim-clifford.jpg" alt="Jim Clifford" loading="lazy" width="600" height="750" style="object-fit:cover; aspect-ratio: 4/5;"/>
+          <div class="cap">Jim Clifford · Saskatoon</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== PUBLICATIONS ========== -->
+    <section id="publications">
+      <div class="sec-head"><span class="n">§ 03</span><h2>Selected Publications</h2><span class="meta" id="pubmeta">23 items</span></div>
+      <div class="pubs-controls" id="pubsctl">
+        <button class="filter-chip on" data-filter="all">All</button>
+        <span class="sep"></span>
+        <button class="filter-chip" data-filter="london">Industrial London</button>
+        <button class="filter-chip" data-filter="ghost">Ghost Acres</button>
+        <button class="filter-chip" data-filter="dh">Digital Humanities</button>
+        <button class="filter-chip" data-filter="settler">Settler Colonialism</button>
+        <button class="filter-chip" data-filter="covid">Pandemic</button>
+        <span class="pubs-count mono" id="pubcount">showing 23</span>
+      </div>
+
+      <ul class="pub-list" id="publist">
+        <li class="pub" data-tags="ghost london dh">
+          <div class="yr">2027</div>
+          <div class="body">
+            <h4>London Timber Consumption and Its Hinterland: The Conversion of Data on Imported Timber Commodities from Foreign Ports, 1880–1900</h4>
+            <div class="authors mono">Castonguay, S. &amp; Clifford, J.</div>
+            <div class="venue">Forest of Numbers: Quantitative Sources on Europe’s Wood Economy (1860s–1910s), edited by Giacomo Bonan (De Gruyter Oldenbourg), pp. 166–193 · forthcoming</div>
+            <div class="abstract">Examines London’s global timber supply through data on imported timber commodities and their foreign ports of origin, connecting industrial wood consumption with its distant environmental hinterlands. <a href="https://doi.org/10.1515/9783112258149-008">Chapter DOI &rarr;</a></div>
+          </div>
+          <div class="type">Chapter</div>
+        </li>
+        <li class="pub" data-tags="covid dh">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>Pandemic Politics: Developing Vaccines in Canada's Anti-vax Heartland</h4>
+            <div class="authors mono">Dyck, E., Clifford, J., Cameron, D., Chass&eacute;, P., Braun, F. &amp; Muhajarine, N.</div>
+            <div class="venue">Canadian Journal of Health History / Revue canadienne d'histoire de la sant&eacute; 43, no. 1, pp. 157&ndash;187</div>
+            <div class="abstract">Traces how Saskatchewan moved from the focal point of Canadian vaccine development at VIDO-InterVac to a staging ground for the anti-vaccine movement. Combining traditional news sources, social media posts, and interviews with residents and vaccine researchers, the paper argues that unmoderated social media platforms overwhelmed collective pandemic responses, politicized vaccines, and reshaped public-health policy in the province. <a href="https://utppublishing.com/doi/10.3138/cjhh.726-102024">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="settler ghost">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>When Did the Great Acceleration Start? Saskatchewan Might Hold the Answer</h4>
+            <div class="authors mono">Clifford, J.</div>
+            <div class="venue">NICHE — Network in Canadian History &amp; Environment · cross-posted with Active History</div>
+            <div class="abstract">Part of the Canada's Great Acceleration series, asking how the mid-twentieth-century surge in resource use and environmental change registers in the Saskatchewan record. <a href="https://niche-canada.org/2026/06/16/when-did-the-great-acceleration-start-saskatchewan-might-hold-the-answer/">Read &rarr;</a></div>
+          </div>
+          <div class="type">Essay</div>
+        </li>
+        <li class="pub" data-tags="dh">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>Reading the Archive by Machine: An OCR Benchmark for Historians, 1612–1921</h4>
+            <div class="authors mono">Clifford, J., Polay, J., Jack, J., Humphries, M. &amp; Leddy, L. C.</div>
+            <div class="venue">Working Papers in Critical Search № 004 <span class="not-pr">not peer-reviewed</span></div>
+            <div class="abstract">Benchmarks six OCR systems on archival documents spanning three centuries and finds that free, open-weight models a historian can run on their own hardware now match or exceed Google&rsquo;s Gemini on clean print and multi-column layouts, with Gemini retaining an edge only on difficult handwriting. Argues the choice between tools has become practical rather than qualitative — turning on layout fidelity and processing speed rather than accuracy alone — and proposes a tiered workflow that pairs fast open tools with selective use of paid services while distinguishing harmless modernizations from dangerous fabrications. <a href="https://working-papers-in-critical-search.github.io/paper-004-ocr-benchmark/">Read &rarr;</a></div>
+          </div>
+          <div class="type">Working Paper</div>
+        </li>
+        <li class="pub" data-tags="dh settler">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>A Cypher Knowledge Graph of British Imperial Territorial Evolution: Wikidata and Teamwork Without Teams in Computational History</h4>
+            <div class="authors mono">Clifford, J.</div>
+            <div class="venue">Working Papers in Critical Search № 002 <span class="not-pr">not peer-reviewed</span></div>
+            <div class="abstract">A curated property graph of 747 historical British imperial territories connected by 1,203 typed relationships, every entity anchored to a Wikidata QID. Argues that Cypher is well suited to the messy genealogies of empire — partitions, reorganizations, post-imperial successor states — and that Wikidata grounding enables interoperable datasets across independent projects (&ldquo;teamwork without forming teams&rdquo;). Documents the human-in-the-loop verification used to keep AI coding assistants from hallucinating identifiers into the graph. <a href="https://working-papers-in-critical-search.github.io/paper-002-empire-evolution/">Read &rarr;</a></div>
+          </div>
+          <div class="type">Working Paper</div>
+        </li>
+        <li class="pub" data-tags="dh">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>Why a Working Paper Series on Critical Search Now</h4>
+            <div class="authors mono">Guldi, J. &amp; Clifford, J.</div>
+            <div class="venue">Working Papers in Critical Search № 001 <span class="not-pr">not peer-reviewed</span></div>
+            <div class="abstract">The editorial introducing the series. Argues that AI has eliminated traditional bottlenecks in digital history, shifting the constraint from access and processing to interpretation and judgment — and that slow peer-review cycles are inadequate for rapidly evolving methods and tools. <a href="https://working-papers-in-critical-search.github.io/paper-001-introduction/">Read &rarr;</a></div>
+          </div>
+          <div class="type">Working Paper</div>
+        </li>
+        <li class="pub featured" data-tags="ghost settler">
+          <div class="yr">2026</div>
+          <div class="body">
+            <h4>Thinking Through Forests: Colonialism, Capitalism, and the Global Timber Trade</h4>
+            <div class="authors mono">Clifford, J. &amp; Lučić, I.</div>
+            <div class="venue">Journal of Historical Geography — Introduction to the Special Issue on Timber Colonialism, pp. A1–A6</div>
+            <div class="abstract">Iva Lučić and I co-edited this special issue and co-wrote its introduction, situating eight case studies — from northern Scandinavia and Patagonia to Sierra Leone, Lingít Aaní, Labrador/Nitassinan, and the Russian North — within a global history of forests, empire, and capitalism. <a href="https://doi.org/10.1016/j.jhg.2026.04.005">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="si-contents" data-tags="ghost settler" aria-label="Special issue contents">
+          <div class="si-head">Special Issue · Co-edited with Iva Lučić · 8 articles</div>
+          <p class="si-note">Articles in the <em>Journal of Historical Geography</em> Special Issue on Timber Colonialism. Listed in order of pagination. <a href="https://www.sciencedirect.com/special-issue/102RWBPR9DV">View the full special issue &rarr;</a></p>
+          <ol>
+            <li>
+              <div><span class="si-author">Peruchi Moretto, S.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2026.03.004">Deforestation processes and (re)forestation practices in Southern Brazil, in the twentieth and twenty-first centuries</a></span></div>
+              <div class="si-pages">50–60</div>
+            </li>
+            <li>
+              <div><span class="si-author">Borovoy, V.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.11.007">The European North of Russia as a timber colony, 1890–1930</a></span></div>
+              <div class="si-pages">63–72</div>
+            </li>
+            <li>
+              <div><span class="si-author">Tytelman, C.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.11.010">Timber Colonialism in Labrador/Nitassinan: The case of the Labrador Boundary</a></span></div>
+              <div class="si-pages">77–88</div>
+            </li>
+            <li>
+              <div><span class="si-author">Hunter, R. A.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.11.011">A Dynamic Timber Frontier: An Archaeological Perspective on Lumbering in Algonquin Provincial Park (1836–1930)</a></span></div>
+              <div class="si-pages">108–121</div>
+            </li>
+            <li>
+              <div><span class="si-author">Daheur, J.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.10.007">From Ash to Timber Capitalism: Market Incentives and the Ecology of German Settlement in Central Poland (1650–1870)</a></span></div>
+              <div class="si-pages">174–185</div>
+            </li>
+            <li>
+              <div><span class="si-author">Kraemer, M.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.06.007">The Forests of Sheet'ká: Failed Timber Colonialism in Lingít Aaní</a></span></div>
+              <div class="si-pages">200–210</div>
+            </li>
+            <li>
+              <div><span class="si-author">Östlund, L., Fernández Génova, M., Cáceres, M. &amp; Eriksson, E.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2025.06.006">Timber colonialism in the periphery: Timber frontiers and indigenous peoples land use in northern Scandinavia and southern Patagonia in the late 19th and early 20th century</a></span></div>
+              <div class="si-pages">213–225</div>
+            </li>
+            <li>
+              <div><span class="si-author">Munro, P. G.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2026.01.001">Timber Colonialism and Forest Reserve Imaginaries: colonial constructions, legal legacies and governance conflicts in Sierra Leone's Kambui Hills</a></span></div>
+              <div class="si-pages">331–340</div>
+            </li>
+          </ol>
+        </li>
+        <li class="pub" data-tags="settler ghost">
+          <div class="yr">2025</div>
+          <div class="body">
+            <h4>Logging and Settlement beyond the Rapids: Unmaking Algonquin Space in the Ottawa Valley, 1817–61</h4>
+            <div class="authors mono">Clifford, J. &amp; Huckerby, S.</div>
+            <div class="venue">Canadian Historical Review</div>
+            <div class="abstract">How the timber trade reshaped Algonquin territory in the Ottawa Valley in the early nineteenth century. <a href="https://doi.org/10.3138/chr-2024-0055">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="covid">
+          <div class="yr">2025</div>
+          <div class="body">
+            <h4>Co-Occurrence of Depression, Anxiety and Increased Alcohol Use during COVID-19</h4>
+            <div class="authors mono">Muhajarine, N. et al., incl. Clifford, J.</div>
+            <div class="venue">BMJ Public Health</div>
+            <div class="abstract"><a href="https://doi.org/10.1136/bmjph-2024-000965">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="ghost dh">
+          <div class="yr">2024</div>
+          <div class="body">
+            <h4>Mapping Commodity Histories: Historical GIS and Canadian Forest Products</h4>
+            <div class="authors mono">Clifford, J., MacFadyen, J. &amp; Castonguay, S.</div>
+            <div class="venue">Oxford Handbook of Commodity History</div>
+            <div class="abstract"><a href="https://doi.org/10.1093/oxfordhb/9780197502679.013.34">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Chapter</div>
+        </li>
+        <li class="pub" data-tags="covid dh">
+          <div class="yr">2024</div>
+          <div class="body">
+            <h4>Digital History Making during a Crisis: A COVID-19 Archive</h4>
+            <div class="authors mono">Clifford, J., Dyck, E. &amp; Harkema, C.</div>
+            <div class="venue">Digital Memory Agents in Canada (U Alberta Press)</div>
+            <div class="abstract"><a href="https://ualbertapress.ca/9781772127850/digital-memory-agents-in-canada/">Publisher &rarr;</a></div>
+          </div>
+          <div class="type">Chapter</div>
+        </li>
+        <li class="pub" data-tags="settler dh">
+          <div class="yr">2024</div>
+          <div class="body">
+            <h4>Virtual Reality in History Education</h4>
+            <div class="authors mono">MacDowell, P., Clifford, J. et al.</div>
+            <div class="venue">Journal of Applied Instructional Design</div>
+            <div class="abstract"><a href="https://doi.org/10.59668/2033.19032">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="covid">
+          <div class="yr">2023</div>
+          <div class="body">
+            <h4>Capturing the Wider Health Impacts of COVID-19: Protocol</h4>
+            <div class="authors mono">Muhajarine, N. et al., incl. Clifford, J.</div>
+            <div class="venue">JMIR Research Protocols</div>
+            <div class="abstract"><a href="https://doi.org/10.2196/46643">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub featured" data-tags="ghost">
+          <div class="yr">2022</div>
+          <div class="body">
+            <h4>British Ghost Acres and Environmental Changes in the Laurentian Forest</h4>
+            <div class="authors mono">Clifford, J. &amp; Castonguay, S.</div>
+            <div class="venue">Journal of Historical Geography</div>
+            <div class="abstract">Tracing British demand for forest products into the ecological transformation of the Laurentian forest. <a href="https://doi.org/10.1016/j.jhg.2022.05.002">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="ghost">
+          <div class="yr">2022</div>
+          <div class="body">
+            <h4>Les hectares fantômes de l'industrialisation britannique et la forêt laurentienne, 1793–1900</h4>
+            <div class="authors mono">Castonguay, S. &amp; Clifford, J.</div>
+            <div class="venue">Écrire l'histoire Environnementale (Rennes)</div>
+            <div class="abstract"><a href="https://books.openedition.org/pur/164763">Publisher &rarr;</a></div>
+          </div>
+          <div class="type">Chapter · FR</div>
+        </li>
+        <li class="pub featured" data-tags="ghost london">
+          <div class="yr">2021</div>
+          <div class="body">
+            <h4>London's Soap Industry and the Development of Global Ghost Acres in the Nineteenth Century</h4>
+            <div class="authors mono">Clifford, J.</div>
+            <div class="venue">Environment and History</div>
+            <div class="abstract"><a href="https://doi.org/10.3197/096734019X15463432086982">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="london">
+          <div class="yr">2020</div>
+          <div class="body">
+            <h4>Greater London's Rapid Growth</h4>
+            <div class="authors mono">Clifford, J.</div>
+            <div class="venue">A Mighty Capital Under Threat (U Pittsburgh Press)</div>
+            <div class="abstract"><a href="https://upittpress.org/books/9780822946106/">Publisher &rarr;</a></div>
+          </div>
+          <div class="type">Chapter</div>
+        </li>
+        <li class="pub featured" data-tags="london ghost">
+          <div class="yr">2017</div>
+          <div class="body">
+            <h4>West Ham and the River Lea: A Social and Environmental History of London's Industrialized Marshland, 1839–1914</h4>
+            <div class="authors mono">Clifford, J.</div>
+            <div class="venue">UBC Press — <em>Nature, History, Society</em> series</div>
+            <div class="abstract">A monograph on the environmental and public-health consequences of nineteenth-century industrialization in East London. <a href="https://www.ubcpress.ca/west-ham-and-the-river-lea">View publisher &rarr;</a></div>
+          </div>
+          <div class="type">Book</div>
+        </li>
+        <li class="pub" data-tags="dh ghost">
+          <div class="yr">2016</div>
+          <div class="body">
+            <h4>Geoparsing History: Locating Commodities in Ten Million Pages of Nineteenth-Century Sources</h4>
+            <div class="authors mono">Clifford, J., Alex, B. et al.</div>
+            <div class="venue">Historical Methods</div>
+            <div class="abstract">Text mining the British Parliamentary Papers to trace commodity flows across the nineteenth century. <a href="https://doi.org/10.1080/01615440.2015.1116419">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="ghost settler">
+          <div class="yr">2016</div>
+          <div class="body">
+            <h4>Maitland's Moment: Turning Nova Scotia's Forests into Ships for the Global Commodity Trade in the Mid-Nineteenth Century</h4>
+            <div class="authors mono">Peace, T., Clifford, J. &amp; Burns, J.</div>
+            <div class="venue">Moving Natures: Mobility and the Environment in Canadian History (U Calgary Press)</div>
+            <div class="abstract">Shipbuilding in Maitland, Nova Scotia, as a node in the global commodity trade — timber, labour, and the environments that sustained mid-nineteenth-century empire. Open access. <a href="https://prism.ucalgary.ca/bitstream/1880/51203/4/Moving_natures_2016_chapter01.pdf">PDF &rarr;</a></div>
+          </div>
+          <div class="type">Chapter</div>
+        </li>
+        <li class="pub" data-tags="dh">
+          <div class="yr">2015</div>
+          <div class="body">
+            <h4>Trading Consequences: A Case Study of Combining Text Mining and Visualization to Facilitate Document Exploration</h4>
+            <div class="authors mono">Hinrichs, U., Clifford, J. et al.</div>
+            <div class="venue">Digital Scholarship in the Humanities</div>
+            <div class="abstract"><a href="https://doi.org/10.1093/llc/fqv046">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+        <li class="pub" data-tags="london">
+          <div class="yr">2012</div>
+          <div class="body">
+            <h4>The River Lea in West Ham</h4>
+            <div class="authors mono">Clifford, J.</div>
+            <div class="venue">Urban Rivers (U Pittsburgh Press)</div>
+            <div class="abstract"><a href="https://upittpress.org/books/9780822961857/">Publisher &rarr;</a></div>
+          </div>
+          <div class="type">Chapter</div>
+        </li>
+        <li class="pub" data-tags="dh">
+          <div class="yr">2010</div>
+          <div class="body">
+            <h4>What is Active History?</h4>
+            <div class="authors mono">Clifford, J. et al.</div>
+            <div class="venue">Left History</div>
+            <div class="abstract"><a href="https://doi.org/10.25071/1913-9632.35817">DOI &rarr;</a></div>
+          </div>
+          <div class="type">Article</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========== DIGITAL PROJECTS ========== -->
+    <section id="projects">
+      <div class="sec-head"><span class="n">§ 04</span><h2>Digital Projects</h2><span class="meta">Maps · Archives · Tools</span></div>
+
+      <div class="proj-subhead">
+        <span class="proj-subhead-label">Completed &amp; Active</span>
+        <span class="proj-subhead-rule"></span>
+      </div>
+      <div class="proj-grid">
+        <a class="proj" href="https://jimclifford.ca/britannica-wiki/">
+          <div class="tag">Historical Corpus</div>
+          <h4>Encyclopædia Britannica, 1771–1860</h4>
+          <p>Eight editions parsed into a searchable, comparative corpus — tracking how coverage, revision, and topics evolved across nearly ninety years of knowledge.</p>
+          <div class="stats"><span><strong>211,451</strong> articles</span><span><strong>41,842</strong> topics</span><span><strong>8</strong> editions</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://jimclifford.ca/col_matching/">
+          <div class="tag">Career Atlas</div>
+          <h4>An Atlas of Imperial Careers</h4>
+          <p>Interactive atlas of Colonial Office and India Office careers, 1820–1966 — mapping every posting and the moments officials moved between positions across two imperial civil services.</p>
+          <div class="stats"><span><strong>~47,000</strong> officials</span><span><strong>22,485</strong> transitions</span><span><strong>1820–1966</strong></span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://jimclifford.ca/timber-data/">
+          <div class="tag">Trade Flows</div>
+          <h4>The Timber Web, 1874–1900</h4>
+          <p>Interactive visualization of British and Irish timber imports — tracking how commodities like pit props and pitch pine shifted their supply origins across Scandinavia and the Baltic over three eras of the trade.</p>
+          <div class="stats"><span><strong>158,918</strong> cargoes</span><span><strong>1874–1900</strong></span><span>Timber Trades Journal</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://jimclifford.ca/quebec/">
+          <div class="tag">Emigrant Voyages</div>
+          <h4>A Cheap Bridge — The Port of Quebec, 1817–1839</h4>
+          <p>Interactive visualization of every vessel arriving at Quebec — tracing how emigrants from Britain and Ireland crossed on timber ships returning in ballast, the &ldquo;cheap bridge&rdquo; that carried settlers up the St. Lawrence and Ottawa.</p>
+          <div class="stats"><span><strong>26,000+</strong> emigrants (Gould &amp; Price)</span><span><strong>1817–1839</strong></span><span>Newspaper arrivals</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://rememberrebuild.ca/">
+          <div class="tag">Community Archive</div>
+          <h4>Remember Rebuild Saskatchewan</h4>
+          <p>SSHRC/CIHR-funded pandemic documentation through community archives and oral histories.</p>
+          <div class="stats"><span><strong>2022–26</strong></span><span>Active</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://activehistory.ca/">
+          <div class="tag">Public History</div>
+          <h4>ActiveHistory.ca</h4>
+          <p>Public-history platform connecting historical scholarship to contemporary issues. Founding editor &amp; current webmaster.</p>
+          <div class="stats"><span><strong>Since 2009</strong></span><span>Founding editor</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://working-papers-in-critical-search.github.io/home/">
+          <div class="tag">Working Paper Series</div>
+          <h4>Working Papers in Critical Search</h4>
+          <p>Open-access series I co-edit with Jo Guldi (Emory) for drafts, method notes, and dataset documentation at the intersection of history, computation, and political economy. Paper 001 — <em>Why a Working Paper Series on Critical Search Now</em> (Guldi &amp; Clifford). Paper 002 — <em>A Cypher Knowledge Graph of British Imperial Territorial Evolution</em> (Clifford).</p>
+          <div class="stats"><span><strong>Since 2026</strong></span><span>Co-editor</span><span class="not-pr">Not peer-reviewed</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://hgiscanada.usask.ca/">
+          <div class="tag">Spatial Data</div>
+          <h4>Historical GIS Research Canada</h4>
+          <p>Census GIS polygons and tabular data for Canada, 1851–1921.</p>
+          <div class="stats"><span><strong>70</strong> years</span><span><strong>~10</strong> censuses</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="/hgiscanada/">
+          <div class="tag">Knowledge Graph</div>
+          <h4>HGIS Canada Knowledge Graph</h4>
+          <p>One prose page per Canadian Census Subdivision per census year, with Wikidata grounding, cross-year continuity, and structured data for chatbot RAG.</p>
+          <div class="stats"><span><strong>30K</strong> pages</span><span><strong>12</strong> provinces</span><span><strong>1.5M</strong> measurements</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://public.tableau.com/app/profile/jim.clifford/vizzes">
+          <div class="tag">Visualizations</div>
+          <h4>Tableau · Trade &amp; Commodities</h4>
+          <p>Interactive visualizations of historical British trade and commodity flows.</p>
+          <div class="stats"><span>Public</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://www.spatial.io/s/Feeding-Edwardian-London-63deb6e205e5d17a2b3cce88">
+          <div class="tag">VR Exhibit</div>
+          <h4>Feeding Edwardian London</h4>
+          <p>Virtual-reality exhibit on London's food supply c. 1901.</p>
+          <div class="stats"><span>VR</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://www.livingmaps.org/groundbreakers">
+          <div class="tag">AR Walking Tour</div>
+          <h4>Ground Breakers</h4>
+          <p>Augmented-reality walking tour of industrial sites in London's Lea Valley.</p>
+          <div class="stats"><span>AR</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://www.youtube.com/watch?v=qUBU7vBw1qQ">
+          <div class="tag">360° Video</div>
+          <h4>Agnes Deans Cameron VR</h4>
+          <p>360° VR video on Cameron's 1908 expedition through northwestern Canada.</p>
+          <div class="stats"><span><strong>2024</strong></span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://www.youtube.com/watch?v=RsGMdgJEGIs">
+          <div class="tag">360° Video</div>
+          <h4>Wright's Timber Slide</h4>
+          <p>360° VR reconstruction of the Ottawa timber slide and the nineteenth-century lumber trade.</p>
+          <div class="stats"><span>VR</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="remember-lives.html">
+          <div class="tag">Digital Memorial</div>
+          <h4>Remember Lives, Not Numbers</h4>
+          <p>Digital memorial for Saskatchewan residents lost to COVID-19.</p>
+          <div class="stats"><span>Memorial</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://arcg.is/1SjG0X">
+          <div class="tag">StoryMap</div>
+          <h4>Industrial London Walking Tour</h4>
+          <p>Interactive StoryMap tour of London's nineteenth-century industrial landscapes.</p>
+          <div class="stats"><span>StoryMap</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://jimclifford.ca/london_industry_map/">
+          <div class="tag">Swipe Map</div>
+          <h4>London's 19th-Century Industrial Geography</h4>
+          <p>Interactive Ordnance Survey swipe map comparing London's industry, water, and docks c.1865–75 vs c.1893–95.</p>
+          <div class="stats"><span><strong>1865–1895</strong></span><span>OS basemaps</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://arcg.is/1CnHbK">
+          <div class="tag">StoryMap</div>
+          <h4>Historic Montreal Walking Tour</h4>
+          <p>Interactive StoryMap tour tracing Montreal's industrial and working-class history.</p>
+          <div class="stats"><span>StoryMap</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj" href="https://zenodo.org/communities/jim_s_clifford/records?q=&l=list&p=1&s=10">
+          <div class="tag">Open Datasets</div>
+          <h4>Zenodo · Ghost Acres datasets</h4>
+          <p>Quebec Arrivals 1817–1839 · Canadian Timber · British Imports.</p>
+          <div class="stats"><span>Open access</span></div>
+          <span class="go">↗</span>
+        </a>
+      </div>
+
+      <div class="proj-subhead">
+        <span class="proj-subhead-label">Works in Progress</span>
+        <span class="proj-subhead-meta">Prototypes, research builds, and evolving corpora</span>
+        <span class="proj-subhead-rule"></span>
+      </div>
+      <div class="proj-grid">
+        <a class="proj proj-wip" href="https://lincsproject.ca/">
+          <div class="tag">Knowledge Graph</div>
+          <h4>LINCS Project</h4>
+          <p>Persistent identifiers for historical Canadians, linked to archival records.</p>
+          <div class="stats"><span><strong>10,000+</strong> IDs</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="https://jburnford.github.io/philosophical-transactions-ocr-1665-1869/">
+          <div class="tag">OCR Corpus</div>
+          <h4>Philosophical Transactions Archive</h4>
+          <p>OCR of the world's first scientific journal, 1665–1869.</p>
+          <div class="stats"><span><strong>8,128</strong> articles</span><span><strong>106,829</strong> pages</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="https://jburnford.github.io/JosephBanksKG/">
+          <div class="tag">Network Graph</div>
+          <h4>Sir Joseph Banks Knowledge Graph</h4>
+          <p>Network visualizations of Banks's global correspondence network.</p>
+          <div class="stats"><span><strong>7,124</strong> docs</span><span><strong>6,441</strong> people</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="https://jburnford.github.io/dry-rot-history/">
+          <div class="tag">Temporal Graph</div>
+          <h4>Dry Rot in Britain</h4>
+          <p>Temporal knowledge graph tracing dry rot from Pepys (1684) through the naval crisis to Britton (1875).</p>
+          <div class="stats"><span><strong>1665–1875</strong></span><span><strong>46</strong> people · <strong>70</strong> sources</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="http://jimclifford.ca/hgiscanada">
+          <div class="tag">LOD for RAG</div>
+          <h4>HGIS Canada · LOD for RAG</h4>
+          <p>Linked open data rebuild of the HGIS Canada census corpus, grounded to Wikidata for richer cross-links — designed to improve chatbot answers to everyday history questions.</p>
+          <div class="stats"><span>Wikidata-grounded</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="https://jimclifford.ca/wheat/">
+          <div class="tag">Interactive Map</div>
+          <h4>Canadian Grain Elevators, 1911–1944</h4>
+          <p>Interactive map of every grain elevator licensed in Canada between 1911 and 1944, tracing the build-out of the Prairie wheat economy.</p>
+          <div class="stats"><span><strong>1911–1944</strong></span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+        <a class="proj proj-wip" href="https://jimclifford.ca/wheat/settlement.html">
+          <div class="tag">Interactive Map</div>
+          <h4>Settling Saskatchewan, 1879–1935</h4>
+          <p>Layered map of land transitions across Saskatchewan — CPR land sales, Crown-to-private homestead patents, surrendered First Nations reserve land, railways, and towns appearing year by year down to the quarter section.</p>
+          <div class="stats"><span><strong>1879–1935</strong></span><span>Quarter-section detail</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== TALKS ========== -->
+    <section id="talks">
+      <div class="sec-head"><span class="n">§ 05</span><h2>Talks</h2><span class="meta">Lectures · Conferences · Slides</span></div>
+      <div class="proj-grid">
+        <a class="proj" href="https://jimclifford.ca/ssha-2026/">
+          <div class="tag">Conference Paper · 2026</div>
+          <h4>Mapping the Colonial Administrative State: Linked Knowledge Graphs from Colonial and Indian Office Lists, 1867&ndash;1947</h4>
+          <p>Turning eighty-five volumes of the Colonial and India Office Lists into a knowledge graph of officials, places, and dated career events — with Ceylon as a case study of how one colony&rsquo;s wider printed record can be built on top. Social Science History Association, 51st Annual Meeting.</p>
+          <div class="stats"><span><strong>Nov 2026</strong></span><span>Atlanta</span><span>Slides</span></div>
+          <span class="go">↗</span>
+        </a>
+        <div class="proj proj-static">
+          <div class="tag">Conference Session · 2026</div>
+          <h4><a href="https://www.youtube.com/watch?v=jZTNWcT6fmo">Cleaning and Structuring Historical Data: A Working Session</a></h4>
+          <p>A walkthrough of the pipeline behind the Atlas of Imperial Careers — OCR of Colonial Office and India Office List biographies, open-model extraction to JSON, and grounding places and people in Wikidata with an MCP server and QLever. AI and History Conference, Johns Hopkins University.</p>
+          <div class="stats"><span><strong>15 Oct 2026</strong></span><span>Baltimore</span><span>61 min</span></div>
+          <div class="links"><a href="https://www.youtube.com/watch?v=jZTNWcT6fmo">Watch on YouTube ↗</a><a href="https://proflouishyman.github.io/ai_conference_2026/talks/S10.html">Session page · chapters &amp; transcript ↗</a></div>
+        </div>
+        <a class="proj" href="https://www.youtube.com/watch?v=AW3pSNOHMxk">
+          <div class="tag">Lunchtime Colloquium · 2015</div>
+          <h4>Mapping London&rsquo;s Industry and Global Hinterlands, 1850&ndash;1914</h4>
+          <p>Research presentation as a fellow of the Rachel Carson Center for Environment and Society, LMU Munich — historical GIS and the distant landscapes that supplied London&rsquo;s industries.</p>
+          <div class="stats"><span><strong>16 Apr 2015</strong></span><span>Munich</span><span>28 min</span></div>
+          <span class="go">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== TEACHING ========== -->
+    <section id="teaching">
+      <div class="sec-head"><span class="n">§ 06</span><h2>Teaching</h2><span class="meta">Courses &amp; Awards</span></div>
+      <div class="two-col">
+        <div>
+          <div class="card">
+            <div class="sub">Undergraduate Seminar</div>
+            <h4><a href="history-496.html" style="border:0;">HIST 496 — Mapping Settler Colonialism</a></h4>
+            <p>Student digital-history projects exploring settler colonialism in Saskatchewan through GIS and mapping methods.</p>
+          </div>
+          <div class="card">
+            <div class="sub">Student Project</div>
+            <h4><a href="https://storymaps.arcgis.com/stories/277ad26ec4684773b4a657bc18c5a9b9" style="border:0;">Piece by Piece</a></h4>
+            <p>A tour of clothing materials from nineteenth-century England. By Sam Huckerby.</p>
+          </div>
+        </div>
+        <div>
+          <div class="card award">
+            <div class="sub">D2L Innovation Award · 2025</div>
+            <h4><a href="https://news.usask.ca/articles/community/2025/usask-team-wins-international-teaching-award-for-canadian-history-game.php" style="border:0;">Homesteaders Board Game</a></h4>
+            <p>Educational game on settler colonialism, co-developed with a USask team. Winner of the 2025 international D2L Innovation Award in Teaching and Learning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FUNDING ========== -->
+    <section id="funding">
+      <div class="sec-head"><span class="n">§ 07</span><h2>Research Funding</h2><span class="meta">Grants &amp; Partnerships</span></div>
+      <ul class="funding-list">
+        <li class="funding-item">
+          <div class="yrs">2026–31</div>
+          <div class="title">Mapping Métis Displacement in the Shadow of Settler Colonialism<span class="agency">SSHRC Insight Grant · PI: Cheryl Troupe · Co-I: Jim Clifford</span><span class="agency">Examines Métis land occupancy and the impacts of settler colonialism in Saskatchewan.</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2026</div>
+          <div class="title"><a href="https://jburnford.github.io/claude_code_workshop/workshop-event.html">HGIS to LOD Workshop</a><span class="agency">SSHRC Connections Grant</span></div>
+          <div class="role">PI</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2022–26</div>
+          <div class="title">Saskatchewan COVID-19 Community Archive<span class="agency">SSHRC Partnership Development Grant</span></div>
+          <div class="role">PI</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2022–24</div>
+          <div class="title">Archives Unleashed Subgrant<span class="agency">Mellon Foundation</span></div>
+          <div class="role">PI</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2021–24</div>
+          <div class="title">Building London With Canadian Resources<span class="agency">SSHRC Partnership Development Grant</span></div>
+          <div class="role">PI</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2018</div>
+          <div class="title">Prairie Landscapes &amp; Environmental Change (CHESS)<span class="agency">SSHRC Connections Grant</span></div>
+          <div class="role">PI</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2014–16</div>
+          <div class="title">London's Ghost Acres, 1850–1919<span class="agency">SSHRC Insight Development Grant</span></div>
+          <div class="role">PI</div>
+        </li>
+        <li class="funding-item pi">
+          <div class="yrs">2012–13</div>
+          <div class="title">Trading Consequences<span class="agency">SSHRC / Jisc / AHRC / ESRC · Digging into Data</span></div>
+          <div class="role">Co-PI</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2024–29</div>
+          <div class="title">HGIS Lab · Infrastructure of Health, Economics &amp; Power<span class="agency">CFI Grant</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2023–28</div>
+          <div class="title">Genèse du système agro-alimentaire canadien<span class="agency">SSHRC Insight Grant</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2023–25</div>
+          <div class="title">Forward Linking: Relationships within the Cultural Data Ecosystem<span class="agency">SSHRC Partnership Development Grant</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2023</div>
+          <div class="title">At the Vanguard of Colonialism: Global Timber Colonialism<span class="agency">Riksbankens Jubileumsfond (Sweden)</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2022–24</div>
+          <div class="title">Build Back Better (COVID-19)<span class="agency">CIHR Grant</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2017–22</div>
+          <div class="title">Commerce Impérial et Transformations Environnementales<span class="agency">SSHRC Insight Grant</span></div>
+          <div class="role">Co-I</div>
+        </li>
+        <li class="funding-item">
+          <div class="yrs">2017–21</div>
+          <div class="title">The Canadian Peoples 1861–1921<span class="agency">CFI</span></div>
+          <div class="role">Co-I</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact">
+      <div class="sec-head"><span class="n">§ 08</span><h2>Contact</h2><span class="meta">Office · Correspondence</span></div>
+      <dl class="contact-grid">
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:jim.clifford@usask.ca">jim.clifford@usask.ca</a></dd>
+          <dt>Phone</dt>
+          <dd class="mono">+1 (306) 966-2973</dd>
+        </div>
+        <div>
+          <dt>Office</dt>
+          <dd>Arts 706, University of Saskatchewan<br/>Saskatoon, SK · Treaty 6 Territory</dd>
+          <dt>Also find me</dt>
+          <dd style="font-size: 0.9rem;">
+            <a href="https://artsandscience.usask.ca/profile/JClifford">USask profile</a> ·
+            <a href="https://scholar.google.ca/citations?user=RBhCqv0AAAAJ">Scholar</a> ·
+            <a href="https://orcid.org/0000-0003-2004-5161">ORCID</a> ·
+            <a href="https://activehistory.ca/">Active History</a> ·
+            <a href="blog-archive.html">Blog archive</a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <footer>
+      <div>© Jim Clifford · Department of History · University of Saskatchewan</div>
+      <div>Redesigned 2026 · Set in Roboto Slab, Work Sans &amp; JetBrains Mono</div>
+    </footer>
+
+  </main>
+
+</div>
+
+<script>
+// ============ Pub filtering + expand ============
+const pubs = document.querySelectorAll('.pub');
+const chips = document.querySelectorAll('.filter-chip');
+const pubCount = document.getElementById('pubcount');
+
+const siBlocks = document.querySelectorAll('.si-contents');
+function applyFilter(f){
+  let n = 0;
+  pubs.forEach(p => {
+    const tags = p.dataset.tags.split(' ');
+    const show = f === 'all' || tags.includes(f);
+    p.classList.toggle('hidden', !show);
+    if(show) n++;
+  });
+  siBlocks.forEach(b => {
+    const tags = (b.dataset.tags || '').split(' ');
+    const show = f === 'all' || tags.includes(f);
+    b.classList.toggle('hidden', !show);
+  });
+  pubCount.textContent = 'showing ' + n;
+}
+
+chips.forEach(c => c.addEventListener('click', () => {
+  chips.forEach(x => x.classList.remove('on'));
+  c.classList.add('on');
+  applyFilter(c.dataset.filter);
+}));
+
+pubs.forEach(p => {
+  p.addEventListener('click', (e) => {
+    if(e.target.tagName === 'A') return;
+    p.classList.toggle('open');
+  });
+});
+
+// ============ Rail active section ============
+const railLinks = document.querySelectorAll('#railnav a');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if(en.isIntersecting){
+      const id = en.target.id;
+      railLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    }
+  });
+}, {rootMargin: '-40% 0px -50% 0px'});
+document.querySelectorAll('section').forEach(s => obs.observe(s));
+
+// smooth scroll
+document.querySelectorAll('#railnav a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const el = document.querySelector(a.getAttribute('href'));
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+// ============ Timeline milestone details ============
+(() => {
+  const panel = document.getElementById('tl-pop');
+  const dots = [...document.querySelectorAll('.themes [data-pop]')];
+  if (!panel) return;
+  const show = el => {
+    dots.forEach(dot => dot.setAttribute('aria-pressed', String(dot === el)));
+    panel.replaceChildren();
+    const row = el.closest('.thread-row');
+    for (const [className, value] of [
+      ['yr', el.dataset.year + ' · ' + row.querySelector('.thread-label').textContent],
+      ['ttl', el.dataset.title], ['sub', el.dataset.sub]
+    ]) {
+      if (!value) continue;
+      const span = document.createElement('span');
+      span.className = className;
+      span.textContent = value;
+      panel.append(span);
+    }
+    if (el.dataset.href) {
+      const link = document.createElement('a');
+      link.href = el.dataset.href;
+      link.textContent = 'Explore this work ↗';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', 'Explore ' + el.dataset.title + ' (opens in a new tab)');
+      panel.append(link);
+    }
+  };
+  document.querySelectorAll('.thread-row').forEach(row => {
+    const years = new Map();
+    row.querySelectorAll('[data-pop]').forEach(dot => {
+      const group = years.get(dot.dataset.year) || [];
+      group.push(dot);
+      years.set(dot.dataset.year, group);
+    });
+    years.forEach(group => {
+      if (group.length < 2) return;
+      const x = group[0].getAttribute('cx');
+      const y = Number(group[0].getAttribute('cy'));
+      group.forEach((dot, i) => {
+        dot.setAttribute('cx', x);
+        dot.setAttribute('cy', y + (i - (group.length - 1) / 2) * 14);
+      });
+    });
+    // Place brief milestone labels above their bands to keep markers visible.
+    row.querySelectorAll('text[style]').forEach(label => {
+      label.setAttribute('y', Number(row.querySelector('circle').getAttribute('cy')) - 18);
+    });
+  });
+  dots.forEach((dot, index) => {
+    dot.setAttribute('r', '5');
+    dot.setAttribute('aria-label', dot.dataset.year + ': ' + dot.dataset.title);
+    dot.setAttribute('aria-controls', 'tl-pop');
+    dot.setAttribute('aria-pressed', 'false');
+    dot.addEventListener('click', () => show(dot));
+    dot.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        show(dot);
+      }
+      const step = {ArrowRight:1, ArrowDown:1, ArrowLeft:-1, ArrowUp:-1}[event.key];
+      if (step) {
+        event.preventDefault();
+        const next = dots[(index + step + dots.length) % dots.length];
+        next.focus();
+        show(next);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
