@@ -26,6 +26,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jimclifford.ca/wheat/settlement.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jimclifford.ca/quebec/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jimclifford.ca/london_industry_map/</loc>
     <priority>0.8</priority>
   </url>
@@ -57,6 +65,11 @@
   </url>
   <url>
     <loc>https://jimclifford.ca/llm-history-comparison.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jimclifford.ca/llm-benchmark-problem.html</loc>
     <lastmod>2026-09-06</lastmod>
     <priority>0.6</priority>
   </url>

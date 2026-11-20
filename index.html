@@ -261,6 +261,12 @@
   .card .sub{font-family: var(--mono); font-size: 0.7rem; color: var(--ochre-deep); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px;}
   .card p{margin: 6px 0 0; color: var(--ink-2); font-size: 0.92rem;}
   .card.award{border-left: 3px solid var(--ochre);}
+  .proj-static{cursor: default;}
+  .proj-static h4 a{border: 0;}
+  .proj-static h4 a:hover{color: var(--ochre-deep);}
+  .proj .links{display:flex; flex-wrap: wrap; gap: 6px 16px; padding-top: 10px; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em;}
+  .proj .links a{color: var(--ochre-deep); border: 0;}
+  .proj .links a:hover{text-decoration: underline;}
 
   .funding-list{list-style: none; padding: 0; margin: 0;}
   .funding-item{display:grid; grid-template-columns: 88px 1fr 60px; gap: 16px; padding: 14px 0; border-top: 1px solid var(--rule); align-items: baseline;}
@@ -302,9 +308,10 @@
       <a href="#about"><span class="num">02</span> About</a>
       <a href="#publications"><span class="num">03</span> Publications</a>
       <a href="#projects"><span class="num">04</span> Digital Projects</a>
-      <a href="#teaching"><span class="num">05</span> Teaching</a>
-      <a href="#funding"><span class="num">06</span> Funding</a>
-      <a href="#contact"><span class="num">07</span> Contact</a>
+      <a href="#talks"><span class="num">05</span> Talks</a>
+      <a href="#teaching"><span class="num">06</span> Teaching</a>
+      <a href="#funding"><span class="num">07</span> Funding</a>
+      <a href="#contact"><span class="num">08</span> Contact</a>
     </nav>
     <div class="rail-foot">
       University of Saskatchewan<br/>
@@ -523,7 +530,8 @@
                     data-href="https://doi.org/10.1136/bmjph-2024-000965"/>
             <circle class="dot" cx="980.0" cy="210" r="3" fill="oklch(0.48 0.09 240)" tabindex="0" role="button"
                     data-pop="1" data-year="2026" data-title="Pandemic Politics: Developing Vaccines in Canada's Anti-vax Heartland"
-                    data-sub="Forthcoming article · Canadian Journal of Health History / Revue canadienne d'histoire de la santé · Dyck, Clifford, Cameron, Chassé, Braun &amp; Muhajarine"/>
+                    data-sub="Article · Canadian Journal of Health History · Dyck, Clifford, Cameron, Chassé, Braun &amp; Muhajarine"
+                    data-href="https://utppublishing.com/doi/10.3138/cjhh.726-102024"/>
           </g>
           <g>
             <line pointer-events="none" x1="980" y1="30" x2="980" y2="290" stroke="oklch(0.66 0.12 70)" stroke-width="1"/>
@@ -604,8 +612,8 @@
           <div class="body">
             <h4>Pandemic Politics: Developing Vaccines in Canada's Anti-vax Heartland</h4>
             <div class="authors mono">Dyck, E., Clifford, J., Cameron, D., Chass&eacute;, P., Braun, F. &amp; Muhajarine, N.</div>
-            <div class="venue">Canadian Journal of Health History / Revue canadienne d'histoire de la sant&eacute; &middot; forthcoming</div>
-            <div class="abstract">Traces how Saskatchewan moved from the focal point of Canadian vaccine development at VIDO-InterVac to a staging ground for the anti-vaccine movement. Combining traditional news sources, social media posts, and interviews with residents and vaccine researchers, the paper argues that unmoderated social media platforms overwhelmed collective pandemic responses, politicized vaccines, and reshaped public-health policy in the province.</div>
+            <div class="venue">Canadian Journal of Health History / Revue canadienne d'histoire de la sant&eacute; 43, no. 1, pp. 157&ndash;187</div>
+            <div class="abstract">Traces how Saskatchewan moved from the focal point of Canadian vaccine development at VIDO-InterVac to a staging ground for the anti-vaccine movement. Combining traditional news sources, social media posts, and interviews with residents and vaccine researchers, the paper argues that unmoderated social media platforms overwhelmed collective pandemic responses, politicized vaccines, and reshaped public-health policy in the province. <a href="https://utppublishing.com/doi/10.3138/cjhh.726-102024">DOI &rarr;</a></div>
           </div>
           <div class="type">Article</div>
         </li>
@@ -661,7 +669,7 @@
         </li>
         <li class="si-contents" data-tags="ghost settler" aria-label="Special issue contents">
           <div class="si-head">Special Issue · Co-edited with Iva Lučić · 8 articles</div>
-          <p class="si-note">Articles in the <em>Journal of Historical Geography</em> Special Issue on Timber Colonialism. Listed in order of pagination.</p>
+          <p class="si-note">Articles in the <em>Journal of Historical Geography</em> Special Issue on Timber Colonialism. Listed in order of pagination. <a href="https://www.sciencedirect.com/special-issue/102RWBPR9DV">View the full special issue &rarr;</a></p>
           <ol>
             <li>
               <div><span class="si-author">Peruchi Moretto, S.</span><span class="si-title"><a href="https://doi.org/10.1016/j.jhg.2026.03.004">Deforestation processes and (re)forestation practices in Southern Brazil, in the twentieth and twenty-first centuries</a></span></div>
@@ -890,6 +898,13 @@
           <div class="stats"><span><strong>158,918</strong> cargoes</span><span><strong>1874–1900</strong></span><span>Timber Trades Journal</span></div>
           <span class="go">↗</span>
         </a>
+        <a class="proj" href="https://jimclifford.ca/quebec/">
+          <div class="tag">Emigrant Voyages</div>
+          <h4>A Cheap Bridge — The Port of Quebec, 1817–1839</h4>
+          <p>Interactive visualization of every vessel arriving at Quebec — tracing how emigrants from Britain and Ireland crossed on timber ships returning in ballast, the &ldquo;cheap bridge&rdquo; that carried settlers up the St. Lawrence and Ottawa.</p>
+          <div class="stats"><span><strong>26,000+</strong> emigrants (Gould &amp; Price)</span><span><strong>1817–1839</strong></span><span>Newspaper arrivals</span></div>
+          <span class="go">↗</span>
+        </a>
         <a class="proj" href="https://rememberrebuild.ca/">
           <div class="tag">Community Archive</div>
           <h4>Remember Rebuild Saskatchewan</h4>
@@ -1045,12 +1060,40 @@
           <div class="stats"><span><strong>1911–1944</strong></span><span class="wip-dot">In progress</span></div>
           <span class="go">↗</span>
         </a>
+        <a class="proj proj-wip" href="https://jimclifford.ca/wheat/settlement.html">
+          <div class="tag">Interactive Map</div>
+          <h4>Settling Saskatchewan, 1879–1935</h4>
+          <p>Layered map of land transitions across Saskatchewan — CPR land sales, Crown-to-private homestead patents, surrendered First Nations reserve land, railways, and towns appearing year by year down to the quarter section.</p>
+          <div class="stats"><span><strong>1879–1935</strong></span><span>Quarter-section detail</span><span class="wip-dot">In progress</span></div>
+          <span class="go">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== TALKS ========== -->
+    <section id="talks">
+      <div class="sec-head"><span class="n">§ 05</span><h2>Recorded Talks</h2><span class="meta">Lectures · Conferences</span></div>
+      <div class="proj-grid">
+        <div class="proj proj-static">
+          <div class="tag">Conference Session · 2026</div>
+          <h4><a href="https://www.youtube.com/watch?v=jZTNWcT6fmo">Cleaning and Structuring Historical Data: A Working Session</a></h4>
+          <p>A walkthrough of the pipeline behind the Atlas of Imperial Careers — OCR of Colonial Office and India Office List biographies, open-model extraction to JSON, and grounding places and people in Wikidata with an MCP server and QLever. AI and History Conference, Johns Hopkins University.</p>
+          <div class="stats"><span><strong>15 Oct 2026</strong></span><span>Baltimore</span><span>61 min</span></div>
+          <div class="links"><a href="https://www.youtube.com/watch?v=jZTNWcT6fmo">Watch on YouTube ↗</a><a href="https://proflouishyman.github.io/ai_conference_2026/talks/S10.html">Session page · chapters &amp; transcript ↗</a></div>
+        </div>
+        <a class="proj" href="https://www.youtube.com/watch?v=AW3pSNOHMxk">
+          <div class="tag">Lunchtime Colloquium · 2015</div>
+          <h4>Mapping London&rsquo;s Industry and Global Hinterlands, 1850&ndash;1914</h4>
+          <p>Research presentation as a fellow of the Rachel Carson Center for Environment and Society, LMU Munich — historical GIS and the distant landscapes that supplied London&rsquo;s industries.</p>
+          <div class="stats"><span><strong>16 Apr 2015</strong></span><span>Munich</span><span>28 min</span></div>
+          <span class="go">↗</span>
+        </a>
       </div>
     </section>
 
     <!-- ========== TEACHING ========== -->
     <section id="teaching">
-      <div class="sec-head"><span class="n">§ 05</span><h2>Teaching</h2><span class="meta">Courses &amp; Awards</span></div>
+      <div class="sec-head"><span class="n">§ 06</span><h2>Teaching</h2><span class="meta">Courses &amp; Awards</span></div>
       <div class="two-col">
         <div>
           <div class="card">
@@ -1076,7 +1119,7 @@
 
     <!-- ========== FUNDING ========== -->
     <section id="funding">
-      <div class="sec-head"><span class="n">§ 06</span><h2>Research Funding</h2><span class="meta">Grants &amp; Partnerships</span></div>
+      <div class="sec-head"><span class="n">§ 07</span><h2>Research Funding</h2><span class="meta">Grants &amp; Partnerships</span></div>
       <ul class="funding-list">
         <li class="funding-item">
           <div class="yrs">2026–31</div>
@@ -1158,7 +1201,7 @@
 
     <!-- ========== CONTACT ========== -->
     <section id="contact">
-      <div class="sec-head"><span class="n">§ 07</span><h2>Contact</h2><span class="meta">Office · Correspondence</span></div>
+      <div class="sec-head"><span class="n">§ 08</span><h2>Contact</h2><span class="meta">Office · Correspondence</span></div>
       <dl class="contact-grid">
         <div>
           <dt>Email</dt>
